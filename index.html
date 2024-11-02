@@ -2,27 +2,29 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
-    <title>∙ DarkerMode | Landing Page</title>
+    <title>DarkerMode</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
   </head>
   <body>
+    <div class='linear-gradient' id='linear-gradient'>
+      <div class='blurple-blur blur' id='blurple-blur blur'></div>
+      <div class='salmon-blur blur' id='salmon-blur blur'></div>
+      <div class='blue-blur blur' id='blue-blur blur'></div>
+    </div>
     <div class="noMobile" id="noMobile">
-      <object class="noMobileImg" id="noMobileImg" data="images/noPhone.svg" type="image/svg+xml"> [Your browser does not support SVG.] </object>
-      <span class="mobileMsg" id="mobileMsg"> Please rotate your display or expand your tab horizontally. </span>
+      <div class="phoneIcon" id="phoneIcon"></div>
+      <span class="errorMessage" id="errorMessage"> Please rotate your display or expand your tab horizontally. </span>
     </div>
-    <div class="topFooter" id="topFooter">
-      <div class="leftAlign" id="leftAlign">
-        <div class="homeIcon" id="homeIcon">
-        </div>
-      </div>
-      <div class="rightAlign" id="rightAlign">
-        <div class="termsOfUseClass" id="termsOfUseId" onclick="permissionsClick()"> Permissions </div>
-        <div class="packDetailsClass" id="packDetailsId" onclick="detailsClick()"> Details </div>
-        <div class="changelogClass" id="changelogId" onclick="changelogClick()"> Changelog </div>
-      </div>
+    <div class="headerBackdrop" id="headerBackdrop"></div>
+    <div class="headerLeft header" id="headerLeft header">
+      <img class="homeLogo" id="homeIcon" src="images/dmLogo.png">
     </div>
+    <div class="headerRight header" id="headerRight header">
+      <div class="termsOfUse headerButton" id="termsOfUse headerButton" onclick="permissionsClick()"> Terms of Use </div>
+      <div class="packDetails headerButton" id="packDetails headerButton" onclick="detailsClick()"> Details </div>
+      <div class="updateLog headerButton" id="updateLog headerButton" onclick="updateLogClick()"> Changelog </div>
     </div>
     <div class="appContainer" id="appContainer">
       <div class="aboutMe" id="aboutMe"></div>
