@@ -61,16 +61,15 @@ function generateRandomValues() {
 // Call the function initially to set the initial values
 generateRandomValues();
 
+// Call the function to make it start moving immediately
+setTimeout(generateRandomValues, 1);
+
 // Set an interval to update the values every 20 seconds
 setInterval(generateRandomValues, 20000);
 
 /* Redirect to Netlify Deploy if on Github Pages */
-function checkAndRedirect(targetURL, redirectURL) {
-  const currentURL = window.location.href;
+const currentURL = window.location.href;
 
-  if (currentURL === "https://justaundre.github.io/DarkerMode/" ) {
-    window.location.href = "https://darkermode.netlify.app";
-  }
+if (currentURL === "https://justaundre.github.io/DarkerMode/" ) {
+  window.location.href = "https://internetutils.netlify.app/DarkerMode/";
 }
-
-checkAndRedirect("https://justaundre.github.io/UtilityThemes/", "https://darkermode.netlify.app/");

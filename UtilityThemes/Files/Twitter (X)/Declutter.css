@@ -1,0 +1,31 @@
+/**
+ * @name Declutter
+ * @description Get this garbage out of here!
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
+div[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt"]) /* The Twitter premium upsell at the top of your timeline */,
+div[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt"]) + div,
+a[href="/i/premium_sign_up"] /* Removes "Premium" Button  */,
+a[href="/i/verified-orgs-signup"] /* Removes "Business" */,
+a[href="/i/grok"] /* Removes "Grok" */,
+a[href="/jobs"] /* Removes "Jobs" */,
+a[href="/explore"] /* Removes "Explore" */,
+nav[aria-label="Footer"] /* Removes footer */,
+nav>a[href="/home"] /* Removes the "Home" button, just use the twitter birb instead */,
+div[role="progressbar"] ~ div /* Removes extra post creation text field, use the big ass blue "Post" button on the sidebar instead. */,
+[aria-label="Loading…"] /* Removes loading screen */,
+[aria-label="Loading"]
+{ display: none; }
+
+/* Removes everything from the right sidebar except the Trending */
+form[aria-label="Search"]>:last-child,
+div[aria-label="Trending"]>div>div:not(:has(section>[aria-label="Timeline: Trending now"])):not(:nth-child(1)) /* Removes "Who to Follow" */
+{ display: none }
+div[aria-label="Trending"]>div>div:has(section>[aria-label="Timeline: Trending now"]) {
+  position: fixed;
+  width: -webkit-fill-available;
+  top: 53px;
+}

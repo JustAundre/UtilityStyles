@@ -1,0 +1,64 @@
+/**
+ * @name Declutter
+ * @description Discord with extra room to spare.
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
+/* Comment or delete the following import rules if you want to disable them */
+/* Cleaner-looking folders, disable if you have cleaner folders enabled from Vencord */
+@import url('https://JustAundre.github.io/WebUtils/UtilityThemes/Files/Discord/Declutter Sub-CSS/Clean-Folders.css');
+
+/* Removes scrollbars */
+* {
+  /* Firefox */
+  scrollbar-width: none !important;
+  /* IE/Edge */
+  -ms-overflow-style: none !important;
+}
+/* WebKit browsers */
+*::-webkit-scrollbar { display: none !important; }
+
+
+[href='/shop'] /* Nitro button on the home page */,
+[href='/store'] /* store button on the home page */,
+div[aria-label='Edit Image with Apps'] /* Hides 'Edit Image with Apps' when hovering over images sent by someone other than you */,
+[aria-label='Help'] /* help button in the top footer */,
+[aria-label='Start Video Call'] /* Start Video call button */,
+[aria-label='New Group DM'] /* Hides Create new group DM button */,
+[aria-label='Add Friends to DM'],
+div[role='listitem'][tabindex='0'] div :nth-child(2) :nth-child(2) /* Activity/status text, and side-icons like owner crown, server booster, and whatever else there is. */,
+div[index][data-list-item-id] div :nth-child(2) :nth-child(2),
+li div a div> :nth-child(2)> :nth-child(2),
+div[style='height: 62px; opacity: 1;']> :first-child> :first-child> :last-child> :last-child,
+div[aria-label='Servers'] ~ div:has(div[aria-label='Download Apps']) /* The 'Download' button for the Discord App */,
+div[aria-label='Servers'] ~ div:has(> div:empty:not([aria-hidden='true'])),
+div[data-fade='false'][style='--connecting-container-fade-duration: 200ms; --connecting-content-fade-duration: 150ms;'] /*  loading screen */,
+div[aria-label='Notification Settings'][role='button'] /* The 'Notifications Settings' button from top footer */,
+li> :nth-child(2) div div div> :nth-child(3) /* The 'hang statuses' (the lil' icons in multi-user VCs in Discord Servers) */,
+div[role='list'][aria-label='Members']>div:not([aria-selected]) /* The 'Activities' section from the top of the Server Members list */,
+h3:has(:nth-child(2) [role='button']):not([aria-labelledby]) { display: none }
+ul[aria-label='Channels'] div[style='height: 16px;']:not([class]), ul[aria-label='Channels'] div[style='height: 20px;']:not([class]), ul[aria-label='Channels'] div[style='height: 12px;']:not([class])~li:not(:has(> div div[aria-label='Browse Channels'])):first-of-type, div[dir='ltr'][style='overflow: hidden scroll; padding-right: 16px;'] div>div:last-child:has(img[src='/assets/826b6a84605f7eb8a469.svg']), svg[style='min-width: 300px; min-height: 105px;'][viewBox='0 0 300 105']~div:not([class]):has(path[d='M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z']), [aria-label='Show User Profile (Unavailable)'], div:has(>div>svg[style='width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;']:not([viewBox="0 0 24 24"])),
+div[style="height: 84px;"] /* Server banners */,
+div[style]:has(>div[style]>img[class][src][alt][aria-hidden="true"]),
+div[class][role='img'][aria-label][aria-hidden]> :nth-child(2) /* Avatar decorations */
+{ display: none !important; }
+
+[aria-label='Send a gift'] /* The 'Gift' button in the message bar */,
+[aria-label='Open GIF picker'] /* The 'GIF' button in the message bar */,
+[aria-label='Open sticker picker'] /* The 'Sticker' button in the message bar */,
+main form div> :has(button[aria-label='Apps']) /* The 'Apps' button aside the chat text input */
+{ display: none; }
+
+/* After removing the Gift, GIF, and Sticker button, fixes the missing padding on the Select Emoji button */
+[aria-label='Select emoji'] {
+  padding-right: 16px;
+  margin-right: unset;
+}
+
+/* After removing all of the fourums tags in favor of the "See all tags" button next to them, fixes the "See all tags" button's positioning */
+button[aria-label="see all tagse"] { position: relative; }
+
+/* After removing the Apps button aside the chat text input, fixes the 'Jump to present' bar when viewing older messages/replies */
+main div:has(>button[type='button']) { right: 16px; }

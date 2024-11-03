@@ -1,0 +1,13 @@
+/**
+ * @name Opaque Viewing
+ * @description Removes UI transparency
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
+/* Solid header, removes the transparency and blur backdrop filter */
+div[aria-label='Home timeline']>div>div:first-child {
+  backdrop-filter: none;
+  background: rgb(0, 0, 0);
+}

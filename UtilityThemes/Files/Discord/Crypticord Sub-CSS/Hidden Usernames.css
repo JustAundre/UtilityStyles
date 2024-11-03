@@ -1,0 +1,25 @@
+/* Blurs usernames */
+.recode-needed {
+  opacity: 20%;
+  filter: blur(8px);
+  transition-delay: 5s !important;
+}
+
+/* When hovering over the actual username it reveals. (Takes longer to reveal.) */
+.recode-needed:hover {
+  opacity: 100%;
+  filter: blur(0px);
+  max-width: 1000px;
+  transition: 0.5s ease-in-out;
+  transition-delay: 5s !important;
+}
+
+/* Slows down the reveal of your actual username when hovering over your user card in the bottom left */
+.recode-needed {
+  transition: 0.5s ease-in-out;
+  transition-delay: 5s;
+}
+
+/* Removes Tooltips */
+body div#app-mount div:has(div#cash-app-pay-container) ~ div:not([class]) ~ div { opacity: 0 !important; }
+body div#app-mount div:has(div#cash-app-pay-container) ~ div:first-of-type, div#cash-app-pay-container { opacity: 1 !important; }

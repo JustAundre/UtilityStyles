@@ -1,0 +1,25 @@
+/**
+ * @name Bandaid Patches
+ * @description Changes that make things look 'correct-er' or add QOL fixes
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
+/* An (*OBJECTIVELY*) better side navbar */
+@import url('https://JustAundre.github.io/WebUtils/UtilityThemes/Files/YouTube/Cleaner Navbar.css');
+
+/* Disables clicking on comments' published time which reloads the page */
+#published-time-text * { pointer-events: none; }
+
+/* Truncated comments use up all the space they're given */
+#content-text span { white-space: unset; }
+
+/* Fixes live, rolling counters for publish date and view count for videos being 4 pixels too low (for some reason?) */
+yt-animated-rolling-number[style="height: 28px; line-height: 28px;"] { transform: translateY(-4px); }
+
+/* Removes the auto-adjusting margin from the actual content part of YouTube */
+#page-manager { margin-left: unset; }
+
+/* Removes the side navbar when it is closed */
+#guide:not([opened]) ~ [role="navigation"] { display: none; }

@@ -1,0 +1,13 @@
+/* Lowers attachment/embed opacity */
+div[aria-roledescription='Message']>*> :has(div[style]):not(:not([class])):not([role="button"]) {
+  opacity: 20%;
+  filter: blur(8px);
+  transition: all 0.25s ease-in-out;
+}
+
+/* Reverts blur and lowered opacity upon hovering */
+div[aria-roledescription='Message']>*> :has(div[style]):not(:not([class])):hover {
+  opacity: 100%;
+  filter: blur(0px);
+  transition: all 0.25s ease-in-out;
+}

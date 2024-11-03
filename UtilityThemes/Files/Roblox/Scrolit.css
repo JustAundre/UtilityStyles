@@ -1,0 +1,43 @@
+/* Puts everything side-by-side instead of on a grid */
+li[data-testid="wide-game-tile"] { display: flex !important; }
+
+/* Makes it actually a scroller */
+div[data-testid="game-grid"] {
+  overflow: scroll;
+  scrollbar-width: none;
+  display: flex !important;
+}
+.games-list-container {
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+/* Fixes weird margin and padding moving wide game tiles when hovered */
+li[data-testid="wide-game-tile"], li[data-testid="wide-game-tile"] * {
+  margin: 0px !important;
+  padding: 0px !important;
+  transform: unset;
+}
+
+/* To make the wide game tiles consistent with the normal game tiles, removes the background color from hovering */
+.focused, .focused * { background-color: transparent !important; }
+
+/* Fixes thumbnails in normal game tiles being varying sizes */
+[data-testid="game-tile"] span.thumbnail-2d-container.game-card-thumb-container { width: 150px }
+
+/* Fixes game ratings and player count on normal game tiles moving around when hovered/unhovered on */
+.game-card .game-card-container .game-card-link .game-card-info,
+.game-card .game-card-container .game-card-link .game-card-native-ad,
+.game-carousel .game-card-container .game-card-link .game-card-info,
+.game-carousel .game-card-container .game-card-link .game-card-native-ad,
+.game-grid .game-card-container .game-card-link .game-card-info,
+.game-grid .game-card-container .game-card-link .game-card-native-ad
+{ margin: 0; }
+
+/* Makes the header and filters of the "Charts" tab occupy the same line */
+.games-list-header,
+.filters-container { width: fit-content; }
+.games-page-container>div.section {
+  display: flex;
+  flex-wrap: wrap;
+}
