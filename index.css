@@ -67,7 +67,7 @@ div.linear-gradient>.salmon-blur {
 
 /* Properties to line up items correctly on the header */
 .headerRight {
-  right: 5%;
+  right: 5vw;
   justify-content: flex-end;
 }
 .headerLeft {
@@ -90,10 +90,10 @@ div.linear-gradient>.salmon-blur {
 
 /* Properties all buttons share. */
 .headerButton {
+  width: 120px;
   height: 100%;
-  width: fit-content;
   text-wrap: nowrap;
-  padding-left: 2.5vw;
+  padding: 0 2.5vw;
   cursor: pointer;
   color: white;
   font-size: large;
@@ -110,8 +110,6 @@ div.linear-gradient>.salmon-blur {
   border-bottom-style: solid;
   background: linear-gradient(to top, rgba(var(--accentColor).125), transparent);
 }
-
-.headerRight>.headerButton:last-of-type { margin-right: calc(var(--homeLogoMargin)/2*1%); }
 
 /* Unique properties of the home button. */
 .homeLogo {

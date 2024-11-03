@@ -22,17 +22,17 @@ function permissionsClick() {
   else {
   packDetails.removeAttribute("active")
   permissions.setAttribute("active", "")
-  changelog.removeAttribute("active")
+  updateLog.removeAttribute("active")
   }
 }
-function changelogClick() {
-  if (changelog.hasAttribute("active")) {
-    changelog.removeAttribute("active")
+function updateLogClick() {
+  if (updateLog.hasAttribute("active")) {
+    updateLog.removeAttribute("active")
   }
   else {
   packDetails.removeAttribute("active")
   permissions.removeAttribute("active")
-  changelog.setAttribute("active", "")
+  updateLog.setAttribute("active", "")
   }
 }
 
