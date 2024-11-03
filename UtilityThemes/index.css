@@ -5,23 +5,24 @@ div {
   height: 100%;
   text-align: center;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
-
 div,
 span,
-p {
+p,
+a {
   color: inherit;
-  font-family: sans-serif
+  font-family: "Poppins", "sans-serif", "system-ui";
+  text-decoration: none;
 }
-
 img,
 svg,
 foreignObject {
   user-select: none;
   -webkit-user-drag: none;
-  -webkit-user-select: none
+  -webkit-user-select: none;
 }
+a { cursor: pointer; }
 
 /* Removes the unaccounted-for extra height added by the default margins on the body element, and makes sure the website takes up all the space it's supposed to and no extra */
 html,
@@ -33,6 +34,7 @@ body {
   overflow: hidden
 }
 
+/* Base background properties */
 .linear-gradient {
   width: 100vw;
   height: 100vh;
@@ -40,6 +42,7 @@ body {
   background: linear-gradient(to top right, rgb(24, 29, 60)75%, rgb(32, 30, 75))
 }
 
+/* Properties for all color spotches */
 div.linear-gradient>div.blur {
   display: block;
   position: absolute;
@@ -47,13 +50,13 @@ div.linear-gradient>div.blur {
   filter: blur(10px)
 }
 
+/* Properties for each individual color spotch in the background */
 div.linear-gradient>.blurple-blur {
   width: 150vh;
   height: 150vh;
   background: radial-gradient(50% 50% at 50% 50%, rgba(82, 80, 226, 0.24) 0%, transparent 100%);
   transform: translateX(var(--x1)) translateY(var(--y1))
 }
-
 div.linear-gradient>.blue-blur {
   width: 175vh;
   height: 175vh;
@@ -137,18 +140,20 @@ div.linear-gradient>.salmon-blur {
   padding-bottom: 24px
 }
 
+/* Properties unique to the folder */
 .folder {
   width: 200px;
   transform: translateY(0);
   opacity: .5;
   cursor: pointer;
   transition: .25s ease;
-  animation: folder-enter 2s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+  animation: folder-enter 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transform-origin: bottom;
 }
-
-.folder:hover {animation: folder-hover forwards .5s ease !important;}
-
-img.folder:active {animation: folder-active forwards .25s ease !important;}
+/* Activates hover animation when hovered */
+.folder:hover { animation: folder-hover forwards .5s ease !important; }
+/* Activates click animation when clicked - even if mid-hover animation */
+img.folder:active { animation: folder-active forwards .25s ease !important; }
 
 .clickstop {
   width: 100vw;

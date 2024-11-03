@@ -1,25 +1,29 @@
-/* Sets the noPhone div to not display by default */
-.noMobile { display: none; }
-
-/* Changes 3 default properties, and removes user-select/drag */
-body * {
+/* Default styles unless overwritten. */
+div {
   display: flex;
-  position: relative;
-  color: inherit;
+  width: 100%;
+  height: 100%;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  user-select: none;
-  place-content: center;
-  text-align: center;
-  -webkit-user-drag: none;
 }
-
-/* Makes all links use a pointer mouse and have no text decoration */
+div,
+span,
+p,
 a {
-  text-decoration: none;
-  cursor: pointer;
   color: inherit;
+  font-family: "Poppins", "sans-serif", "system-ui";
+  text-decoration: none;
 }
+img,
+svg,
+foreignObject {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+a { cursor: pointer; }
+.noMobile { display: none; } /* Sets the noPhone div to not display by default */
 
 /* Makes the body element center all things, etc. */
 body {
@@ -30,6 +34,7 @@ body {
   font-size: 16px;
 }
 
+/* Base background properties */
 .linear-gradient {
   width: 100vw;
   height: 100vh;
@@ -37,6 +42,7 @@ body {
   background: linear-gradient(to top right, rgb(24, 29, 60)75%, rgb(32, 30, 75));
 }
 
+/* Properties for all color spotches */
 div.linear-gradient>div.blur {
   display: block;
   position: absolute;
@@ -44,13 +50,13 @@ div.linear-gradient>div.blur {
   filter: blur(10px);
 }
 
+/* Properties for each individual color spotch in the background */
 div.linear-gradient>.blurple-blur {
   width: 150vh;
   height: 150vh;
   background: radial-gradient(50% 50% at 50% 50%, rgba(82, 80, 226, 0.24) 0%, transparent 100%);
   transform: translateX(var(--x1)) translateY(var(--y1));
 }
-
 div.linear-gradient>.blue-blur {
   width: 175vh;
   height: 175vh;
@@ -149,7 +155,7 @@ div.linear-gradient>.salmon-blur {
 .downloadPack { width: 60vw; }
 
 /* Selector indicator for buttons */
-[active]::before, [active]::after { content: "-" }
+[active]::before, [active]::after { content: "-"; }
 
 /* Detects if you're a mobile user and disables the website */
 @media screen and (orientation: portrait) {
