@@ -27,8 +27,8 @@ a { cursor: pointer; }
 
 /* Makes the body element center all things, etc. */
 body {
-  position: fixed;
-  height: 100vh;
+  display: contents;
+  overflow-x: hidden;
   margin: 0px;
   font-family: "Comfortaa";
   font-size: 16px;
@@ -38,7 +38,7 @@ body {
 .linear-gradient {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background: linear-gradient(to top right, rgb(24, 29, 60)75%, rgb(32, 30, 75));
 }
 
@@ -81,6 +81,7 @@ div.linear-gradient>.salmon-blur {
   justify-content: flex-start;
 }
 .header, .headerBackdrop {
+  z-index: 1;
   width: auto;
   height: 7vh;
   position: fixed;
@@ -129,6 +130,7 @@ div.linear-gradient>.salmon-blur {
 
 /* Properties to line everything up in the actual app. */
 .appContainer {
+  position: absolute;
   margin-top: var(--appContainerMargin);
   width: 100vw;
   height: auto;
@@ -138,7 +140,7 @@ div.linear-gradient>.salmon-blur {
 /* Properties for both the "About Me" and "Download Pack" elements */
 .aboutMe,
 .downloadPack {
-  height: 45vw;
+  height: 100vw;
   max-height: var(--maxAppHeight);
   border-radius: .5vw;
   border-width: 1px;
