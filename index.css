@@ -132,6 +132,7 @@ div.linear-gradient>.salmon-blur {
 /* Properties for both the "About Me" and "Download Pack" elements */
 .aboutMe,
 .downloadPack {
+  height: 45vw;
   border-radius: .5vw;
   border-width: 1px;
   border-color: rgba(var(--borderColor) .1);
@@ -141,16 +142,10 @@ div.linear-gradient>.salmon-blur {
 }
 
 /* Properties unique to the "About Me" element */
-.aboutMe {
-  width: 25vw;
-  height: 50vh;
-}
+.aboutMe { width: 25vw; }
 
 /* Properties unique to the "Download Pack" element */
-.downloadPack {
-  height: 50vh;
-  width: 60vw;
-}
+.downloadPack { width: 60vw; }
 
 /* Selector indicator for buttons */
 [active]::before, [active]::after { content: "-" }
