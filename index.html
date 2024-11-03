@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="UTF-8">
-    <title>DarkerMode</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+    <meta charset="UTF-8"> <!-- Sets the encoding of the document -->
+    <title>DarkerMode</title> <!-- Sets the title of the tab -->
+    <link rel="stylesheet" href="index.css"> <!-- Imports my CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa"> <!-- Imports my first choice of custom font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins"> <!-- Imports my first choice of custom font -->
   </head>
   <body>
-    <div class='linear-gradient' id='linear-gradient'>
-      <div class='blurple-blur blur' id='blurple-blur blur'></div>
-      <div class='salmon-blur blur' id='salmon-blur blur'></div>
-      <div class='blue-blur blur' id='blue-blur blur'></div>
+    <div class="linear-gradient" id="linear-gradient"> <!-- Background -->
+      <div class="blurple-blur blur" id="blurple-blur blur"></div> 
+      <div class="salmon-blur blur" id="salmon-blur blur"></div>
+      <div class="blue-blur blur" id="blue-blur blur"></div>
     </div>
-    <div class="noMobile" id="noMobile">
+    <div class="noMobile" id="noMobile"> <!-- Blocks viewers using portrait mode via CSS -->
       <div class="phoneIcon" id="phoneIcon"></div>
       <span class="errorMessage" id="errorMessage"> Please rotate your display or expand your tab horizontally. </span>
     </div>
     <div class="headerBackdrop" id="headerBackdrop"></div>
     <div class="headerLeft header" id="headerLeft header">
-      <a class="homeLogo" id="homeIcon" href="/"></a>
+      <img class="homeLogo" id="homeIcon" href="/" src="images/dmLogo.svg">
     </div>
     <div class="headerRight header" id="headerRight header">
       <div class="termsOfUse headerButton" id="termsOfUse headerButton" onclick="permissionsClick()"> Terms of Use </div>
@@ -31,5 +31,5 @@
       <div class="downloadPack" id="downloadPack"></div>
     </div>
   </body>
+  <script src="index.js"></script> <!-- Imports my JavaScript -->
 </html>
-<script src="index.js"></script>

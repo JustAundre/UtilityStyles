@@ -113,7 +113,7 @@ div.linear-gradient>.salmon-blur {
 
 /* Unique properties of the home button. */
 .homeLogo {
-  width: fit-content;
+  width: calc(14vh * .8);
   height: 80%;
   cursor: pointer;
   object-fit: contain;
