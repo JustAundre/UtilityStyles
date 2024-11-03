@@ -63,3 +63,14 @@ generateRandomValues();
 
 // Set an interval to update the values every 20 seconds
 setInterval(generateRandomValues, 20000);
+
+/* Redirect to Netlify Deploy if on Github Pages */
+function checkAndRedirect(targetURL, redirectURL) {
+  const currentURL = window.location.href;
+
+  if (currentURL === "https://justaundre.github.io/DarkerMode/" ) {
+    window.location.href = "https://darkermode.netlify.app";
+  }
+}
+
+checkAndRedirect("https://justaundre.github.io/UtilityThemes/", "https://darkermode.netlify.app/");

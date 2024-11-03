@@ -66,25 +66,34 @@ div.linear-gradient>.salmon-blur {
 }
 
 /* Properties to line up items correctly on the header */
-.headerRight { justify-content: flex-end; }
-.headerLeft { justify-content: flex-start; }
+.headerRight {
+  right: 5%;
+  justify-content: flex-end;
+}
+.headerLeft {
+  left: 5vw;
+  justify-content: flex-start;
+}
 .header, .headerBackdrop {
-  width: 100vw;
+  width: auto;
   height: 7vh;
   position: fixed;
   top: 0;
-  left: 0;
-  border-bottom: 1px solid rgb(var(--borderColor) .05);
 }
 
 /* Header backdrop filter */
-.headerBackdrop { backdrop-filter: contrast(1.0125) blur(12.5px); }
+.headerBackdrop {
+  width: 100vw;
+  backdrop-filter: contrast(1.0125) blur(12.5px);
+  border-bottom: 1px solid rgb(var(--borderColor) .05);
+}
 
 /* Properties all buttons share. */
 .headerButton {
   height: 100%;
-  width: auto;
-  padding: 0 2rem;
+  width: fit-content;
+  text-wrap: nowrap;
+  padding-left: 2.5vw;
   cursor: pointer;
   color: white;
   font-size: large;
@@ -106,16 +115,12 @@ div.linear-gradient>.salmon-blur {
 
 /* Unique properties of the home button. */
 .homeLogo {
-  transition: .2s ease-in-out;
-  width: 12.5vw;
-  height: 100%;
-  background: url('/DarkerMode/images/DM-Logo.png');
-  font-size: 1.25rem;
+  width: fit-content;
+  height: 80%;
   cursor: pointer;
-  margin-left: calc(var(--homeLogoMargin)*1%);
+  object-fit: contain;
+  object-position: left;
 }
-.homeLogo:hover { font-size: 1.35rem; }
-.homeLogo:active { font-size: 1.15rem; }
 
 /* Properties to line everything up in the actual app. */
 .appContainer {
