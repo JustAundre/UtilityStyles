@@ -98,6 +98,7 @@ div.linear-gradient>.salmon-blur {
   color: white;
   font-size: large;
   transition: .2s ease-in-out;
+  filter: brightness(1.5);
 }
 .headerButton:hover {
   color: rgb(var(--accentColor) 1);
