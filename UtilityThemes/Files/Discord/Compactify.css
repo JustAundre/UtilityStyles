@@ -34,7 +34,7 @@ ul[aria-label='Direct Messages'][role='list'] h2,
 ul[aria-label='Direct Messages'][role='list'] li> :has(div[aria-label='Leave Group']),
 ul[aria-label='Direct Messages'][role='list'] li> :has(div[aria-label='Close DM']) { transform: translate(0, -8px) }
 
-/* Makes members list compact - Commented because it doesn't function properly past a certain amount of members.
+/* Makes members list compact - Commented because it doesn't function properly past a certain amount of members. */
 div[dir='ltr'][style='overflow: hidden scroll; padding-right: 0px;'] div[role='listitem'][tabindex='0']>div,
 div[role='list'][aria-label='Members'][style] div[role='listitem']>div {
   max-height: 34px !important;
