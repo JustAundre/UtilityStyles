@@ -140,7 +140,7 @@ div.linear-gradient>.salmon-blur {
 /* Properties for both the "About Me" and "Download Pack" elements */
 .aboutMe,
 .downloadPack {
-  height: 100vw;
+  height: 45vw;
   max-height: var(--maxAppHeight);
   border-radius: .5vw;
   border-width: 1px;
