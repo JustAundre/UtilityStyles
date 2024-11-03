@@ -133,6 +133,7 @@ div.linear-gradient>.salmon-blur {
 .aboutMe,
 .downloadPack {
   height: 45vw;
+  max-height: var(--maxAppHeight);
   border-radius: .5vw;
   border-width: 1px;
   border-color: rgba(var(--borderColor) .1);
@@ -183,10 +184,12 @@ div.linear-gradient>.salmon-blur {
 }
 
 :root {
-  --appContainerMargin: calc(7vh + 25px);
+  --appContainerMargin: calc(var(--headerHieght) + var(--mainContentTopMargin));
   --borderColor: 255, 255, 255,;
   --accentColor: 83, 45, 120,;
   --errorMinor: 148, 46, 46,;
   --errorMajor: 255, 0, 0,;
-  --homeLogoMargin: 5;
+  --headerHieght: 7vh;
+  --mainContentTopMargin: 25px;
+  --maxAppHeight: calc(100vh - (var(--headerHieght) + (2 * var(--mainContentTopMargin))));
 }
