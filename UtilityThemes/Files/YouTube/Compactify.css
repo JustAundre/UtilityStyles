@@ -1,5 +1,5 @@
 /**
- * @name Compactify
+ * @name Compactify for YouTube
  * @description Some things take up too much space, let's fix that.
  * @author JustAundre
  * @version 1.0.0
@@ -8,15 +8,19 @@
 
 /* Compresses the download and share buttons */
   /* Removes the share and download text from the buttons */
-  button[aria-label='Download'] div:not([aria-hidden='true']),
-  button[aria-label='Share'] div:not([aria-hidden='true'])
-  { display: none; }
-  
-    /* Consistency changes on padding and margin */
-  button[aria-label='Download'],
-  button[aria-label='Share']
-  { padding: 6px; }
+  ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"], [title="I dislike this"]) div:not([aria-hidden="true"]) {
+    display: none;
+  }
+  /* Consistency changes on padding and margin */
+  ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"], [title="I dislike this"]) {
+    padding: 6px;
+  }
+  ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"], [title="I dislike this"]) div[aria-hidden="true"] {
+    margin: 0 4px !important;
+  }
 
-  button[aria-label='Download'] div[aria-hidden='true'],
-  button[aria-label='Share'] div[aria-hidden='true']
-  { margin: 0 4px !important; }
+/* Disables video previews */
+#video-preview {
+  display: none;
+  pointer-events: none;
+}

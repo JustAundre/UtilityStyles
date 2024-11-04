@@ -1,3 +1,11 @@
+/**
+ * @name Mobile Sidebar
+ * @description Makes the collapsable sidebar open 
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
 /* Removes the auto-adjusting margin from the actual content part of YouTube */
 #page-manager { margin-left: unset; }
 
@@ -9,4 +17,9 @@
   opacity: .5;
   pointer-events: none;
   user-select: none;
+}
+
+/* Stops elements from auto-adjusting their position when the sidebar is open. */
+ytd-browse[guide-persistent-and-visible] * {
+  left: none;
 }

@@ -105,10 +105,7 @@ main[aria-label] form>div>div { margin-bottom: 6px; }
 main[aria-label] form>div:last-of-type { position: unset; }
 
 :root {
-  --custom-emoji-size-emoji: 1rem;
-  /* Self-explanatory */
-  --custom-message-spacing-vertical-container-cozy: unset;
-  /* Makes the extra spacing between messages non-existant */
-  --custom-category-channel-space-before-category: 8px;
-  /* Makes the spacing between categories smaller */
+  --custom-emoji-size-emoji: 1rem; /* Self-explanatory */
+  --custom-message-spacing-vertical-container-cozy: unset; /* Makes the extra spacing between messages non-existant */
+  --custom-category-channel-space-before-category: 8px; /* Makes the spacing between categories smaller */
 }

@@ -1,0 +1,6 @@
+ytd-video-renderer:has(badge-shape[aria-label="Shorts"]) /* Removes YouTube Shorts from places like Trending */,
+div#dismissible.ytd-rich-shelf-renderer:has(svg[style="pointer-events: none; display: inherit; width: 100%; height: 100%;"][width="24"][height="24"]) /* Removes the YouTube Shorts shelf */,
+ytd-reel-shelf-renderer /* Removes Shorts from video descriptions */,
+[tab-title="Shorts"] /*Removes the Shorts tab from channel views*/,
+[aria-label="Shorts"] /* Removes the Shorts tab on the sidebar */
+{ display: none; }
