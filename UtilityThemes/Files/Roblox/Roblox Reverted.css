@@ -1,3 +1,11 @@
+/**
+ * @name Roblox Reverted
+ * @description Feeling aged like milk, eh?
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
 li:has(> a[href="https://www.roblox.com/premium/membership?ctx=leftnav"]) /* The 'Buy Premium' in the navmenu */,
 li:has(> a[href="https://www.roblox.com/trades"]) /* The 'Trade' button in the navmenu */,
 li:has(> a[href="https://blog.roblox.com"]) /* The 'Blog' button in the navmenu */,

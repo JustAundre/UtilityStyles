@@ -1,3 +1,11 @@
+/**
+ * @name Carousel Convert
+ * @description Go from tall to long!
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
 /* Puts everything side-by-side instead of on a grid */
 li[data-testid="wide-game-tile"] { display: flex !important; }
 
