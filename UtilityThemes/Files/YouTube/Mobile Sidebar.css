@@ -20,4 +20,4 @@
 }
 
 /* Stops elements from auto-adjusting their position when the sidebar is open. */
-* { left: 0 !important; }
+ytd-browse[mini-guide-visible] * { left: 0 !important; }

@@ -6,9 +6,6 @@
  * @authorId 532681285961777154
 */
 
-/* An (*OBJECTIVELY*) better side navbar - Disabled by default - Uncomment to activate */
-/* @import url('https://JustAundre.github.io/InternetUtils/UtilityThemes/Files/YouTube/Mobile Sidebar.css'); */
-
 /* Disables the appearance of YouTube Shorts */
 @import url('https://JustAundre.github.io/InternetUtils/UtilityThemes/Files/YouTube/Declutter Sub-CSS/No Shorts.css');
 
@@ -19,7 +16,7 @@ ytd-guide-section-renderer:has([href="/premium"]) /* All the BS with YouTube's o
 div#footer /* Stuff about copyright */,
 #sponsor-button /* The "Join" button on channels */,
 #offer-module /* Advertised merchandise below videos */,
-ytd-download-button-renderer ~ yt-button-view-model:not(:has(path[d="M18 4v15.06l-5.42-3.87-.58-.42-.58.42L6 19.06V4h12m1-1H5v18l7-5 7 5V3z"])) /* Removes the "Thanks" & "Clip" button */,
+yt-button-view-model.ytd-menu-renderer:has([aria-label="Thanks"],[aria-label="Clip"]) /* Removes the "Thanks" & "Clip" button */,
 #donation-shelf /* Donation shelf above the live chat container for livestreams */,
 #paid-comment-background /* The colored background for "Thanks" comments */,
 #paid-comment-chip /* The chip next to "Thanks" comments displaying how much they sent to the creator */,

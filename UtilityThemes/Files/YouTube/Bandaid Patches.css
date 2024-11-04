@@ -6,8 +6,8 @@
  * @authorId 532681285961777154
 */
 
-/* An (*OBJECTIVELY*) better side navbar */
-@import url('https://JustAundre.github.io/WebUtils/UtilityThemes/Files/YouTube/Cleaner Navbar.css');
+/* An (*OBJECTIVELY*) better side navbar - Disabled by default - Uncomment to activate */
+/* @import url('https://JustAundre.github.io/InternetUtils/UtilityThemes/Files/YouTube/Mobile Sidebar.css'); */
 
 /* Disables clicking on comments' published time which reloads the page */
 #published-time-text * { pointer-events: none; }
