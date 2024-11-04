@@ -23,5 +23,12 @@ yt-button-view-model.ytd-menu-renderer:has([aria-label="Thanks"],[aria-label="Cl
 div[aria-label="New"] /* The "New" video chip under recently posted unwatched videos */,
 #spinner /* The loading spinner when loading more comments and recommendations */,
 #info>a.bold /* Video hastags */,
-*:has(>button[aria-label="Search with your voice"]) /* Voice search button */
+*:has(>button[aria-label="Search with your voice"]) /* Voice search button */,
+#cinematics-container /* Cinimatics - The glow around the video player */
 { display: none !important; }
+
+/* Disables video previews */
+#video-preview {
+  display: none;
+  pointer-events: none;
+}
