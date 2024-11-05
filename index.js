@@ -1,18 +1,29 @@
+// Define "now" as a new "Date()" function
 const now = new Date();
-const userWeekDay = ["Monday", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][now.getDay() - 1];
-console.log(userWeekDay);
+
+// Get the user's day of the week in number form (1-7), zero index it (0-6), and then covert it into an actual day name
+const userWeekDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][now.getDay() - 1];
+console.log(userWeekDay); // Logs it, used for debugging
+
+// Pre-define a variable so it can be used outside of the if/then/else statement
 let timeOfDay;
+
+// Gets the user's hour of the day
 const userHours = now.getHours();
+
+// If the user's time of day in hours is less than or equal to mid-day, set the timeOfDay to morning
 if (userHours <= 12) {
   timeOfDay = "morning";
 }
-else {
-  if (userHours <= 17 && userHours > 12) {
-    timeOfDay = "afternoon";
-  } else {
-    timeOfDay = "evening";
-  }
+
+/* If the user's time of day in hours is less than or equal to 17 (5 PM) and also greater than mid day,
+set the timeOfDay to afternoon, otherwise, set the timeOfDay to evening. (past 5 PM, but before 12 AM) */
+if (userHours <= 17 && userHours > 12) {
+  timeOfDay = "afternoon";
+} else {
+  timeOfDay = "evening";
 }
+
 
 let selectedGreeting;
 function rngGreeting() {
