@@ -63,4 +63,4 @@ main form div> :has(button[aria-label='Apps']) /* The 'Apps' button aside the ch
 button[aria-label="see all tagse"] { position: relative; }
 
 /* After removing the Apps button aside the chat text input, fixes the 'Jump to present' bar when viewing older messages/replies */
-main div:has(>button[type='button']) { right: 16px; }
+main [tabindex="-1"]~div:has(>button[type='button']) {right: 16px;}
