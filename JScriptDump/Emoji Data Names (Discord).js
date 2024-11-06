@@ -1,3 +1,6 @@
+// *NOT* MINE, AI MADE ONLY BECAUSE I HAD TO.
+// WHEN I CAN I WILL REMAKE THIS ON MY OWN,
+// I REPEAT, THIS IS NOT MINE, NOT PROTECTED UNDER COPYRIGHT.
 function extractEmojiDataNames() {
   // Find all elements matching the selector
   const emojiElements = document.querySelectorAll('img.emoji');

@@ -24,17 +24,72 @@ function rngGreeting() {
   if (timeOfDay === "evening") { selectedGreeting = [greetingAllOne, greetingEveningOne][Math.round(Math.random())]; }
   console.log('Selected greeting "' + selectedGreeting + '"');
   const greetingElement = document.querySelector("#greetingElementId");
-  greetingElement.innerText = selectedGreeting;
+  greetingElement.innerText = <span>selectedGreeting</span>;
 }
 
-const rngAdjective = ["Nice", "Fair", "Lovely", "Beautiful", "Starry", "Wonderful", "Amazing"][Math.round(Math.random() * 6)];
-const rngMiniGreeting = ["hello", "greetings", "good afternoon", "good " + timeOfDay, "ello'", "how are you", "fairing well", "welcome"][Math.round(Math.random() * 7)];
-const rngPunctuation = ["!","?"][Math.round(Math.random())];
-const rngPunctuation2 = ["!","."][Math.round(Math.random())];
-const rngPunctuation3 = ["!", ".", "?"][Math.round(Math.random() * 2)];
-let rngUserNick = ["programmer", "coder", "stranger", "user", "guest", "old friend", "friend", "traveler", "visitor", ""][Math.round(Math.random() * 8)];
-const rngDrink = ["coffee", "tea", "fruit juice", "hot chocolate", "matcha"][Math.round(Math.random() * 4)];
-const rngHmm = ["Hmm, ", ".. Hm. ", ""][Math.round(Math.random() * 2)]
+const rngAdjective = [
+  "Nice",
+  "Fair",
+  "Lovely",
+  "Beautiful",
+  "Starry",
+  "Wonderful",
+  "Amazing",
+]
+[Math.round(Math.random() * 6)];
+
+const rngMiniGreeting = ["hello",
+  "greetings",
+  "good afternoon",
+  "good " + timeOfDay,
+  "ello'",
+  "how are you",
+  "fairing well",
+  "welcome",
+][Math.round(Math.random() * 7)];
+
+const rngPunctuation = [
+  "!",
+  "?",
+][Math.round(Math.random())];
+
+const rngPunctuation2 = [
+  "!",
+  ".",
+][Math.round(Math.random())];
+
+const rngPunctuation3 = [
+  "!",
+  ".",
+  "?",
+][Math.round(Math.random() * 2)];
+
+let rngUserNick = [
+  "programmer",
+  "coder",
+  "stranger",
+  "user",
+  "guest",
+  "old friend",
+  "friend",
+  "traveler",
+  "visitor",
+  "",
+][Math.round(Math.random() * 8)];
+
+const rngDrink = [
+  "coffee",
+  "tea",
+  "warm milk",
+  "hot chocolate",
+  "matcha",
+][Math.round(Math.random() * 4)];
+
+const rngHmm = [
+  "Hmm, ",
+  ".. Hm. ",
+  "",
+][Math.round(Math.random() * 2)];
 
 const userDate = Number("" + now.getFullYear + (now.getMonth + 1) + now.getDate);
 const utcDate = Number("" + now.getUTCFullYear + (now.getUTCMonth + 1) + now.getUTCDate);
