@@ -1,0 +1,39 @@
+/* Default styles unless overwritten. */
+div,
+header,
+footer,
+img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+div,
+span,
+p,
+a {
+  color: inherit;
+  font-family: "Poppins", "sans-serif", "system-ui";
+  text-decoration: none;
+}
+img,
+svg,
+foreignObject {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+a { cursor: pointer; }
+.noMobile { display: none; } /* Sets the noPhone div to not display by default */
+
+/* Makes the body element center all things, etc. */
+body {
+  display: contents;
+  overflow-x: hidden;
+  margin: 0px;
+  font-family: "Comfortaa";
+  font-size: 16px;
+  background: radial-gradient(white 50%, beige);
+}

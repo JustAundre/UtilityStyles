@@ -6,6 +6,6 @@ console.log(cssHrefs);
 cssHrefElements.forEach(element => {
   const downloadElement = document.createElement("a");
   downloadElement.href = element.href;
-  downloadElement.download = Math.round(Math.random * 100) + ".css"
+  downloadElement.download;
   downloadElement.click();
 })
