@@ -20,4 +20,8 @@
 }
 
 /* Stops elements from auto-adjusting their position when the sidebar is open. */
-ytd-browse[mini-guide-visible] * { left: 0 !important; }
+ytd-browse[mini-guide-visible] *,
+ytd-browse[guide-persistent-and-visible] ytd-playlist-sidebar-renderer.ytd-browse,
+ytd-browse[guide-persistent-and-visible] ytd-playlist-header-renderer.ytd-browse,
+ytd-browse[guide-persistent-and-visible] .page-header-sidebar.ytd-browse
+{ left: 0 !important; }
