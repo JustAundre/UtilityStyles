@@ -1,10 +1,9 @@
 /* Redirect to Netlify Deploy if on Github Pages */
-const currentURL = window.location.href;
-if (currentURL === "https://justaundre.github.io/UtilityThemes/" ) { window.location.href = "https://internetutils.netlify.app/UtilityThemes/"; }
+if (window.location.href === "https://justaundre.github.io/UtilityThemes/" ) { window.location.href = "https://internetutils.netlify.app/UtilityThemes/"; }
 
 const folderInitial = document.querySelector('.folder');
 
-function generateRandomPositions() {
+function generateRandomXY() {
   const x1 = Math.round(Math.random() * 100 - 50);
   const x2 = Math.round(Math.random() * 100 - 50);
   const x3 = Math.round(Math.random() * 100 - 50);
@@ -21,16 +20,13 @@ function generateRandomPositions() {
 }
 
 // Call the function initially to set the initial values
-generateRandomPositions();
+generateRandomXY();
 
 // Call the function to make it start moving immediately
-setTimeout(generateRandomPositions, 1);
+setTimeout(generateRandomXY, 1);
 
 // Set an interval to update the values every 20 seconds
-setInterval(generateRandomPositions, 20000);
+setInterval(generateRandomXY, 20000);
 
-function disableEnterAnimation() {
-  folder.style.animation = 'none';
-}
-
-setTimeout(disableEnterAnimation, 2000);
+// Remove folder entrance animation property after 2 seconds have passed
+setTimeout(function() { folder.style.animation = 'none'; }, 2000);

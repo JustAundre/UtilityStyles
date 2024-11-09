@@ -1,6 +1,5 @@
 /* Redirect to Netlify Deploy if on Github Pages */
-const currentURL = window.location.href;
-if (currentURL === 'https://justaundre.github.io/InternetUtilities/DarkerMode/' ) { window.location.href = 'https://internetutils.netlify.app/DarkerMode/'; }
+if (window.location.href === 'https://justaundre.github.io/InternetUtilities/DarkerMode/' ) { window.location.href = 'https://internetutils.netlify.app/DarkerMode/'; }
 
 // Defines elements
 const packDetails = document.querySelector('.packDetails');
@@ -35,7 +34,7 @@ function updateLogClick() {
   }
 }
 
-function generateRandomPositions() {
+function generateRandomXY() {
   const x1 = Math.round(Math.random() * 100 - 50);
   const x2 = Math.round(Math.random() * 100 - 50);
   const x3 = Math.round(Math.random() * 100 - 50);
@@ -52,10 +51,10 @@ function generateRandomPositions() {
 }
 
 // Call the function initially to set the initial values
-generateRandomValues();
+generateRandomXY();
 
 // Call the function to make it start moving immediately
-setTimeout(generateRandomValues, 1);
+setTimeout(generateRandomXY, 1);
 
 // Set an interval to update the values every 20 seconds
-setInterval(generateRandomValues, 20000);
+setInterval(generateRandomXY, 20000);
