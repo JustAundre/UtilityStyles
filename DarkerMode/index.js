@@ -1,61 +1,54 @@
+/* Redirect to Netlify Deploy if on Github Pages */
+const currentURL = window.location.href;
+if (currentURL === 'https://justaundre.github.io/InternetUtilities/DarkerMode/' ) { window.location.href = 'https://internetutils.netlify.app/DarkerMode/'; }
+
 // Defines elements
-const packDetails = document.querySelector(".packDetails");
-const permissions = document.querySelector(".termsOfUse");
-const updateLog = document.querySelector(".updateLog");
+const packDetails = document.querySelector('.packDetails');
+const permissions = document.querySelector('.termsOfUse');
+const updateLog = document.querySelector('.updateLog');
+const root = document.querySelector(':root')
 
 function detailsClick() {
   // Sets the button to inactive if it was already active and was clicked.
-  if (packDetails.hasAttribute("active")) {
-    packDetails.removeAttribute("active")
-  }
-  // Changes the default button CSS to indicate it is selected only if it isn't already selected.
+  if (packDetails.hasAttribute('active')) { packDetails.removeAttribute('active'); }
   else {
-  packDetails.setAttribute("active", "")
-  permissions.removeAttribute("active")
-  updateLog.removeAttribute("active")
+    // Changes the default button CSS to indicate it is selected only if it isn't already selected.
+    packDetails.setAttribute('active', '');
+    permissions.removeAttribute('active');
+    updateLog.removeAttribute('active');
   }
 }
 function permissionsClick() {
-  if (permissions.hasAttribute("active")) {
-    permissions.removeAttribute("active")
-  }
+  if (permissions.hasAttribute('active')) { permissions.removeAttribute('active'); }
   else {
-  packDetails.removeAttribute("active")
-  permissions.setAttribute("active", "")
-  updateLog.removeAttribute("active")
+    packDetails.removeAttribute('active');
+    permissions.setAttribute('active', '');
+    updateLog.removeAttribute('active');
   }
 }
 function updateLogClick() {
-  if (updateLog.hasAttribute("active")) {
-    updateLog.removeAttribute("active")
-  }
+  if (updateLog.hasAttribute('active')) { updateLog.removeAttribute('active'); }
   else {
-  packDetails.removeAttribute("active")
-  permissions.removeAttribute("active")
-  updateLog.setAttribute("active", "")
+    packDetails.removeAttribute('active');
+    permissions.removeAttribute('active');
+    updateLog.setAttribute('active', '');
   }
 }
 
-function generateRandomValues() {
-  const x1 = Math.round(Math.random() * 100) - 50;
-  const x2 = Math.round(Math.random() * 100) - 50;
-  const x3 = Math.round(Math.random() * 100) - 50;
-  const y1 = Math.round(Math.random() * 100) - 50;
-  const y2 = Math.round(Math.random() * 100) - 50;
-  const y3 = Math.round(Math.random() * 100) - 50;
+function generateRandomPositions() {
+  const x1 = Math.round(Math.random() * 100 - 50);
+  const x2 = Math.round(Math.random() * 100 - 50);
+  const x3 = Math.round(Math.random() * 100 - 50);
+  const y1 = Math.round(Math.random() * 100 - 50);
+  const y2 = Math.round(Math.random() * 100 - 50);
+  const y3 = Math.round(Math.random() * 100 - 50);
 
-  document.documentElement.style.setProperty(
-    '--x1', `${x1}vw` );
-  document.documentElement.style.setProperty(
-    '--x2', `${x2}vw` );
-  document.documentElement.style.setProperty(
-    '--x3', `${x3}vw` );
-  document.documentElement.style.setProperty(
-    '--y1', `${y1}vh` );
-  document.documentElement.style.setProperty(
-    '--y2', `${y2}vh` );
-  document.documentElement.style.setProperty(
-    '--y3', `${y3}vh` );
+  root.setAttribute('--x1', `${x1}vw` );
+  root.setAttribute('--x2', `${x2}vw` );
+  root.setAttribute('--x3', `${x3}vw` );
+  root.setAttribute('--y1', `${y1}vh` );
+  root.setAttribute('--y2', `${y2}vh` );
+  root.setAttribute('--y3', `${y3}vh` );
 }
 
 // Call the function initially to set the initial values
@@ -66,10 +59,3 @@ setTimeout(generateRandomValues, 1);
 
 // Set an interval to update the values every 20 seconds
 setInterval(generateRandomValues, 20000);
-
-/* Redirect to Netlify Deploy if on Github Pages */
-const currentURL = window.location.href;
-
-if (currentURL === "https://justaundre.github.io/DarkerMode/" ) {
-  window.location.href = "https://internetutils.netlify.app/DarkerMode/";
-}
