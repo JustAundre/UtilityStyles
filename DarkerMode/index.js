@@ -1,36 +1,36 @@
 /* Redirect to Netlify Deploy if on Github Pages */
-if (window.location.href === 'https://justaundre.github.io/InternetUtilities/DarkerMode/' ) { window.location.href = 'https://internetutils.netlify.app/DarkerMode/'; }
+if (window.location.href.includes(`github.io`)) { window.location.href = `https://internetutils.netlify.app/DarkerMode/`; }
 
 // Defines elements
-const packDetails = document.querySelector('.packDetails');
-const permissions = document.querySelector('.termsOfUse');
-const updateLog = document.querySelector('.updateLog');
-const root = document.querySelector(':root')
+const packDetails = document.querySelector(`.packDetails`);
+const permissions = document.querySelector(`.termsOfUse`);
+const updateLog = document.querySelector(`.updateLog`);
+const root = document.querySelector(`:root`)
 
 function detailsClick() {
   // Sets the button to inactive if it was already active and was clicked.
-  if (packDetails.hasAttribute('active')) { packDetails.removeAttribute('active'); }
+  if (packDetails.hasAttribute(`active`)) { packDetails.removeAttribute(`active`); }
   else {
-    // Changes the default button CSS to indicate it is selected only if it isn't already selected.
-    packDetails.setAttribute('active', '');
-    permissions.removeAttribute('active');
-    updateLog.removeAttribute('active');
+    // Changes the default button CSS to indicate it is selected only if it isn`t already selected.
+    packDetails.setAttribute(`active`, ``);
+    permissions.removeAttribute(`active`);
+    updateLog.removeAttribute(`active`);
   }
 }
 function permissionsClick() {
-  if (permissions.hasAttribute('active')) { permissions.removeAttribute('active'); }
+  if (permissions.hasAttribute(`active`)) { permissions.removeAttribute(`active`); }
   else {
-    packDetails.removeAttribute('active');
-    permissions.setAttribute('active', '');
-    updateLog.removeAttribute('active');
+    packDetails.removeAttribute(`active`);
+    permissions.setAttribute(`active`, ``);
+    updateLog.removeAttribute(`active`);
   }
 }
 function updateLogClick() {
-  if (updateLog.hasAttribute('active')) { updateLog.removeAttribute('active'); }
+  if (updateLog.hasAttribute(`active`)) { updateLog.removeAttribute(`active`); }
   else {
-    packDetails.removeAttribute('active');
-    permissions.removeAttribute('active');
-    updateLog.setAttribute('active', '');
+    packDetails.removeAttribute(`active`);
+    permissions.removeAttribute(`active`);
+    updateLog.setAttribute(`active`, ``);
   }
 }
 

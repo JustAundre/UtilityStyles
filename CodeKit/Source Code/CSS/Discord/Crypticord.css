@@ -1,0 +1,14 @@
+/**
+ * @name Privacy Shades for Discord
+ * @description Discord, curtains closed.
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
+/* Remove (or comment) the corresponding lebeled module you want to disable. */
+@import url('https://JustAundre.github.io/InternetUtils/CodeKit/Source Code/CSS/Discord/Privacy Shades Sub-CSS/Blur Attachments.css'); /* Blur attachments and embeds Module */
+@import url('https://JustAundre.github.io/InternetUtils/CodeKit/Source Code/CSS/Discord/Privacy Shades Sub-CSS/Blurred Profiles.css'); /* Hide Profiles Module */
+@import url('https://JustAundre.github.io/InternetUtils/CodeKit/Source Code/CSS/Discord/Privacy Shades Sub-CSS/Hidden Usernames.css'); /* Hide Usernames Module */
+/* Recode Needed - @import url('https://JustAundre.github.io/InternetUtils/CodeKit/Source Code/CSS/Discord/Privacy Shades Sub-CSS/Shorter Displays.css'); /* Shorten Displays Module */
+@import url('https://JustAundre.github.io/InternetUtils/CodeKit/Source Code/CSS/Discord/Privacy Shades Sub-CSS/Private Settings.css'); /* Private Settings Module */

@@ -1,7 +1,7 @@
 /* Redirect to Netlify Deploy if on Github Pages */
-if (window.location.href === "https://justaundre.github.io/UtilityThemes/" ) { window.location.href = "https://internetutils.netlify.app/UtilityThemes/"; }
+if (window.location.href.includes(`github.io`)) { window.location.href = "https://internetutils.netlify.app/UtilityThemes/"; }
 
-const folderInitial = document.querySelector('.folder');
+const folderInitial = document.querySelector(`.folder`);
 
 function generateRandomXY() {
   const x1 = Math.round(Math.random() * 100 - 50);
@@ -29,4 +29,4 @@ setTimeout(generateRandomXY, 1);
 setInterval(generateRandomXY, 20000);
 
 // Remove folder entrance animation property after 2 seconds have passed
-setTimeout(function() { folder.style.animation = 'none'; }, 2000);
+setTimeout(function() { folder.style.animation = `none`; }, 2000);
