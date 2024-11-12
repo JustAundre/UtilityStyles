@@ -1,22 +1,25 @@
-/* Redirect to Netlify Deploy if on Github Pages */
-if (window.location.href.includes(`github.io`)) { window.location.href = "https://internetutils.netlify.app/UtilityThemes/"; }
-
-const folderInitial = document.querySelector(`.folder`);
+/* Redirect to Netlify Deploy if on Github Pages */ if (window.location.href.includes(`github.io`)) { window.location.href = "https://internetutils.netlify.app/UtilityThemes/"; }
+// Sets a JS variable representing the root; something usually used in CSS for global CSS variables
+  const root = document.querySelector(`:root`)
+// Sets a JS variable representing the folders
+  const folderInitial = document.querySelector(`.folder`);
 
 function generateRandomXY() {
-  const x1 = Math.round(Math.random() * 100 - 50);
-  const x2 = Math.round(Math.random() * 100 - 50);
-  const x3 = Math.round(Math.random() * 100 - 50);
-  const y1 = Math.round(Math.random() * 100 - 50);
-  const y2 = Math.round(Math.random() * 100 - 50);
-  const y3 = Math.round(Math.random() * 100 - 50);
+  // Generates 6 random X/Y values
+  const x1 = `${Math.round(Math.random() * 100 - 50)}vw`;
+  const x2 = `${Math.round(Math.random() * 100 - 50)}vw`;
+  const x3 = `${Math.round(Math.random() * 100 - 50)}vw`;
+  const y1 = `${Math.round(Math.random() * 100 - 50)}vh`;
+  const y2 = `${Math.round(Math.random() * 100 - 50)}vh`;
+  const y3 = `${Math.round(Math.random() * 100 - 50)}vh`;
 
-  root.setAttribute('--x1', `${x1}vw` );
-  root.setAttribute('--x2', `${x2}vw` );
-  root.setAttribute('--x3', `${x3}vw` );
-  root.setAttribute('--y1', `${y1}vh` );
-  root.setAttribute('--y2', `${y2}vh` );
-  root.setAttribute('--y3', `${y3}vh` );
+  // Assigns the 6 random X/Y values to :root
+  root.setAttribute('--x1', x1);
+  root.setAttribute('--x2', x2);
+  root.setAttribute('--x3', x3);
+  root.setAttribute('--y1', y1);
+  root.setAttribute('--y2', y2);
+  root.setAttribute('--y3', y3);
 }
 
 // Call the function initially to set the initial values

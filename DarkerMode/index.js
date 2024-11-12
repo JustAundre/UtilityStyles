@@ -1,18 +1,20 @@
 /* Redirect to Netlify Deploy if on Github Pages */
-if (window.location.href.includes(`github.io`)) { window.location.href = `https://internetutils.netlify.app/DarkerMode/`; }
+  if (window.location.href.includes(`github.io`)) { window.location.href = `https://internetutils.netlify.app/DarkerMode/`; }
 
 // Defines elements
-const packDetails = document.querySelector(`.packDetails`);
-const permissions = document.querySelector(`.termsOfUse`);
-const updateLog = document.querySelector(`.updateLog`);
-const root = document.querySelector(`:root`)
+  // Sets a JS variable for the header buttons button
+  const packDetails = document.querySelector(`.packDetails`);
+  const permissions = document.querySelector(`.termsOfUse`);
+  const updateLog = document.querySelector(`.updateLog`);
+/* Sets a JS variable for the root, something usually used in CSS for global CSS variables */
+  const root = document.querySelector(`:root`)
 
 function detailsClick() {
   // Sets the button to inactive if it was already active and was clicked.
   if (packDetails.hasAttribute(`active`)) { packDetails.removeAttribute(`active`); }
   else {
     // Changes the default button CSS to indicate it is selected only if it isn`t already selected.
-    packDetails.setAttribute(`active`, ``);
+    packDetails.setAttribute(`active`);
     permissions.removeAttribute(`active`);
     updateLog.removeAttribute(`active`);
   }
@@ -21,7 +23,7 @@ function permissionsClick() {
   if (permissions.hasAttribute(`active`)) { permissions.removeAttribute(`active`); }
   else {
     packDetails.removeAttribute(`active`);
-    permissions.setAttribute(`active`, ``);
+    permissions.setAttribute(`active`);
     updateLog.removeAttribute(`active`);
   }
 }
@@ -30,24 +32,26 @@ function updateLogClick() {
   else {
     packDetails.removeAttribute(`active`);
     permissions.removeAttribute(`active`);
-    updateLog.setAttribute(`active`, ``);
+    updateLog.setAttribute(`active`);
   }
 }
 
 function generateRandomXY() {
-  const x1 = Math.round(Math.random() * 100 - 50);
-  const x2 = Math.round(Math.random() * 100 - 50);
-  const x3 = Math.round(Math.random() * 100 - 50);
-  const y1 = Math.round(Math.random() * 100 - 50);
-  const y2 = Math.round(Math.random() * 100 - 50);
-  const y3 = Math.round(Math.random() * 100 - 50);
+  // Generates 6 random X/Y values
+  const x1 = `${Math.round(Math.random() * 100 - 50)}vw`;
+  const x2 = `${Math.round(Math.random() * 100 - 50)}vw`;
+  const x3 = `${Math.round(Math.random() * 100 - 50)}vw`;
+  const y1 = `${Math.round(Math.random() * 100 - 50)}vh`;
+  const y2 = `${Math.round(Math.random() * 100 - 50)}vh`;
+  const y3 = `${Math.round(Math.random() * 100 - 50)}vh`;
 
-  root.setAttribute('--x1', `${x1}vw` );
-  root.setAttribute('--x2', `${x2}vw` );
-  root.setAttribute('--x3', `${x3}vw` );
-  root.setAttribute('--y1', `${y1}vh` );
-  root.setAttribute('--y2', `${y2}vh` );
-  root.setAttribute('--y3', `${y3}vh` );
+  // Assigns the 6 random X/Y values to :root
+  root.setAttribute('--x1', x1);
+  root.setAttribute('--x2', x2);
+  root.setAttribute('--x3', x3);
+  root.setAttribute('--y1', y1);
+  root.setAttribute('--y2', y2);
+  root.setAttribute('--y3', y3);
 }
 
 // Call the function initially to set the initial values
