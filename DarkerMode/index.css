@@ -98,7 +98,7 @@ div.linear-gradient>.salmon-blur {
   border-bottom: 1px solid rgb(var(--borderColor) .05);
 }
 
-/* Properties all buttons share. */
+/* Properties all header buttons share. */
 .headerButton {
   width: auto;
   height: 100%;
@@ -121,6 +121,9 @@ div.linear-gradient>.salmon-blur {
   border-bottom-style: solid;
   background: linear-gradient(to top, rgba(var(--accentColor).125), transparent);
 }
+[a]::before::after,
+.headerButton:active::before::after
+{ content: "-"; }
 
 /* Unique properties of the home button. */
 .homeLogo {
@@ -158,9 +161,6 @@ div.linear-gradient>.salmon-blur {
 
 /* Properties unique to the "Download Pack" element */
 .downloadPack { width: 60vw; }
-
-/* Selector indicator for buttons */
-[active]::before, [active]::after { content: "-"; }
 
 /* Detects if you're a mobile user and disables the website */
 @media screen and (orientation: portrait) {

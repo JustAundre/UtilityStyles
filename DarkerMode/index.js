@@ -9,14 +9,6 @@
 /* Sets a JS variable for the root, something usually used in CSS for global CSS variables */
 const root = document.documentElement;
 
-function detailsClick() {
-  details.toggleAttribute(`a`);
-  if (details.hasAttribute(`a`)) {}
-  else {
-      tos.removeAttribute(`a`);
-      update.removeAttribute(`a`);
-  }
-}
 function tosClick() {
   tos.toggleAttribute(`a`);
   if (tos.hasAttribute(`a`)) {}
@@ -25,7 +17,15 @@ function tosClick() {
       update.removeAttribute(`a`);
   }
 }
-function updateLogClick() {
+function detailsClick() {
+  details.toggleAttribute(`a`);
+  if (details.hasAttribute(`a`)) {}
+  else {
+      tos.removeAttribute(`a`);
+      update.removeAttribute(`a`);
+  }
+}
+function updateClick() {
   update.toggleAttribute(`a`);
   if (update.hasAttribute(`a`)) {}
   else {
