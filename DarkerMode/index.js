@@ -4,7 +4,7 @@
 // Defines elements
   // Sets a JS variable for the header buttons button
   const packDetails = document.querySelector(`.packDetails`);
-  const permissions = document.querySelector(`.termsOfUse`);
+  const termsOfUse = document.querySelector(`.termsOfUse`);
   const updateLog = document.querySelector(`.updateLog`);
 /* Sets a JS variable for the root, something usually used in CSS for global CSS variables */
   const root = document.querySelector(`:root`)
@@ -15,15 +15,15 @@ function detailsClick() {
   else {
     // Changes the default button CSS to indicate it is selected only if it isn`t already selected.
     packDetails.setAttribute(`active`);
-    permissions.removeAttribute(`active`);
+    termsOfUse.removeAttribute(`active`);
     updateLog.removeAttribute(`active`);
   }
 }
-function permissionsClick() {
-  if (permissions.hasAttribute(`active`)) { permissions.removeAttribute(`active`); }
+function termsOfUseClick() {
+  if (termsOfUse.hasAttribute(`active`)) { termsOfUse.removeAttribute(`active`); }
   else {
     packDetails.removeAttribute(`active`);
-    permissions.setAttribute(`active`);
+    termsOfUse.setAttribute(`active`);
     updateLog.removeAttribute(`active`);
   }
 }
@@ -31,7 +31,7 @@ function updateLogClick() {
   if (updateLog.hasAttribute(`active`)) { updateLog.removeAttribute(`active`); }
   else {
     packDetails.removeAttribute(`active`);
-    permissions.removeAttribute(`active`);
+    termsOfUse.removeAttribute(`active`);
     updateLog.setAttribute(`active`);
   }
 }
