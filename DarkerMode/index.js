@@ -7,7 +7,7 @@
   const termsOfUse = document.querySelector(`.termsOfUse`);
   const updateLog = document.querySelector(`.updateLog`);
 /* Sets a JS variable for the root, something usually used in CSS for global CSS variables */
-  const root = document.body;
+  const root = document.querySelector(`html`);
 
 function detailsClick() {
   // Sets the button to inactive if it was already active and was clicked.
