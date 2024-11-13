@@ -13,12 +13,13 @@ function generateRandomXY() {
     const y2 = `${ Math.round( Math.random() * 100 - 50 ) }vh`;
     const y3 = `${ Math.round( Math.random() * 100 - 50 ) }vh`;
   // Assigns the 6 random X/Y values to :root
-    root.style.setProperty(`--x1`, x1);
-    root.style.setProperty(`--x2`, x2);
-    root.style.setProperty(`--x3`, x3);
-    root.style.setProperty(`--y1`, y1);
-    root.style.setProperty(`--y2`, y2);
-    root.style.setProperty(`--y3`, y3);
+    root.style.cssText = `
+      --x1: ${x1};
+      --x2: ${x2};
+      --x3: ${x3};
+      --y1: ${y1};
+      --y2: ${y2};
+      --y3: ${y3};`;
 }
 
 // Call the function initially to set the initial values
@@ -32,3 +33,4 @@ setInterval(generateRandomXY, 20000);
 
 // Remove folder entrance animation property after 2 seconds have passed
 setTimeout(function() { folder.style.animation = `none`; }, 2000);
+root.style.css()
