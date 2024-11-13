@@ -116,7 +116,7 @@ div.linear-gradient>.salmon-blur {
   border-bottom-style: solid;
   background: linear-gradient(to top, rgba(var(--accentColor).25), transparent);
 }
-.headerButton:active, .headerButton[active] {
+.headerButton:active, .headerButton[a] {
   color: rgb(var(--accentColor) 1);
   border-bottom-style: solid;
   background: linear-gradient(to top, rgba(var(--accentColor).125), transparent);

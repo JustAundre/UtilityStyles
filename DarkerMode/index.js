@@ -3,36 +3,34 @@
 
 // Defines elements
   // Sets a JS variable for the header buttons button
-  const packDetails = document.querySelector(`.packDetails`);
-  const termsOfUse = document.querySelector(`.termsOfUse`);
-  const updateLog = document.querySelector(`.updateLog`);
+  const details = document.querySelector(`.packDetails`);
+  const tos = document.querySelector(`.termsOfUse`);
+  const update = document.querySelector(`.updateLog`);
 /* Sets a JS variable for the root, something usually used in CSS for global CSS variables */
 const root = document.documentElement;
 
 function detailsClick() {
-  // Sets the button to inactive if it was already active and was clicked.
-  if (packDetails.hasAttribute(`active`)) { packDetails.removeAttribute(`active`); }
+  details.toggleAttribute(`a`);
+  if (details.hasAttribute(`a`)) {}
   else {
-    // Changes the default button CSS to indicate it is selected only if it isn`t already selected.
-    packDetails.style(`active`);
-    termsOfUse.removeAttribute(`active`);
-    updateLog.removeAttribute(`active`);
+      tos.removeAttribute(`a`);
+      update.removeAttribute(`a`);
   }
 }
-function termsOfUseClick() {
-  if (termsOfUse.hasAttribute(`active`)) { termsOfUse.removeAttribute(`active`); }
+function tosClick() {
+  tos.toggleAttribute(`a`);
+  if (tos.hasAttribute(`a`)) {}
   else {
-    packDetails.removeAttribute(`active`);
-    termsOfUse.style(`active`);
-    updateLog.removeAttribute(`active`);
+      details.removeAttribute(`a`);
+      update.removeAttribute(`a`);
   }
 }
 function updateLogClick() {
-  if (updateLog.hasAttribute(`active`)) { updateLog.removeAttribute(`active`); }
+  update.toggleAttribute(`a`);
+  if (update.hasAttribute(`a`)) {}
   else {
-    packDetails.removeAttribute(`active`);
-    termsOfUse.removeAttribute(`active`);
-    updateLog.style(`active`);
+      details.removeAttribute(`a`);
+      tos.removeAttribute(`a`);
   }
 }
 
