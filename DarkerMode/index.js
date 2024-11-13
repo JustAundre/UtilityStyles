@@ -5,32 +5,34 @@
   // Sets a JS variable for the header buttons button
   const details = document.querySelector(`.packDetails`);
   const tos = document.querySelector(`.termsOfUse`);
-  const update = document.querySelector(`.updateLog`);
+  const log = document.querySelector(`.updateLog`);
 /* Sets a JS variable for the root, something usually used in CSS for global CSS variables */
 const root = document.documentElement;
 
 function tosClick() {
-  tos.toggleAttribute(`a`);
-  if (tos.hasAttribute(`a`)) {}
+  if (tos.hasAttribute(`a`)) { tos.removeAttribute(`a`) }
   else {
-      details.removeAttribute(`a`);
-      update.removeAttribute(`a`);
+    tos.setAttribute(`a`);
+    details.removeAttribute(`a`);
+    log.removeAttribute(`a`);
   }
 }
 function detailsClick() {
   details.toggleAttribute(`a`);
-  if (details.hasAttribute(`a`)) {}
+  if (details.hasAttribute(`a`)) { details.removeAttribute(`a`) }
   else {
-      tos.removeAttribute(`a`);
-      update.removeAttribute(`a`);
+    tos.removeAttribute(`a`);
+    details.setAttribute(`a`);
+    log.removeAttribute(`a`);
   }
 }
-function updateClick() {
-  update.toggleAttribute(`a`);
-  if (update.hasAttribute(`a`)) {}
+function logClick() {
+  log.toggleAttribute(`a`);
+  if (update.hasAttribute(`a`)) { log.removeAttribute(`a`) }
   else {
-      details.removeAttribute(`a`);
-      tos.removeAttribute(`a`);
+    tos.removeAttribute(`a`);
+    details.removeAttribute(`a`);
+    log.setAttribute(`a`);
   }
 }
 
