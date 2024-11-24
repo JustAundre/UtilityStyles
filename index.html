@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang='en-US'>
   <head>
-    <!-- Imports JavaScript to check what kind of device your device is (phone, tablet, laptop/pc) --><script type="module" src="Device.min.js"></script>
     <!-- Sets the encoding of the document --><meta charset='UTF-8'>
-    <!-- Sets the title of the tab --><title> InternetUtils </title>
+    <!-- Sets the title of the tab --><title> IU &#xB7; Homepage </title>
     <!-- Imports my CSS --><link rel='stylesheet' href='index.css'>
-    <!-- Imports my 1st choice of custom font --><link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Comfortaa'>
-    <!-- Imports my 2nd choice of custom font --><link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins'>
+    <!-- Imports my 1st choice of custom font --><link rel='stylesheet' font-display="swap" href='https://fonts.googleapis.com/css?family=Comfortaa'>
+    <!-- Imports my 2nd choice of custom font --><link rel='stylesheet' font-display="swap" href='https://fonts.googleapis.com/css2?family=Poppins'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta property='og:title' content='InternetUtils'>
+    <meta property='og:title' content='IU &#xB7; Homepage'>
     <meta property='og:description' content='A simple web coding project for fun but also in attempt to better the web.'>
     <meta property='og:image' content=''>
     <meta property='og:url' content='/'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- The default background for my websites --><script src='/Global Media/Dynamic Background.js' async></script>
+    <!-- Blocks users from viewing in portrait mode --><script src='/Global Media/121 User Block.js' async></script>
   </head>
   <body>
-    
+    <div class="positioningDiv" id="positioningDiv">
+      <span class="greetingText" id="greetingText"></span>
+      <span class="redirectDialogue" id="redirectDialogue"> 'Ya sure you're in the right place? Here, try one of these. </span>
+      <div class="borderDiv" class="borderDiv"></div>
+      <div class="siteSelector" id="siteSelector">
+        <div class="pullTab" id="pullTab"></div>
+      </div>
+    </div>
   </body>
   <!-- Imports my JavaScript --><script src='index.js'></script>
 </html>

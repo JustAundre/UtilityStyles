@@ -7,9 +7,7 @@
 */
 
 /* Makes the channels list in servers more compact*/
-ul[aria-label='Channels'] li div:not([role='group']),
-ul[aria-label='Channels'] li ul li,
-ul[aria-label='Channels'] li a[aria-label][data-list-item-id] {
+ul[aria-label='Channels'] li div:not([role='group']):not([style="bottom: 24px;"]), ul[aria-label='Channels'] li ul li, ul[aria-label='Channels'] li a[aria-label][data-list-item-id] {
   max-height: 24px !important;
   min-height: 0px !important;
 }
@@ -17,7 +15,7 @@ div[class='']:has(div[aria-label='Voice icon']) { max-height: unset; }
 ul[aria-label='Channels'] li div[role='group'] div[data-dnd-name] { max-height: 16px; }
 ul[aria-label='Channels'] li ul[role='group'][aria-label] div:empty,
 ul[aria-label='Channels'] li ul[role='group'][aria-label] svg[width='12'][height='11']
-{ transform: translate(0px, -4px); }
+{transform: translate(0px, -4px);}
 ul[aria-label='Channels'] li ul[role='group'][aria-label] svg[width='12'][height='11'][style='transform: rotateX(180deg) translateY(-9px);'] { transform: rotateX(180deg) translateY(-5px) !important }
 
 /* Makes DMs list compact */
@@ -29,39 +27,35 @@ ul[aria-label='Direct Messages'] li a[class][aria-label][data-list-item-id][href
 /* Removes excess left-ward padding for voice channel users */
 li> :nth-child(2):not(svg) { max-height: unset !important; }
 
-/* Lessens top spacing for user DMs */
+/* Reduces top margin for user DMs */
 ul[aria-label='Direct Messages'][role='list'] h2,
 ul[aria-label='Direct Messages'][role='list'] li> :has(div[aria-label='Leave Group']),
 ul[aria-label='Direct Messages'][role='list'] li> :has(div[aria-label='Close DM']) { transform: translate(0, -8px) }
 
-/* Makes members list compact - Commented because it doesn't function properly past a certain amount of members. */
+/* Make the members list more compact */
 div[dir='ltr'][style='overflow: hidden scroll; padding-right: 0px;'] div[role='listitem'][tabindex='0']>div,
 div[role='list'][aria-label='Members'][style] div[role='listitem']>div {
   max-height: 34px !important;
   min-height: 0px !important;
 }
 div[role='list'][aria-label='Members']>div[index],
-div[role='list'][aria-label='Members']>div[index]>div {
+div[role='list'][aria-label='Members']>div[index] > div {
   padding-left: 4px;
   padding-right: 4px;
 }
-div[role='list'][aria-label='Members'][style] div[role='listitem'] h3 { padding: 16px 8px 0px 16px; }
-div[role='list'][aria-label='Members']>div:not([aria-selected]),
-h3:has(:nth-child(2) [role='button']):not([aria-labelledby])
-{ display: none; }
 
-/* Slightly less vertical spacing for text */
+/* Reudces vertical spacing for text */
 [aria-roledescription='Message'] div div[id] { line-height: 1.15rem }
 #---new-messages-bar { top: none; }
 
-/* Truncates oversized reply previews */
+/* Truncates large reply message previews */
 [aria-roledescription='Message'] div img[alt=''][src]~div[tabindex='0'] {
   max-width: 128px;
   overflow: hidden;
 }
 
-/* Truncates oversized channel description previews */
-section[aria-label='Channel header']>div>div>div:has([aria-label='Open Channel Topic'][role='button']) {
+/* Truncates large channel description previews */
+section[aria-label='Channel header'] > div > div > div:has([aria-label='Open Channel Topic'][role='button']) {
   display: block;
   max-width: 128px;
 }
@@ -79,9 +73,9 @@ div[aria-roledescription='Message']:has(div h3) { margin-top: .2rem !important; 
 div[aria-roledescription='Message'] { min-height: unset !important; }
 
 /* Makes header text sent by users have less spacing */
-h1,
-h2,
-h3
+[aria-roledescription="Message"] h1,
+[aria-roledescription="Message"] h2,
+[aria-roledescription="Message"] h3
 { margin: 0 !important; }
 
 h1:has(span span),
@@ -92,12 +86,11 @@ h3:has(span span) {
 }
 
 /* Resizes the chat history search bar for DMs, GCs, and servers. */
-section[aria-label='Channel header'] div> :nth-child(2)>*:not([role='button'][tabindex]),
-section[aria-label='Channel header'] div> :nth-child(2)>*:not([role='button'][tabindex]) *:not(svg:has([mask])):not([mask]) {
+section[aria-label='Channel header'] div > :nth-child(2) > *:not([role='button'][tabindex]),
+section[aria-label='Channel header'] div > :nth-child(2) > *:not([role='button'][tabindex]) *:not(svg:has([mask])):not([mask]) {
   width: 24px;
   padding: 0;
 }
-[aria-label="Hide Member List"] + div>div>div { background: unset; }
 
 /* Makes the message bar smaller */
 main[aria-label] form::before { display: none; }
@@ -106,6 +99,6 @@ main[aria-label] form>div:last-of-type { position: unset; }
 
 :root {
   --custom-emoji-size-emoji: 1rem; /* Self-explanatory */
-  --custom-message-spacing-vertical-container-cozy: unset; /* Makes the extra spacing between messages non-existant */
-  --custom-category-channel-space-before-category: 8px; /* Makes the spacing between categories smaller */
+  --custom-message-spacing-vertical-container-cozy: unset; /* Reduce extra spacing between messages */
+  --custom-category-channel-space-before-category: 8px; /* Reduce spacing between channel categories */
 }

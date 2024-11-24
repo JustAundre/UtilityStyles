@@ -6,21 +6,32 @@
  * @authorId 532681285961777154
 */
 
-/* Appropriately changes the text color of the block and remove friends button to the red/danger color of most other buttons that require caution */
-#user-context-remove-friend>div,
-#user-context-block>div
-{ color: var(--status-danger); }
-
+/* Adds a small delay before you can block or unfriend someone to prevent accidents */
+#user-context-remove-friend > div,
+#user-context-block > div
+{ color: var(--status-danger) }
+#user-context-remove-friend,
+#user-context-block {
+  transform: translateX(-200%);
+  transition: .5s ease-in-out transform;
+}
 #user-context-remove-friend:hover,
-#user-context-block:hover
-{ background-color: var(--menu-item-danger-hover-bg); }
+#user-context-block:hover { background-color: var(--menu-item-danger-hover-bg); }
+#user-context-remove-friend:hover > div,
+#user-context-block:hover > div { color: white; }
+[role="group"]:hover #user-context-remove-friend {
+  transform: none;
+  transition-delay: 2.5s;
+  transition-property: transform;
+}
+[role="group"]:hover #user-context-block {
+  transform: none;
+  transition-delay: 2.6s;
+  transition-property: transform;
+}
 
-#user-context-remove-friend:hover>div,
-#user-context-block:hover>div
-{ color: var(--white); }
-
-/* Removes the 'Show User Profile' button in DMs when your screen is not wide enough to support it. */
-div[role='button'][aria-label='Show User Profile (Unavailable)'] { display: none; }
+/* Removes the "Apps" & "Add to Server" context menu buttons when right clicking on a person in your DMs for a better experience with the added feature above. */
+[role="group"]:has([id="user-context-block"]) > div:not([id="user-context-remove-friend"]):not([id="user-context-block"]) { display: none; }
 
 /* Keeps the emoji selector icon consistent */
 [aria-label="Select emoji"] div > div:last-of-type {
@@ -30,4 +41,22 @@ div[role='button'][aria-label='Show User Profile (Unavailable)'] { display: none
 [aria-label="Select emoji"] div > div:first-of-type { opacity: 0; }
 
 /* Unicase initials for the placeholder icon for servers without a set icon */
-[data-list-item-id][aria-label][role="treeitem"][style="font-size: 18px;"]>div { font-variant-caps: unicase; }
+[data-list-item-id][aria-label][role="treeitem"][style="font-size: 18px;"] > div { font-variant-caps: unicase; }
+
+/* Keeps the emoji selector icon consistent */
+[aria-label="Select emoji"] div > div:last-of-type {
+  mask-position: 24px 72px;
+  opacity: 1 !important;
+}
+[aria-label="Select emoji"] div > div:first-of-type { opacity: 0; }
+
+/* Removes the thought bubble effect for custom statuses */
+[role="tooltip"][aria-label]:has( div:has(::before):has(::after) ) {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+[role="tooltip"][aria-label] div::after,
+[role="tooltip"][aria-label] div::before {
+  display: none;
+}

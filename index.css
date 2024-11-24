@@ -1,39 +1,72 @@
-/* Default styles unless overwritten. */
-div,
-header,
-footer,
-img {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-div,
-span,
-p,
-a {
-  color: inherit;
-  font-family: "Poppins", "sans-serif", "system-ui";
-  text-decoration: none;
-}
-img,
-svg,
-foreignObject {
-  user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-}
-a { cursor: pointer; }
-.noMobile { display: none; } /* Sets the noPhone div to not display by default */
+@import url('/Global\ Media/Global\ CSS.css');
 
-/* Makes the body element center all things, etc. */
-body {
-  display: contents;
-  overflow-x: hidden;
-  margin: 0px;
-  font-family: "Comfortaa";
-  font-size: 16px;
-  background: radial-gradient(white 50%, beige);
+.positioningDiv {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: column;
+}
+
+.greetingText {
+  color: white;
+  font-size: calc(1vw + 2vw);
+  margin-top: 15vh;
+}
+
+.redirectDialogue {
+  color: white;
+  font-size: calc(1vw + 1vh);
+  opacity: .75;
+}
+
+.borderDiv {
+  margin-top: 10px;
+  width: 0;
+  height: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--borderColor) .75);
+  animation: borderExpand forwards 1s cubic-bezier(0, 0, 0.35, 1);
+}
+
+.siteSelector {
+  height: 0;
+  width: 40vw;
+  animation: selectorExpand forwards ease-out 2s;
+  animation-delay: 1.5s;
+  backdrop-filter: contrast(1.025) blur(25px);
+  border-bottom-left-radius: 5vh;
+  border-bottom-right-radius: 5vh;
+}
+
+.pullTab {
+  width: 75%;
+  height: 0;
+  position: absolute;
+  bottom: 10px;
+  opacity: 0; 
+  animation: pullTabFadeIn forwards linear 2s;
+  animation-delay: 1.5s;
+  border: 1px solid rgba(var(--borderColor) .1);
+  border-radius: 999px;
+}
+
+@keyframes borderExpand {
+  0% { width: 0; }
+  100% { width: 50vw; }
+}
+
+@keyframes selectorExpand {
+  0% {
+    height: 0;
+    border: 1px rgba(var(--borderColor) .1) solid;
+  }
+  100% {
+    height: 50vh;
+    border: 1px rgba(var(--borderColor) .1) solid;
+  }
+}
+
+@keyframes pullTabFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 100; }
 }

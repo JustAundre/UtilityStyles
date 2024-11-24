@@ -1,4 +1,4 @@
-# Welcome to the InternetUtilities Repo
+# Welcome to the InternetUtils Repository!
 
 ## About
 
@@ -17,6 +17,19 @@ More on the contents of this repository, **as of 11/5/2024**, we have...
   - My iteration of dark mode UI
   - *(W.I.P as of 11/5/2024)* My iteration of dark mode UI but with colored UI elements
 
+## How to
+
+### How to use
+
+If you're not somehow already familiar with [Sylus](https://en.wikipedia.org/wiki/Stylus_browser_extension/) or [UserStyles](https://userstyles.org/), you can make a new theme in the Stylus extension and use an import rule.
+
+```css
+@import url('https://example.com/folder/theme.css');
+```
+
+\( You need to have import rules at the top of the file- *not including commented code.* \)
+Replace the sample URL with the URL to the stylesheet of your choice! A user-friendly website layout for navigating the CSS files and copying the appropriate import rules at <https://internetutils.netlify.app/>
+
 ## Terms of Use
 
 By referencing, viewing, and utilizing the code provided by me, JustAundre, you agree to the following;
@@ -34,15 +47,10 @@ Copyright (c) 2024 JustAundre - All rights reserved.
 Licensed under the Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You may obtain a copy of the License at: <https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en>
 You are hereby granted a license under the Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International License to use this code.
 
-## How to
+## Attributions
 
-### How to use
+- Error SFX used in CodeKit - <https://pixabay.com/sound-effects/error-10-206498/>.
+- Folder icons used in DarkerMode - <https://icons8.com/icon/EWPnfXnEPDw6/folder>, <https://icons8.com/icon/YLebfeHkUcOR/folder>.
 
-If you're not somehow already familiar with [Sylus](https://en.wikipedia.org/wiki/Stylus_browser_extension/) or [UserStyles](https://userstyles.org/), you can make a new theme in the Stylus extension and use an import rule.
-
-```css
-@import url('https://example.com/folder/theme.css');
-```
-
-\( You need to have import rules at the top of the file- *not including commented code.* \)
-Replace the sample URL with the URL to the stylesheet of your choice! A user-friendly website layout for navigating the CSS files and copying the appropriate import rules at <https://internetutils.netlify.app/>
+## Small comments
+Yes, I know I have weird JS syntax ;3

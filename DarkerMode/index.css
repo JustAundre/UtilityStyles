@@ -1,114 +1,28 @@
-/* Default styles unless overwritten. */
-div,
-header,
-footer,
-img {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-div,
-span,
-p,
-a {
-  color: inherit;
-  font-family: "Poppins", "sans-serif", "system-ui";
-  text-decoration: none;
-}
-img,
-svg,
-foreignObject {
-  user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-}
-a { cursor: pointer; }
-.noMobile { display: none; } /* Sets the noPhone div to not display by default */
+@import url('/Global\ Media/Global\ CSS.css');
 
-/* Makes the body element center all things, etc. */
-body {
-  display: contents;
-  overflow-x: hidden;
-  margin: 0px;
-  font-family: "Comfortaa";
-  font-size: 16px;
-}
-
-/* Base background properties */
-.linear-gradient {
+/* Header */
+.header {
   width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background: linear-gradient(to top right, rgb(24, 29, 60)75%, rgb(32, 30, 75));
-}
-
-/* Properties for all color spotches */
-div.linear-gradient>div.blur {
-  display: block;
-  position: absolute;
-  transition: 60s ease;
-  filter: blur(10px);
-}
-
-/* Properties for each individual color spotch in the background */
-div.linear-gradient>.blurple-blur {
-  width: 150vh;
-  height: 150vh;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(82, 80, 226, 0.24) 0%, transparent 100%);
-  transform: translateX(var(--x1)) translateY(var(--y1));
-}
-div.linear-gradient>.blue-blur {
-  width: 175vh;
-  height: 175vh;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(49, 139, 255, .24) 0%, transparent 100%);
-  transform: translateX(var(--x2)) translateY(var(--y2));
-}
-
-div.linear-gradient>.salmon-blur {
-  width: 200vh;
-  height: 200vh;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(231, 93, 143, .24) 0%, transparent 100%);
-  transform: translateX(var(--x3)) translateY(var(--y3));
-}
-
-/* Properties to line up items correctly on the header */
-.headerRight {
-  right: 5vw;
-  justify-content: flex-end;
-}
-.headerLeft {
-  left: 5vw;
-  justify-content: flex-start;
-}
-.header, .headerBackdrop {
-  z-index: 1;
-  width: auto;
   height: 7vh;
-  position: fixed;
+  position: absolute;
   top: 0;
-}
-
-/* Header backdrop filter */
-.headerBackdrop {
-  width: 100vw;
-  backdrop-filter: contrast(1.0125) blur(12.5px);
-  border-bottom: 1px solid rgb(var(--borderColor) .05);
+  backdrop-filter: contrast(1.025) blur(25px);
+  border-bottom: 1px solid rgb(var(--borderColor) .1);
+  justify-content: flex-end;
 }
 
 /* Properties all header buttons share. */
 .headerButton {
   width: auto;
   height: 100%;
-  text-wrap: nowrap;
   padding: 0 2.5vw;
   cursor: pointer;
   color: white;
   font-size: 2vh;
   transition: .2s ease-in-out;
   filter: brightness(1.5);
+  position: relative;
+  right: 5vw;
 }
 .headerButton:hover {
   color: rgb(var(--accentColor) 1);
@@ -121,8 +35,8 @@ div.linear-gradient>.salmon-blur {
   border-bottom-style: solid;
   background: linear-gradient(to top, rgba(var(--accentColor).125), transparent);
 }
-[a]::before::after,
-.headerButton:active::before::after
+[a]::before,
+[a]::after
 { content: "-"; }
 
 /* Unique properties of the home button. */
@@ -132,6 +46,8 @@ div.linear-gradient>.salmon-blur {
   cursor: pointer;
   object-fit: contain;
   object-position: left;
+  position: absolute;
+  left: 5vw;
 }
 
 /* Properties to line everything up in the actual app. */
@@ -162,44 +78,8 @@ div.linear-gradient>.salmon-blur {
 /* Properties unique to the "Download Pack" element */
 .downloadPack { width: 60vw; }
 
-/* Detects if you're a mobile user and disables the website */
-@media screen and (orientation: portrait) {
-  .noMobile {
-    position: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    background: linear-gradient(to top, rgb(20, 15, 10), rgb(10, 5, 0));
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-  }
-
-  .phoneIcon {
-    background-image: url('images/phoneIcon.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .errorMessage {
-    width: 80vw;
-    height: 20vh;
-    color: rgb(var(--errorMinor)1);
-    font-size: 3vh;
-  }
-
-  .phoneIcon {
-    width: 40vw;
-    height: 42.5vh;
-  }
-}
-
 :root {
   --appContainerMargin: calc(var(--headerHieght) + var(--mainContentTopMargin));
-  --borderColor: 255, 255, 255,;
-  --accentColor: 83, 45, 120,;
-  --errorMinor: 148, 46, 46,;
-  --errorMajor: 255, 0, 0,;
   --headerHieght: 7vh;
   --mainContentTopMargin: 25px;
   --maxAppHeight: calc(100vh - (var(--headerHieght) + (2 * var(--mainContentTopMargin))));

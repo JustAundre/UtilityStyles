@@ -12,20 +12,17 @@
 
 /* Removes scrollbars */
 * {
-  /* Firefox */
-  scrollbar-width: none !important;
-  /* IE/Edge */
-  -ms-overflow-style: none !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE/Edge */
 }
-/* WebKit browsers */
-*::-webkit-scrollbar { display: none !important; }
+*::-webkit-scrollbar { display: none !important; /* WebKit browsers */ }
 
-
-[href='/shop'] /* Nitro button on the home page */,
-[href='/store'] /* store button on the home page */,
-div[aria-label='Edit Image with Apps'] /* Hides 'Edit Image with Apps' when hovering over images sent by someone other than you */,
-[aria-label='Help'] /* help button in the top footer */,
-[aria-label='Start Video Call'] /* Start Video call button */,
+/* Removes the following... */
+[href='/shop'] /* Nitro button on the homepage */,
+[href='/store'] /* Store button on the homepage */,
+div[aria-label='Edit Image with Apps'] /* The 'Edit Image with Apps' when hovering over images sent by someone other than you */,
+[aria-label='Help'] /* Help button in the header */,
+[aria-label='Start Video Call'] /* Start Video Call button */,
 [aria-label='New Group DM'] /* Hides Create new group DM button */,
 [aria-label='Add Friends to DM'],
 div[role='listitem'][tabindex='0'] div :nth-child(2) :nth-child(2) /* Activity/status text, and side-icons like owner crown, server booster, and whatever else there is. */,
@@ -41,10 +38,17 @@ div[role='list'][aria-label='Members']>h3~div:not([class]) /* The 'Activities' s
 h3:has(:nth-child(2) [role='button']):not([aria-labelledby]),
 ul[aria-label='Channels'] div[style='height: 16px;']:not([class]) /* Nitro Boosts progress bar for servers with boosts */,
 ul[aria-label='Channels'] div[style='height: 20px;']:not([class]),
-ul[aria-label='Channels'] div[style='height: 12px;']:not([class])~li:not(:has(> div div[aria-label='Browse Channels'])):first-of-type, div[dir='ltr'][style='overflow: hidden scroll; padding-right: 16px;'] div>div:last-child:has(img[src='/assets/826b6a84605f7eb8a469.svg']), svg[style='min-width: 300px; min-height: 105px;'][viewBox='0 0 300 105']~div:not([class]):has(path[d='M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z']), [aria-label='Show User Profile (Unavailable)'], div:has(>div>svg[style='width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;']:not([viewBox="0 0 24 24"])),
-div[style="height: 84px;"] /* Server banners */,
+ul[aria-label='Channels'] div[style='height: 12px;']:not([class]) ~ li:not(:has(> div div[aria-label='Browse Channels'])):first-of-type,
+div[dir='ltr'][style='overflow: hidden scroll; padding-right: 16px;'] div>div:last-child:has(img[src='/assets/826b6a84605f7eb8a469.svg']),
+svg[style='min-width: 300px; min-height: 105px;'][viewBox='0 0 300 105'] ~ div:not([class]):has(path[d='M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z']),
+[aria-label='Show User Profile (Unavailable)'],
+div:has(>div>svg[style='width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;']:not([viewBox="0 0 24 24"])),
+[style="height: 84px;"] /* Server banners */,
 div[style]:has(>div[style]>img[class][src][alt][aria-hidden="true"]),
-div[class][role='img'][aria-label][aria-hidden]> :nth-child(2) /* Avatar decorations */
+[aria-label="Server Shop"] /* Server shops */,
+div[class][role='img'][aria-label][aria-hidden]> :nth-child(2) /* Avatar decorations */,
+div[role='button'][aria-label='Show User Profile (Unavailable)'] /* The 'Show User Profile' button in DMs when your screen is not wide enough to support it. */,
+[role="group"]:has([id="user-context-block"]) > div:not([id="user-context-remove-friend"]):not([id="user-context-block"]) /* The "Apps" & "Add to Server" context menu buttons when right clicking on a person in your DMs */
 { display: none !important; }
 
 [aria-label='Send a gift'] /* The 'Gift' button in the message bar */,
