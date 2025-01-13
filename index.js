@@ -1,152 +1,78 @@
-// Define "now" as a new "Date()" function
-  const now = new Date();
+// Randomized wording and sentence starters for greetings
+const greetingWords = {}
+options = ["nice", "fair", "lovely", "beautiful", "starry", "wonderful", "amazing", "great",];
+greetingWords.synonymsNice = options[rng(options)];
 //
+options = ["stare", "look", "gaze", "ponder", "awe",];
+greetingWords.synonymsLook = options[rng(options)];
+//
+options = ["evening", "night", "nightfall", "dusk",];
+greetingWords.synonymsNight = options[rng(options)];
+//
+options = ["coffee", "green tea", "tea", "warm milk", "hot chocolate", "hot coco", "matcha",];
+greetingWords.drink = options[rng(options)];
+//
+greetingWords.firstBlanket = ["heated", "weighted",][rng()];
+greetingWords.secondBlanket = (greetingWords.firstBlanket == "heated") ? "weighted" : "heated";
+greetingWords.punctNonQuestion = ["!", ".",][rng()];
+options = [
+  `hello${greetingWords.punctNonQuestion}`,
+  `greetings${greetingWords.punctNonQuestion}`,
+  `good ${user.generalTime}${greetingWords.punctNonQuestion}`,
+  `'ello${greetingWords.punctNonQuestion}`,
+  `welcome${greetingWords.punctNonQuestion}`,
+  `nice weather, ${user.name}${greetingWords.punctNonQuestion}`,
+  `ooo! how are you?`,
+  "how are you?",
+  "fairing well?",
+];
+greetingWords.minorGreeting = options[rng(options)];
+greetingWords.questionEndWithUsername = ["", `, ${user.name}`][rng()] + "?";
+greetingWords.sentenceEndWithUsername = ["", `, ${user.name}`][rng()] + `${greetingWords.punctNonQuestion}`;
 
-// Finds the user's generalized time of day
-  const userHour = now.getHours();
-  let timeGeneralized;
-  switch (true) {
-    case userHour <= 12: timeGeneralized = 'morning';
-    case userHour <= 17 && userHour > 12: timeGeneralized = 'afternoon';
-    case userHour >= 17: timeGeneralized = 'evening';
-  }
-//
-
-// Randomized wording for greetings
-  let userNick = [
-    'programmer',
-    'coder',
-    'stranger',
-    'user',
-    'guest',
-    'old friend',
-    'friend',
-    'traveler',
-    'visitor',
-  ][Math.round(Math.random() * 8)];
-  let capitalizedUserNick = [
-    'Programmer',
-    'Coder',
-    'Stranger',
-    'User',
-    'Guest',
-    'Old friend',
-    'Friend',
-    'Traveler',
-    'Visitor',
-  ][Math.round(Math.random() * 8)];
-  const randomAdjective = [
-    'Nice',
-    'Fair',
-    'Lovely',
-    'Beautiful',
-    'Starry',
-    'Wonderful',
-    'Amazing',
-  ][Math.round(Math.random() * 6)];
-  const randomNotQuestion = [
-    '!',
-    '.',
-  ][Math.round(Math.random())]
-  const randomDrink = [
-    'coffee',
-    'tea',
-    'warm milk',
-    'hot chocolate',
-    'matcha',
-  ][Math.round(Math.random() * 4)];
-  const synonymsOfLook = [
-    'stare',
-    'look',
-    'gaze',
-    'ponder',
-    'awe',
-  ][Math.round(Math.random() * 4)]
-  const randomMiniGreeting = [
-    `hello${randomNotQuestion}`,
-    `greetings${randomNotQuestion}`,
-    `good ${timeGeneralized}${randomNotQuestion}`,
-    `'ello${randomNotQuestion}`,
-    `welcome${randomNotQuestion}`,
-    'how are you?',
-    'fairing well?',
-    `nice weather, ${userNick}${randomNotQuestion}`,
-  ][Math.round(Math.random() * 6)];
-  const randomMiniGreetingCapitalized = [
-    `Hello${randomNotQuestion}`,
-    `Greetings${randomNotQuestion}`,
-    `Good ${timeGeneralized}${randomNotQuestion}`,
-    `'Ello${randomNotQuestion}`,
-    `Welcome${randomNotQuestion}`,
-    'How are you?',
-    'Fairing well?',
-    `Nice weather, ${userNick}${randomNotQuestion}`,
-  ][Math.round(Math.random() * 6)];
-//
-// If user's date difference from UTC date is greater than 2, force user's nickname to "time traveler" and sets isTimeTraveler to "true"
-  const userDate = Number(`${now.getFullYear()}${(now.getMonth() + 1)}${now.getDate()}`);
-  let isTimeTraveler;
-  const utcDate = Number(`${now.getUTCFullYear()}${now.getUTCMonth() + 1}${now.getUTCDate()}`);
-  if ((utcDate - userDate) > 2 || (utcDate - userDate) < -2) {
-    userNick = 'time traveler';
-    isTimeTraveler = true;
-  } else 
-  { isTimeTraveler = false; }
-//
-
-function randomGreeting() {
-  // Selects a random greeting based on the appropriate time of day
-  switch (timeGeneralized) {
-    case 'morning': selectedGreeting = [ greetingAllOne, greetingAllTwo, greetingMorningOne, ][Math.round(Math.random() * 2)];
-    case 'afternoon': selectedGreeting = [ greetingAllOne, greetingAfternoonOne, ][Math.round(Math.random())];
-    case 'evening': selectedGreeting = [ greetingAllOne, greetingEveningOne, ][Math.round(Math.random())];
-  }
-  //
-  const greetingElement = document.querySelector(`.greetingText`);
-  greetingElement.innerText = ` ${selectedGreeting} `;
+// Defines the directories for all the possible greetings
+const g = {
+  all: {},
+  morning: {},
+  afternoon: {},
+  evening: {},
 }
-
-// Possible greetings
-  // Possible any time of day
-    const greetingAllOne = `Good ${timeGeneralized}, ${userNick}${randomNotQuestion}`;
-    const greetingAllTwo = `${randomMiniGreetingCapitalized} Has the internet gotten any better?`;
-    const greetingAllThree = `Hm?- Oh${randomNotQuestion} Going for a ${timeGeneralized} walk, ${userNick}?`;
-  //
-  // Only possible in the morning (before or equal to mid-day)
-    const greetingMorningOne = `Mmm.. oh${randomNotQuestion} Care for a cup of ${randomDrink}, ${userNick}?`;
-  //
-  // Only possible during afternoons (past mid-day and before or equal to 5 PM)
-    const greetingAfternoonOne = `Oh, ${randomMiniGreeting} Care to ${synonymsOfLook} at the sunset with me?`;
-  //
-  // Only possible in the evening (past 5 PM)
-    const greetingEveningOne = `${randomAdjective} night, isn't it. ${capitalizedUserNick}?`;
-    const greetingEveningTwo = `${randomMiniGreetingCapitalized} Would you like to come star gaze?`;
-  //
+// Possible any time of day
+g.all.a1 = `<span>good ${user.generalTime}${greetingWords.sentenceEndWithUsername}</span>`;
+g.all.a2 = `<span>${greetingWords.minorGreeting} has the ${[
+  "web",
+  "internet",
+][rng()]} ${[
+  `gotten ${["", "any"][rng()]} better`,
+  `improved`,
+][rng()]}${greetingWords.questionEndWithUsername}</span>`;
+g.all.a3 = `<span>hm?- oh${greetingWords.punctNonQuestion} going ${[
+  "for",
+  "on",
+][rng()]} ${(user.generalTime == "morning") ? "a" : "an"} ${user.generalTime} walk${greetingWords.questionEndWithUsername}</span>`;
 //
-
-// Debug logging
-  console.log(`
-    %c greetingAllOne = "${greetingAllOne}"\n
-    %c greetingAllTwo = "${greetingAllTwo}"\n
-    %c greetingAllThree = "${greetingAllThree}"\n
-    %c greetingMorningOne = "${greetingMorningOne}"\n
-    %c greetingEveningOne = "${greetingEveningOne}"\n
-    %c greetingEveningTwo = "${greetingEveningTwo}"\n
-    %c userNick = "${userNick}"\n
-    %c timeGeneralized = "${timeGeneralized}"\n
-    %c isTimeTraveler = ${isTimeTraveler}\n`,
-    `color: lime;`,
-    `color: rgb(155, 255, 155);`,
-    'color: lime;',
-    `color: rgb(155, 255, 155);`,
-    'color: lime;',
-    `color: rgb(155, 255, 155);`,
-    'color: lime;',
-    `color: rgb(155, 255, 155);`,
-    'color: lime;', 
-  );
+// Only possible in the morning
+g.morning.a1 = `<span>mmm.. oh${greetingWords.punctNonQuestion} care for a cup of ${greetingWords.drink}${greetingWords.questionEndWithUsername}</span>`;
 //
-
-// Call the function to roll a random greeting
-  randomGreeting();
+// Only possible during afternoons
+g.afternoon.a1 = `<span>oh, ${greetingWords.minorGreeting} care to ${greetingWords.synonymsLook} at the sunset with me?</span>`;
 //
+// Only possible in the evening
+g.evening.a1 = `<span>${greetingWords.synonymsNice} ${greetingWords.synonymsNight}, isn't it${["", `, ${user.name}`][rng()]}?</span>`;
+g.evening.a2 = `<span>${greetingWords.minorGreeting} would you like to come star gaze?</span>`;
+g.evening.a3 = `
+  <span>${greetingWords.synonymsNice} ${greetingWords.synonymsNight} for a ${greetingWords.firstBlanket} blanket, ${user.name}${greetingWords.punctNonQuestion}</span>
+  ${["", `<span>( Or maybe a ${greetingWords.secondBlanket} blanket... )</span>`,][rng()]}
+`;
+g.evening.a4 = `<span>ready for bed, are we, ${user.name}?</span>`;
+g.evening.a5 = `<span>feeling tired yet, ${user.name}?</span>`;
+g.evening.a6 = `<span>hm?- oh${greetingWords.punctNonQuestion} going ${["for", "on",][rng()]} an evening walk, ${user.name}?</span>`;
+
+// Selects a random greeting based on the appropriate time of day and displays it to the respective element
+options = [...Object.values(g.all), ...Object.values(g[user.generalTime])]
+// Sets the selected, sentence-casified greeting as the greeting displayed on the page
+document.querySelector("#greetingText").innerHTML = 
+  options[rng(options)]. // Chooses a random valid greeting
+  toLowerCase().replace(/([!?.\(\)]-? |(^|<span>)'?|>)\w/g, // Custom logic/regex to select all characters that should be capitalized
+  (capitalizeLetter) => capitalizeLetter.toUpperCase()) // Actually capitalizes the selected letters
+;

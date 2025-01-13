@@ -1,56 +1,61 @@
-# Welcome to the InternetUtils Repository!
-
+# readme.md
 ## About
+This github repository hosts code projects made by @JustAundre \(Discord\).
+You can also find me over on [YouTube](https://www.youtube.com/@JustAundre); however I don't post often.
+This repository's purpose is to host the following...
 
-This github repository hosts code projects made by @JustAundre on Discord.
-You can also find me over on YouTube; however I don't post often.
-More on the contents of this repository, **as of 11/5/2024**, we have...
-
-- CSS for..
+- CSS for...
   - Decluttering websites (including ads)
   - Compacting UI elements
   - Spacing out UI elements
   - Patching visual issues
   - Many things unrelated to actual personalization
 
-- Minecarft Java resource pack(s?)
-  - My iteration of dark mode UI
-  - *(W.I.P as of 11/5/2024)* My iteration of dark mode UI but with colored UI elements
+## Formatting quirks Coders should know
+Empty comments in my JavaScript are usually separaters for readability whilst still trying to keep blocks of related code connected \(See example below\)
+```js
+// Group of relevant code 1
+let
+xyz1 = 1,
+xyz2 = 2;
+//
+const
+abc1 = 3,
+abc2 = 4;
 
-## How to
-
-### How to use
-
-If you're not somehow already familiar with [Sylus](https://en.wikipedia.org/wiki/Stylus_browser_extension/) or [UserStyles](https://userstyles.org/), you can make a new theme in the Stylus extension and use an import rule.
-
-```css
-@import url('https://example.com/folder/theme.css');
+// Group of relevant code 2
+let sum = x + y + a + b;
 ```
+Seemingly useless scopes (code inbetween 2 curley brackets that do nothing) are there to limit the scope of variables I want to have a limited scope \(See example below\)
+```js
+{
+  let options = ["a", "b", "c",];
+  let button = document.querySelector("#button1");
+}
+let options = ["x", "y", "z",];
+```
+I add newlines in places where I think reading the code as 1 line would be burdensome even if it's not "neccessary".
+```js
+// My formatting:
+let options = [
+  `abc${var1}`,
+  `abc${var2}`,
+  `abc${var3}`,
+  `abc${var4}`,
+];
 
-\( You need to have import rules at the top of the file- *not including commented code.* \)
-Replace the sample URL with the URL to the stylesheet of your choice! A user-friendly website layout for navigating the CSS files and copying the appropriate import rules at <https://internetutils.netlify.app/>
+// What I would like to avoid:
+let options = [`abc${var1}`, `abc${var2}`, `abc${var3}`, `abc${var4}`,];
+```
+For functions used in an index.js but which are not declared in the index.js file, please check for it in the Global JS.js file.
 
-## Terms of Use
-
-By referencing, viewing, and utilizing the code provided by me, JustAundre, you agree to the following;
-
-- You agree to this [Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en/) *unless given expressed permission*.
-  - Expressed permission here is defined as an Email response from <justaundre.late018@passinbox.com> giving permission
-- In any case you use the code in a way that was not meant to be or modify the code to be damaging and use it improperly purposefully, in neglegence, or malicously, I, JustAundre will not be liable.
-  - Use and modification of the code improperly, in neglegence, and/or malice intent includes, but is not limited to; Cyber crime, corruption of your own machine, unexpected/unwanted data modifications.
-- You acknowledge that this code is likely not perfectly optimized. In the event that minor damages are caused due to my raw and unchanged code, I cannot promise compensation but can promise reasonable effort in debugging and repairing the issue in the code.
-- Upon violation, you acknowledge you are no longer allowed to view and utilize any digital media and code produced by me, JustAundre.
-  - \( Creations directly based upon the files available here are also to be included in this \)
-- The Copyright applies to everything unless commented otherwise in the specific file.
-
-Copyright (c) 2024 JustAundre - All rights reserved.
-Licensed under the Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You may obtain a copy of the License at: <https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en>
-You are hereby granted a license under the Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International License to use this code.
 
 ## Attributions
+- Website background inspiration \(Heavy inspiration\) [DocsTransfer](https://docstransfer.com)
+- Folder Icons in Homepage - [Closed Folder Icon](https://icons8.com/icon/EWPnfXnEPDw6/folder), [Open Folder Icon](https://icons8.com/icon/YLebfeHkUcOR/folder)
+- JavaScript learning source - [MDN Web Documents - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-- Error SFX used in CodeKit - <https://pixabay.com/sound-effects/error-10-206498/>.
-- Folder icons used in DarkerMode - <https://icons8.com/icon/EWPnfXnEPDw6/folder>, <https://icons8.com/icon/YLebfeHkUcOR/folder>.
-
-## Small comments
-Yes, I know I have weird JS syntax ;3
+## Copyright
+Copyright © 2024 JustAundre - All rights reserved.
+Licensed under the Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You may obtain a copy of the License at: <https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en>
+You are hereby granted a license under the Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International License to use this code.

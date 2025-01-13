@@ -1,4 +1,0 @@
-/*Blurs and lowers visibility of profile pictures.*/
-div[style='width: 32px; height: 32px;'] svg foreignObject,
-div[aria-roledescription='Message'] div img[alt=' '],
-div[aria-roledescription='Message']> :nth-child(1) img:not([alt]) { filter: blur(3px); }

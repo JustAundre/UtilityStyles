@@ -1,0 +1,25 @@
+/**
+ * @name Declutter for Roblox
+ * @description Roblox with extra room to spare.
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
+/* Removes all of the below */
+/* The 'Buy Premium' in the navmenu */ li:has(> a[href="https://www.roblox.com/premium/membership?ctx=leftnav"]),
+/* The 'Trade' button in the navmenu */ li:has(> a[href="https://www.roblox.com/trades"]),
+/* The 'Blog' button in the navmenu */ li:has(> a[href="https://blog.roblox.com"]),
+/* The 'Official Shop' button in the navmenu */ li:has(> #nav-shop),
+/* The 'Giftcards' button in the navmenu */ li:has(> a[href="https://www.roblox.com/giftcards-us"]),
+/* The 'Profile' button (just click on your profile picture instead) */ li:has(> #nav-profile),
+/* The "Robux" button on the navbar */ #navigation-robux-container,
+/* 'Recommended For You' sections */ div[data-testid="home-page-game-grid"],
+/* The footer at the bottom of the website */ #footer-container,
+/* Your profile and/or your age bracket indicator in the right of the navbar */ .nav.navbar-right > .age-bracket-label,
+/* The app bumper that might occasionally be fixed at the bottom of your screen talking about the Roblox Android app */ [app-bumper]
+{ display: none !important; }
+
+/* Removes the padding/margins for the now removed footer */
+body { margin-bottom: 0px; }
+main#container-main { padding-bottom: 0px; }

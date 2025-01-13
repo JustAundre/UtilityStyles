@@ -1,4 +1,0 @@
-/* Recode required */
-
-/* Removes tooltips */
-[id="cash-app-pay-container"] + div:not([class]) + div { display: none; }

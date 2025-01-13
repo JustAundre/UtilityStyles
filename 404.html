@@ -2,22 +2,42 @@
 <html lang='en-US'>
   <head>
     <!-- Sets the encoding of the document --><meta charset='UTF-8'>
-    <!-- Sets the title of the tab --><title> IU &#xB7; Homepage </title>
-    <!-- Imports my CSS --><link rel='stylesheet' href='index.css'>
-    <!-- Imports my 1st choice of custom font --><link rel='stylesheet' font-display="swap" href='https://fonts.googleapis.com/css?family=Comfortaa'>
-    <!-- Imports my 2nd choice of custom font --><link rel='stylesheet' font-display="swap" href='https://fonts.googleapis.com/css2?family=Poppins'>
-    <!-- The default background for my websites --><script src='/Global Media/Dynamic Background.js' async></script>
-    <!-- Blocks users from viewing in portrait mode --><script src='/Global Media/121 User Block.js' async></script>
+    <!-- Sets the title of the tab --><title> IU &#x2022; Homepage </title>
+    <!-- The default background for my websites --><script src='/global_files/global.js' async></script>
+    <!-- Metadata for embeds -->
+    <meta property='og:title' content='IU &#x2022; Homepage'>
+    <meta property='og:description' content="
+      The Worldwide Web's great library.&#xA;
+      Welcome, dear user.
+    ">
+    <meta property='og:image' content=''>
+    <meta property='og:url' content='/'>
   </head>
   <body>
-    <div class="positioningDiv" id="positioningDiv">
-      <span class="greetingText" id="greetingText"></span>
-      <span class="redirectDialogue" id="redirectDialogue"> 'Ya sure you're in the right place? Here, try one of these. </span>
-      <div class="borderDiv" class="borderDiv"></div>
-      <div class="siteSelector" id="siteSelector">
-        <div class="pullTab" id="pullTab"></div>
+    <span id="greetingText">Heya, welcome back.</span>
+    <span id="redirectText">
+      <span>Lookin' for something around here? Here, try one of</span>
+      <i>these.</i>
+    </span>
+    <div id="websitesGrid">
+      <div id="privacySecurity">
+        <span class="folderTitle">Privacy & Security</span>
+      </div>
+      <div id="mediaPiracy">
+        <span class="folderTitle">Media Piracy</span>
+      </div>
+      <div id="alternativeApps">
+        <span class="folderTitle">Alternative Apps</span>
+      </div>
+      <div id="panachromeMc">
+        <span class="folderTitle">DarkerMC</span>
+      </div>
+      <div id="codeKit">
+        <span class="folderTitle">CodeKit</span>
+      </div>
+      <div id="aboutMe">
+        <span class="folderTitle">About Me</span>
       </div>
     </div>
   </body>
-  <!-- Imports my JavaScript --><script src='index.js'></script>
 </html>

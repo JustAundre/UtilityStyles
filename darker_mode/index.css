@@ -1,0 +1,90 @@
+@import url('/Global\ Media/Global\ CSS.css');
+
+/* Header */
+.header {
+  width: 100vw;
+  height: 7vh;
+  backdrop-filter: contrast(1.025) blur(25px);
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+/* Properties all header buttons share. */
+.headerButton {
+  width: auto;
+  height: 100%;
+  filter: brightness(1.5);
+  position: relative;
+  right: 5vw;
+  padding: 0 2.5vmax;
+  transition: 200ms ease-out;
+  cursor: pointer;
+  font-size: 2vmin;
+}
+
+.headerButton:hover {
+  color: hsl(270, 30%, 55%);
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
+.headerButton:active,
+.headerButton[a] {
+  color: hsl(270, 30%, 70%);
+  animation: headerButtonClick 500ms ease-out;
+}
+@keyframes headerButtonClick {
+  0% { letter-spacing: 0; }
+  10% { letter-spacing: 2px; }
+  100% { letter-spacing: 0; }
+}
+
+.headerButton[a]::before,
+.headerButton[a]::after {
+  content: "-";
+}
+
+/* Unique properties of the home button. */
+.homeLogo {
+  object-fit: contain;
+  object-position: left;
+  position: absolute;
+  left: 5vw;
+  width: calc(14vh * 80%);
+  height: 80%;
+  cursor: pointer;
+}
+
+/* Properties to line everything up in the actual app. */
+.appContainer {
+  justify-content: space-evenly;
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  margin-top: var(--appContainerMargin);
+}
+
+/* Properties for both the "About Me" and "Download Pack" elements */
+.aboutMe,
+.downloadPack {
+  backdrop-filter: contrast(1.025) blur(25px);
+  height: 45vw;
+  max-height: var(--maxAppHeight);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, .1);
+  border-radius: .5vw;
+}
+
+/* Properties unique to the "About Me" element */ .aboutMe { width: 25vw; }
+/* Properties unique to the "Download Pack" element */ .downloadPack { width: 60vw; }
+
+:root {
+  --appContainerMargin: calc(var(--headerHieght) + var(--mainContentTopMargin));
+  --headerHieght: 7vh;
+  --mainContentTopMargin: 25px;
+  --maxAppHeight: calc(100vh - (var(--headerHieght) + (2 * var(--mainContentTopMargin))));
+}

@@ -1,0 +1,21 @@
+/**
+ * @name Declutter for Twitch
+ * @description Go from unbelievably cramped to somewhat acceptable
+ * @author JustAundre
+ * @version 1.0.0
+ * @authorId 532681285961777154
+*/
+
+/* Removes all of the following */
+/* I forgot lmao */ .find-me > div:not([class]),
+/* Featured content carousel preview items */ div.featured-content-carousel__item-container:not(.featured-content-carousel__item-container--offset-0.featured-content-carousel__item-container--center),
+/* Sidebar */ .side-nav[data-test-selector='side-nav'][data-a-target='side-nav-bar'],
+/* Top donators above the chat */ .chat-room__content > *:not([aria-label='Chat messages']):not(.chat-input):not(:not([class])),
+
+/* Video tags */
+[aria-label='Stream Information'] div:not([class]),
+div.fAVISI:has(a.tw-tag[href]),
+
+/* Prime offers */ .prime-offers,
+/* Removes placeholder video boxes */ section[aria-label='Main Content']#front-page-main-content > div > div > div:not(:not(.Layout-sc-1xcs6mc-0))
+{ display: none; }
