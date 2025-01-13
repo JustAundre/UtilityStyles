@@ -1,6 +1,6 @@
 # readme.md
 ## About
-This github repository hosts code projects made by @JustAundre \(Discord\).
+This github repository hosts code projects made by [@JustAundre](https://discord.com/channels/@me/532681285961777154) \(Discord\).
 You can also find me over on [YouTube](https://www.youtube.com/@JustAundre); however I don't post often.
 This repository's purpose is to host the following...
 
@@ -9,9 +9,8 @@ This repository's purpose is to host the following...
   - Compacting UI elements
   - Spacing out UI elements
   - Patching visual issues
-  - Many things unrelated to actual personalization
 
-## Formatting quirks Coders should know
+## Formatting quirks to note
 Empty comments in my JavaScript are usually separaters for readability whilst still trying to keep blocks of related code connected \(See example below\)
 ```js
 // Group of relevant code 1
