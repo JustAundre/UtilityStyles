@@ -35,9 +35,9 @@ if (user.utcOffset > 1) { user.name = "time traveler"; }
   importPortraitBlock = document.createElement("script");
   //
   importGlobalCss.href = "/WebUtils/global_files/global.css";
-  importLocalCss.href = "/WebUtilsindex.css";
+  importLocalCss.href = "/WebUtils/index.css";
   importPortraitBlock.src = "/WebUtils/global_files/landscape_only.js";
-  importLocalJs.src = "/WebUtilsindex.js";
+  importLocalJs.src = "/WebUtils/index.js";
   //
   importGlobalCss.rel = "stylesheet";
   importLocalCss.rel = "stylesheet";
