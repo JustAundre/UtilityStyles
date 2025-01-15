@@ -7,10 +7,16 @@
 */
 
 /* Compresses the download and share buttons */
-  /* Removes the share and download text from the buttons */
-  ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"], [title="I dislike this"]) div:not([aria-hidden="true"]) {
-    display: none;
-  }
-  /* Consistency changes on padding and margin */
-  ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"], [title="I dislike this"]) { padding: 6px; }
-  ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"], [title="I dislike this"]) div[aria-hidden="true"] { margin: 0 4px !important; }
+/* Removes the share and download text from the buttons */
+ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"], [title="I dislike this"]) div:not([aria-hidden="true"]) {
+  display: none;
+}
+/* Changes the padding and margins to be consistent with the rest of the buttons */
+ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"],
+[title="I dislike this"]) {
+  padding: 6px;
+}
+ytd-menu-renderer.ytd-watch-metadata button:not([title="I like this"],
+[title="I dislike this"]) div[aria-hidden="true"] {
+  margin: 0 4px !important;
+}

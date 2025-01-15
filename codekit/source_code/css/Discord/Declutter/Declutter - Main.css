@@ -6,11 +6,10 @@
  * @authorId 532681285961777154
 */
 
-/* Comment or delete the following import rules if you want to disable them */
 /* Cleaner-looking folders, disable if you have cleaner folders enabled from Vencord */
 @import url("https://justaundre.github.io/InternetUtils/codekit/source_code/css/discord/Declutter/Clean-Folders.css");
 
-/* Removes... */
+/* Removes the following... */
 /* Nitro button on the homepage */ [href="/shop"],
 /* Store button on the homepage */ [href="/store"],
 /* The "Edit Image with Apps" when hovering over images sent by someone other than you */ div[aria-label="Edit Image with Apps"],
@@ -19,10 +18,7 @@
 /* Hides Create new group DM button */ [aria-label="New Group DM"],
 /* Loading screen */ div[data-fade="false"][style="--connecting-container-fade-duration: 200ms; --connecting-content-fade-duration: 150ms;"],
 /* "Notifications Settings" button from top footer */ div[aria-label="Notification Settings"][role="button"],
-/* Voice channel hang statuses */ li > :nth-child(2) div div div > :nth-child(3),
-/* Server banners */
-nav > div > header + div[style],
-[style="height: 84px;"],
+/* "Hang statuses" (the lil" icons in multi-user VCs in Discord Servers) */ li > :nth-child(2) div div div > :nth-child(3),
 /* Server boosts */ [aria-label="Channels"] > li:has(div[style]),
 /* Server shops */ li:has([aria-label="Server Shop"]),
 /* "Show User Profile" button in DMs when your screen is not wide enough to support it */ [aria-label="Show User Profile (Unavailable)"],
@@ -37,7 +33,10 @@ nav > div > header + div[style],
 /* The "Download" button for the Discord App */
 div[aria-label="Servers"] ~ div:has(div[aria-label="Download Apps"]),
 div[aria-label="Servers"] ~ div:has(> div:empty:not([aria-hidden="true"])),
-/* User sub-text and statuses under their display name on members lists */ [role="listitem"] > div > div:last-of-type > div:nth-child(2),
+/* User sub-text and statuses under their display name on members lists */
+a[aria-label] > div > div:nth-child(2) > div:nth-child(2),
+div[role="listitem"] > div > div:nth-child(2) > div:nth-child(2),
+[role="img"] ~ div:nth-child(2) > div:nth-child(2),
 /* Clan tags */ [role="listitem"] > div > div:last-of-type > div > div > span > span:nth-child(2),
 /* "Activities" at the top of the Server Members list */
 div[role="list"][aria-label="Members"] > h3 ~ div:not([class]),
@@ -57,15 +56,4 @@ div > [alt=" "]:nth-child(2) {
 /* After removing the Apps button aside the chat text input, fixes the "Jump to present" bar when viewing older messages/replies */
 main [tabindex="-1"] ~ div:has(>button[type="button"]) {
   right: 16px;
-}
-
-/* Removes the thought bubble effect for custom statuses */
-[role="tooltip"][aria-label]:has( div:has(::before):has(::after) ) {
-  background: none;
-  box-shadow: none;
-  border: none;
-}
-[role="tooltip"][aria-label] div::after,
-[role="tooltip"][aria-label] div::before {
-  display: none;
 }
