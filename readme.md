@@ -50,7 +50,6 @@ For functions used in an index.js but which are not declared in the index.js fil
 
 
 ## Attributions
-- Website background inspiration \(Heavy inspiration\) [DocsTransfer](https://docstransfer.com)
 - Folder Icons in Homepage - [Closed Folder Icon](https://icons8.com/icon/EWPnfXnEPDw6/folder), [Open Folder Icon](https://icons8.com/icon/YLebfeHkUcOR/folder)
 - JavaScript learning source - [MDN Web Documents - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
