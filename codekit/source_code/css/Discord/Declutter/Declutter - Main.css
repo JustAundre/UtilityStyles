@@ -19,7 +19,7 @@
 /* Loading screen */ div[data-fade="false"][style="--connecting-container-fade-duration: 200ms; --connecting-content-fade-duration: 150ms;"],
 /* "Notifications Settings" button from top footer */ div[aria-label="Notification Settings"][role="button"],
 /* "Hang statuses" (the lil" icons in multi-user VCs in Discord Servers) */ li > :nth-child(2) div div div > :nth-child(3),
-/* Server boosts */ [aria-label="Channels"] > li:has(div[style]),
+/* Server boosts */ [aria-label="Channels"] > li:has([d="M9.3 5.3a1 1 0 0 0 0 1.4l5.29 5.3-5.3 5.3a1 1 0 1 0 1.42 1.4l6-6a1 1 0 0 0 0-1.4l-6-6a1 1 0 0 0-1.42 0Z"]),
 /* Server shops */ li:has([aria-label="Server Shop"]),
 /* "Show User Profile" button in DMs when your screen is not wide enough to support it */ [aria-label="Show User Profile (Unavailable)"],
 /* "Apps" & "Add to Server" context menu buttons when right clicking on a person in your DMs */ [role="group"]:has([id="user-context-block"]) > div:not([id="user-context-remove-friend"]):not([id="user-context-block"]),
