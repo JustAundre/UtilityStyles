@@ -10,10 +10,10 @@
 
 /* Implements the new icon */
 [aria-label="Servers"] [width="48"] > div > div > div {
-  width: var(--custom-folder-item-guild-icon-size);
-  height: var(--custom-folder-item-guild-icon-size);
+  width: var(--guildbar-folder-size);
+  height: var(--guildbar-folder-size);
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjI1KSIgZD0iTTIgNWEzIDMgMCAwIDEgMy0zaDMuOTNhMiAyIDAgMCAxIDEuNjYuOUwxMiA1aDdhMyAzIDAgMCAxIDMgM3YxMWEzIDMgMCAwIDEtMyAzSDVhMyAzIDAgMCAxLTMtM1Y1WiI+PC9wYXRoPjwvc3ZnPg==');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: calc(var(--custom-folder-item-guild-icon-size) / 2);
+  background-size: calc(var(--guildbar-folder-size) / 2);
 }
