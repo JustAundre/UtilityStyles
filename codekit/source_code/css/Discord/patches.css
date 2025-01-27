@@ -47,5 +47,5 @@
 
 /* Unicase initials for the placeholder icon for servers without a set icon */
 [data-list-item-id][aria-label][role="treeitem"][style="font-size: 18px;"] > div {
-  font-variant-caps: unicase;
+  font-variant-caps: all-small-caps;
 }
