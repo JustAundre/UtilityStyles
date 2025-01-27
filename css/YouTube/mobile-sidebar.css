@@ -1,0 +1,24 @@
+/* Removes the auto-adjusting margin from the actual content part of YouTube */
+#page-manager {
+  margin-left: unset;
+}
+
+/* Removes the side navbar when it is closed */
+#guide:not([opened]) ~ [role="navigation"] {
+  display: none;
+}
+
+/* When the side navbar is opened, lowers the opacity of the page's content, and deactivates clicking/hovering, or selecting the content */
+#guide[opened] ~ #page-manager {
+  opacity: .5;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Stops elements from auto-adjusting their position when the sidebar is open. */
+ytd-browse[mini-guide-visible] *,
+ytd-browse[guide-persistent-and-visible] ytd-playlist-sidebar-renderer.ytd-browse,
+ytd-browse[guide-persistent-and-visible] ytd-playlist-header-renderer.ytd-browse,
+ytd-browse[guide-persistent-and-visible] .page-header-sidebar.ytd-browse {
+  left: 0 !important;
+}

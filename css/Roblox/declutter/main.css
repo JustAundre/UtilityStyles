@@ -1,0 +1,22 @@
+/* Removes... */
+li:has(> a[href="https://www.roblox.com/premium/membership?ctx=leftnav"]) /* The "Buy Premium" in the navmenu */,
+li:has(> a[href="https://www.roblox.com/trades"]) /* The "Trade" button in the navmenu */,
+li:has(> a[href="https://blog.roblox.com"]) /* The "Blog" button in the navmenu */,
+li:has(> #nav-shop) /* The "Official Shop" button in the navmenu */,
+li:has(> a[href="https://www.roblox.com/giftcards-us"]) /* The "Giftcards" button in the navmenu */,
+li:has(> #nav-profile) /* The "Profile" button (just click on your profile picture instead somewhere above it) */,
+#navigation-robux-container /* The "Robux" button on the navbar */,
+div[data-testid="home-page-game-grid"] /* "Recommended For You" sections */,
+#footer-container /* The footer at the bottom of the website */,
+.nav.navbar-right > .age-bracket-label /* The age bracket indicator in the right of the navbar */,
+[app-bumper] /* The app bumper that might occasionally be fixed at the bottom of your screen talking about the Roblox Android app */ {
+  display: none !important
+}
+
+/* Removes the padding/margins for the now removed footer */
+body {
+  margin-bottom: 0px
+}
+main#container-main {
+  padding-bottom: 0px
+}
