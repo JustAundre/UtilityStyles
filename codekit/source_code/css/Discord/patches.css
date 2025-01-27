@@ -32,16 +32,20 @@
 }
 
 /* Removes the "Apps" & "Add to Server" context menu buttons when right clicking on a person in your DMs for a better experience with the added feature above. */
-[role="group"]:has([id="user-context-block"]) > div:not([id="user-context-remove-friend"]):not([id="user-context-block"]) { display: none; }
+[role="group"]:has([id="user-context-block"]) > div:not([id="user-context-remove-friend"]):not([id="user-context-block"]) {
+  display: none;
+}
 
 /* Keeps the emoji selector icon consistent */
 [aria-label="Select emoji"] div > div:last-of-type {
   mask-position: 24px 72px;
   opacity: 1 !important;
 }
-[aria-label="Select emoji"] div > div:first-of-type { opacity: 0; }
+[aria-label="Select emoji"] div > div:first-of-type {
+  opacity: 0;
+}
 
 /* Unicase initials for the placeholder icon for servers without a set icon */
-[data-list-item-id][aria-label][style="font-size: 18px;"] * {
+[data-list-item-id][aria-label][role="treeitem"][style="font-size: 18px;"] > div {
   font-variant-caps: unicase;
 }

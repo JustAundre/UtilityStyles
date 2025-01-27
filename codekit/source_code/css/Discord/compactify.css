@@ -5,19 +5,25 @@
  * @version 1.0.0
  * @authorId 532681285961777154
 */
-
 /* Makes the channels list in servers more compact*/
 ul[aria-label="Channels"] li div:not([role="group"]):not([style="bottom: 24px;"]),
 ul[aria-label="Channels"] li ul li, ul[aria-label="Channels"] li a[aria-label][data-list-item-id] {
   max-height: 24px !important;
   min-height: 0px !important;
 }
-div[class=""]:has(div[aria-label="Voice icon"]) { max-height: unset; }
-ul[aria-label="Channels"] li div[role="group"] div[data-dnd-name] { max-height: 16px; }
+div[class=""]:has(div[aria-label="Voice icon"]) {
+  max-height: unset;
+}
+ul[aria-label="Channels"] li div[role="group"] div[data-dnd-name] {
+  max-height: 16px;
+}
 ul[aria-label="Channels"] li ul[role="group"][aria-label] div:empty,
-ul[aria-label="Channels"] li ul[role="group"][aria-label] svg[width="12"][height="11"]
-{transform: translate(0px, -4px);}
-ul[aria-label="Channels"] li ul[role="group"][aria-label] svg[width="12"][height="11"][style="transform: rotateX(180deg) translateY(-9px);"] { transform: rotateX(180deg) translateY(-5px) !important }
+ul[aria-label="Channels"] li ul[role="group"][aria-label] svg[width="12"][height="11"] {
+  transform: translate(0px, -4px);
+}
+ul[aria-label="Channels"] li ul[role="group"][aria-label] svg[width="12"][height="11"][style="transform: rotateX(180deg) translateY(-9px);"] {
+  transform: rotateX(180deg) translateY(-5px) !important;
+}
 
 /* Makes DMs list compact */
 ul[aria-label="Direct Messages"] li a[class][aria-label][data-list-item-id][href] {
@@ -94,10 +100,16 @@ section[aria-label="Channel header"] div > :nth-child(2) > *:not([role="button"]
   padding: 0;
 }
 
-/* Makes the message bar smaller */
-main[aria-label] form::before { display: none; }
-main[aria-label] form > div > div { margin-bottom: 6px; }
-main[aria-label] form > div:last-of-type { position: unset; }
+/* Makes the subtext under the message bar smaller, and completely disappear if not displaying anything. */
+main[aria-label] form::before {
+  display: none;
+}
+main[aria-label] form > div > div {
+  margin-bottom: 6px;
+}
+main[aria-label] form > div:last-of-type {
+  position: unset;
+}
 
 :root {
   /* Resizes emojis */ --custom-emoji-size-emoji: 1rem;

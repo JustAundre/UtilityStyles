@@ -6,9 +6,9 @@
  * @authorId 532681285961777154
 */
 
-/* Recommended values: 50% for circle, 8px for a squircle, 4px for round square, and 0 for sharp square */ 
+/* Recommended values: 50% for circle, 8px for a squircle, 4px for round square, and 0 for sharp square */
 :root {
-  --profileRadius: 50%;
+  --profileRadius: 4px;
 }
 
 /* Removes the original status indicators */
@@ -19,7 +19,7 @@ rect[fill="#f23f43"] {
   display: none;
 }
 
-/* Unsets the mask for user profile backgrounds */
+/* Unsets the circular mask for user profile backgrounds */
 [style="min-width: 340px; min-height: 120px;"] > foreignObject,
 [viewBox="0 0 300 105"] > foreignObject,
 [viewBox="0 0 600 210"] foreignObject {
@@ -74,7 +74,7 @@ foreignObject[width="120"],
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiB6b29tQW5kUGFuPSJtYWduaWZ5IiB2aWV3Qm94PSIwIDAgMzc1IDM3NC45OTk5OTEiIGhlaWdodD0iNTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2ZXJzaW9uPSIxLjAiPjxkZWZzPjxjbGlwUGF0aCBpZD0iNGE2NjMxZGRhMSI+PHBhdGggZD0iTSAwIDAgTCAzNzMuNSAwIEwgMzczLjUgMzc1IEwgMCAzNzUgWiBNIDAgMCAiIGNsaXAtcnVsZT0ibm9uemVybyIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCM0YTY2MzFkZGExKSI+PHBhdGggZmlsbD0iI2YwYjIzMiIgZD0iTSAyNTEuMDU4NTk0IDI4OC40MTQwNjIgQyAxNzQuMzU5Mzc1IDI4OC40MTQwNjIgMTEwLjM1OTM3NSAyMjQuNDE0MDYyIDExMC4zNTkzNzUgMTQ3LjcxNDg0NCBDIDExMC4zNTkzNzUgNzQuNTQ2ODc1IDE2OC42MzI4MTIgMTIuOTg0Mzc1IDI0MC41ODk4NDQgNy40ODQzNzUgQyAyMjMuODc4OTA2IDIuNjA5Mzc1IDIwNi4yMjY1NjIgLTAuMDE5NTMxMiAxODcuOTQ5MjE5IC0wLjAxOTUzMTIgQyA4NC4zNzEwOTQgLTAuMDE5NTMxMiAwLjQxMDE1NiA4My45NDE0MDYgMC40MTAxNTYgMTg3LjUgQyAwLjQxMDE1NiAyOTEuMDU4NTk0IDg0LjM3MTA5NCAzNzUuMDE5NTMxIDE4Ny45NDkyMTkgMzc1LjAxOTUzMSBDIDI4MS41ODU5MzggMzc1LjAxOTUzMSAzNTkuMTk1MzEyIDMwNi4zNzEwOTQgMzczLjE5OTIxOSAyMTYuNjY0MDYyIEMgMzQ4Ljc5Njg3NSAyNTkuMjEwOTM4IDMwMi44MjgxMjUgMjg4LjQxNDA2MiAyNTEuMDU4NTk0IDI4OC40MTQwNjIgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvZz48cGF0aCBmaWxsPSIjZjBiMjMyIiBkPSJNIDQ5LjA2MjUgMTI4LjkwNjI1IEMgNDkuMDYyNSAxMzQuNTU4NTk0IDQ0LjQ2ODc1IDEzOS4xNjc5NjkgMzguODAwNzgxIDEzOS4xNjc5NjkgQyAzMy4xMjg5MDYgMTM5LjE2Nzk2OSAyOC41MzUxNTYgMTM0LjU1ODU5NCAyOC41MzUxNTYgMTI4LjkwNjI1IEMgMjguNTM1MTU2IDEyMy4yMzQzNzUgMzMuMTI4OTA2IDExOC42MjUgMzguODAwNzgxIDExOC42MjUgQyA0NC40Njg3NSAxMTguNjI1IDQ5LjA2MjUgMTIzLjIzNDM3NSA0OS4wNjI1IDEyOC45MDYyNSAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZmlsbD0iI2YwYjIzMiIgZD0iTSA2Ny41NjY0MDYgOTMuNzEwOTM4IEMgNjcuNTY2NDA2IDk5LjM4MjgxMiA2Mi45NTMxMjUgMTAzLjk3NjU2MiA1Ny4yODUxNTYgMTAzLjk3NjU2MiBDIDUxLjYxMzI4MSAxMDMuOTc2NTYyIDQ3LjAxOTUzMSA5OS4zODI4MTIgNDcuMDE5NTMxIDkzLjcxMDkzOCBDIDQ3LjAxOTUzMSA4OC4wNDI5NjkgNTEuNjEzMjgxIDgzLjQ0OTIxOSA1Ny4yODUxNTYgODMuNDQ5MjE5IEMgNjIuOTUzMTI1IDgzLjQ0OTIxOSA2Ny41NjY0MDYgODguMDQyOTY5IDY3LjU2NjQwNiA5My43MTA5MzggIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGZpbGw9IiNmMGIyMzIiIGQ9Ik0gODguMDkzNzUgMTUwLjM3ODkwNiBDIDg4LjA5Mzc1IDE1Ni4wNjY0MDYgODMuNSAxNjAuNjYwMTU2IDc3LjgzMjAzMSAxNjAuNjYwMTU2IEMgNzIuMTYwMTU2IDE2MC42NjAxNTYgNjcuNTY2NDA2IDE1Ni4wNjY0MDYgNjcuNTY2NDA2IDE1MC4zNzg5MDYgQyA2Ny41NjY0MDYgMTQ0LjcyNjU2MiA3Mi4xNjAxNTYgMTQwLjEzMjgxMiA3Ny44MzIwMzEgMTQwLjEzMjgxMiBDIDgzLjUgMTQwLjEzMjgxMiA4OC4wOTM3NSAxNDQuNzI2NTYyIDg4LjA5Mzc1IDE1MC4zNzg5MDYgIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==');
 }
 
-/* Creates the new DnD status indicator */
+/* Creates the new Do Not Disturb status indicator */
 [aria-label="Direct Messages"] div > div:has([fill="#f23f43"]) ~ div:nth-child(2)::before,
 [aria-label="Members"] div > div:has([fill="#f23f43"]) ~ div:nth-child(2)::before {
   content: "";
