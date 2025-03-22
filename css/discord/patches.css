@@ -46,8 +46,8 @@ span:has(> [aria-label="Reveal email address"]),
 div:has(> [id=":r1gi:"]) + div:first-of-type > div:has(a) {
   display: none;
 }
-div:has(span:has(> [aria-label="Reveal phone number"]))::before,
-div:has(span:has(> [aria-label="Reveal email address"]))::before {
+div:has(> span > [aria-label="Reveal phone number"])::before,
+div:has(> span > [aria-label="Reveal email address"])::before {
   display: block;
-  content: ಠ _ಠ;
+  content: "ಠ _ಠ";
 }
