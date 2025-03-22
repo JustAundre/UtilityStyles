@@ -50,4 +50,5 @@ div:has(> span > [aria-label="Reveal phone number"])::before,
 div:has(> span > [aria-label="Reveal email address"])::before {
   display: block;
   content: "ಠ _ಠ";
+  color: white;
 }
