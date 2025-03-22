@@ -43,7 +43,7 @@
 /* Removes the phone number and email peaks completely and the reveal button(s) in your account settings */
 span:has(> [aria-label="Reveal phone number"]),
 span:has(> [aria-label="Reveal email address"]),
-div:has(> [id=":r1gi:"]) + div:first-of-type > div:has(a) {
+div:has(> h3) ~ div > div:has(> a) {
   display: none;
 }
 div:has(> span > [aria-label="Reveal phone number"])::before,
