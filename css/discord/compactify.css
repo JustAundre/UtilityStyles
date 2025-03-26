@@ -29,13 +29,6 @@ li > :nth-child(2):not(svg) {
   max-height: unset !important;
 }
 
-/* Make the members list more compact */
-div[dir="ltr"][style="overflow: hidden scroll; padding-right: 0px;"] div[role="listitem"][tabindex="0"]>div,
-div[role="list"][aria-label="Members"][style] div[role="listitem"]>div {
-  max-height: 36px !important;
-  min-height: 0px !important;
-}
-
 /* Reudces vertical spacing for text */
 [aria-roledescription="Message"] div div[id] {
   line-height: 1rem;
@@ -91,17 +84,6 @@ section[aria-label="Channel header"] div > :nth-child(2) > *:not([role="button"]
 section[aria-label="Channel header"] div > :nth-child(2) > *:not([role="button"][tabindex]) *:not(svg:has([mask])):not([mask]) {
   width: 24px;
   padding: 0;
-}
-
-/* Makes the subtext under the message bar smaller, and completely disappear if not displaying anything. */
-main[aria-label] form::before {
-  display: none;
-}
-main[aria-label] form > div > div {
-  margin-bottom: 6px;
-}
-main[aria-label] form > div:last-of-type {
-  position: unset;
 }
 
 :root {

@@ -27,11 +27,11 @@
 }
 
 /* Keeps the emoji selector icon consistent */
-[aria-label="Select emoji"] div > div:last-of-type {
-  mask-position: 24px 72px;
+[aria-label="Select emoji"] div[style] > div:last-of-type {
+  mask-position: 18px 54px;
   opacity: 1 !important;
 }
-[aria-label="Select emoji"] div > div:first-of-type {
+[aria-label="Select emoji"] div[style] > div:first-of-type {
   opacity: 0;
 }
 
