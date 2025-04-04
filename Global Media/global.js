@@ -24,8 +24,9 @@ user.generalTime = (function () {
   else return("evening");
 })();
 user.utcOffset = Math.abs(Number(`${now.getUTCFullYear()}${now.getUTCMonth() + 1}${now.getUTCDate()}`) - Number(`${now.getFullYear()}${(now.getMonth() + 1)}${now.getDate()}`)); // Subtracts the user's date string (year, month, day) from the UTC date string and then converts it to an absolute number (force to positive number if negative) to find their absolute difference from the UTC date.
-if (user.utcOffset > 1) { user.name = "time traveler"; }// Imports globally and locally used resources (resources used on all pages in this repository and ones specific to one page)
+if (user.utcOffset > 1) { user.name = "time traveler"; } // If their offset is greater than 1 day, they are marked as "time traveler"
 
+// Imports globally and locally used resources (resources used on all pages in this repository and ones specific to one page)
 {
   const
   importGlobalCss = document.createElement("link"),
