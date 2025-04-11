@@ -33,7 +33,7 @@ if (user.utcOffset > 1) { user.name = "time traveler"; } // If their offset is g
   importLocalCss = document.createElement("link"),
   importLocalJs = document.createElement("script");	
   //
-  importGlobalCss.href = "/Global Media/global.css";
+  importGlobalCss.href = "/UtilityStyles/Global Media/global.css";
   importLocalCss.href = "index.css";
   importLocalJs.src = "index.js";
   //
