@@ -1,0 +1,13 @@
+/* Import Discord's Noto Sans font because that's what I like */
+@font-face {
+  font-family: 'noto-sans';
+  src: url('/global-media/noto-sans-semibold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Sets the main font along with a flurry of fallback fonts */
+* {
+  font-family: noto-sans, sans-serif, 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue';
+}
