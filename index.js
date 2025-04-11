@@ -69,10 +69,7 @@ g.evening.a5 = `<span>feeling tired yet, ${user.name}?</span>`;
 g.evening.a6 = `<span>hm?- oh${greetingWords.punctNonQuestion} going ${["for", "on",][rng()]} an evening walk, ${user.name}?</span>`;
 
 // Selects a random greeting based on the appropriate time of day and displays it to the respective element
-options = [...Object.values(g.all), ...Object.values(g[user.generalTime])]
+options = [...Object.values(g.all), ...Object.values(g[user.generalTime])];
+
 // Sets the selected, sentence-casified greeting as the greeting displayed on the page
-document.querySelector("#greetingText").innerHTML = 
-  options[rng(options)]. // Chooses a random valid greeting
-  toLowerCase().replace(/([!?.\(\)]-? |(^|<span>)'?|>)\w/g, // Custom logic/regex to select all characters that should be capitalized
-  (capitalizeLetter) => capitalizeLetter.toUpperCase()) // Actually capitalizes the selected letters
-;
+document.querySelector("#greetingText").innerHTML = options[rng(options)].toLowerCase().replace(/([!?.\(\)]-? |(^|<span>)'?|>)\w/g, (capitalizeLetter) => capitalizeLetter.toUpperCase());

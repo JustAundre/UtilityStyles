@@ -31,36 +31,17 @@ if (user.utcOffset > 1) { user.name = "time traveler"; } // If their offset is g
   const
   importGlobalCss = document.createElement("link"),
   importLocalCss = document.createElement("link"),
-  importLocalJs = document.createElement("script"),
-  importPortraitBlock = document.createElement("script");
+  importLocalJs = document.createElement("script");	
   //
-  importGlobalCss.href = "/WebUtils/media/global.css";
-  importLocalCss.href = "/WebUtils/index.css";
-  importPortraitBlock.src = "/WebUtils/media/landscape_only.js";
-  importLocalJs.src = "/WebUtils/index.js";
+  importGlobalCss.href = "/Global Media/global.css";
+  importLocalCss.href = "index.css";
+  importLocalJs.src = "index.js";
   //
   importGlobalCss.rel = "stylesheet";
   importLocalCss.rel = "stylesheet";
-  importPortraitBlock.defer = true;
   importLocalJs.defer = true;
   //
-  document.head.appendChild(importPortraitBlock);
   document.head.appendChild(importLocalJs);
   document.head.appendChild(importGlobalCss);
   document.head.appendChild(importLocalCss);
 }
-
-const
-  backgroundGradient = document.createElement("div"),
-  backgroundSolid = document.createElement("div");
-backgroundGradient.id = "backgroundGradient";
-backgroundSolid.id = "backgroundSolid";
-
-document.body.onload = (function (){
-  setTimeout(function (){
-    backgroundSolid.innerHTML = document.body.innerHTML;
-    document.body.textContent = undefined;
-    document.body.appendChild(backgroundGradient);
-    backgroundGradient.appendChild(backgroundSolid);
-  })
-})()
