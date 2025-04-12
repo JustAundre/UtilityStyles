@@ -23,7 +23,7 @@ function getCookie(cookieName) {
 // Basic user data
 const user = {};
 if (document.cookie) {
-  user.name = getCookie(userName);
+  user.name = getCookie("userName");
   let lastVisit = Number(getCookie("lastVisit"));
   let currentTime = now.getTime();
   if (!isNan(lastVisit) < currentTime) { user.name = "time traveler"; }
