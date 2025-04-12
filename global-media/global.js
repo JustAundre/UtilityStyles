@@ -11,7 +11,7 @@ function rng(options) {
 // Function to pull a value from the cookie based on the value's name
 function getCookie(cookieName) {
   let dataChunk = document.cookie.split("; ");
-  for (const data of dataChunk) {
+  for (let data of dataChunk) {
     data = data.split("=");
     if (data[0] === cookieName) { return data[1]; }
   }
