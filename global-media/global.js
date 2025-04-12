@@ -26,7 +26,7 @@ if (document.cookie) {
   user.name = getCookie("userName");
   let lastVisit = Number(getCookie("lastVisit"));
   let currentTime = now.getTime();
-  if (!isNan(lastVisit) < currentTime) { user.name = "time traveler"; }
+  if (!isNaN(lastVisit) < currentTime) { user.name = "time traveler"; }
   lastVisit = now.getTime();
   document.cookie = `lastVisit=${lastVisit}`;
 }
