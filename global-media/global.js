@@ -14,7 +14,7 @@ function getCookie(cookieName) {
 
   data.forEach(data => {
     const values = data.split("=");
-    if (values[0].trim() === cookieName) {
+    if (values[0] === cookieName) {
       return values[1];
     }
   })
@@ -26,7 +26,7 @@ if (document.cookie) {
   user.name = getCookie("userName");
   let lastVisit = Number(getCookie("lastVisit"));
   let currentTime = now.getTime();
-  if (!isNaN(lastVisit) < currentTime) { user.name = "time traveler"; }
+  if (lastVisit =< currentTime) { user.name = "time traveler"; }
   lastVisit = now.getTime();
   document.cookie = `lastVisit=${lastVisit}`;
 }
