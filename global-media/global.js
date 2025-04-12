@@ -10,14 +10,14 @@ function rng(options) {
 }
 // Function to pull a value from the cookie based on the value's name
 function getCookie(cookieName) {
-  const data = document.cookie.split("; ");
-
-  data.forEach(data => {
-    const values = data.split("=");
+  let dataChunk = document.cookie.split("; ");
+  let value;
+  for (const data of dataChunk) {
+    let values = data.split("=");
     if (values[0] === cookieName) {
       return values[1];
     }
-  })
+  }
 }
 
 // Basic user data
