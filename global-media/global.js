@@ -36,8 +36,8 @@ else {
   document.cookie = `userName=${user.name}`;
   document.cookie = `lastVisit=${now.getTime()}`;
 }
-document.cookie = `expires=${new Date(`${now.getTime() + 1000 * 60 * 60 * 24 * 31}`).toUTCString()}` // Sets the cookie expiry to 31 days from now
-user.hour = now.getHours();
+document.cookie = `expires=${new Date(now.getTime() + 1000 * 60 * 60 * 24 * 31).toUTCString()}` // Sets the cookie expiry to 31 days from now
+user.hour = now.getHours(); 
 user.generalTime = (function () {
   if (user.hour >= 4 && user.hour < 12) { return("morning"); }
   else if (user.hour >= 12 && user.hour < 16) { return("afternoon"); }

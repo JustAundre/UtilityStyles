@@ -1,7 +1,7 @@
 /* Import Discord's Noto Sans font because that's what I like */
 @font-face {
   font-family: 'noto-sans';
-  src: url('/global-media/noto-sans-semibold.woff2') format('woff2');
+  src: url('/UtilityStyles/global-media/noto-sans-semibold.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
