@@ -86,6 +86,25 @@ section[aria-label="Channel header"] div > :nth-child(2) > *:not([role="button"]
   padding: 0;
 }
 
+/* Removes the header */
+div[data-fullscreen][class] {
+  grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end] !important;
+}
+div[style="overflow: hidden scroll; gap: var(--space-xs); padding-right: 0px;"] > *:first-child {
+  padding-top: var(--space-xs);
+}
+
+/* Shrinks the user bar */
+[aria-label="Servers sidebar"] {
+  margin-bottom: 0 !important;
+}
+[aria-label="User area"] {
+  width: 100% !important;
+  right: 0 !important;
+  left: unset !important;
+  bottom: 0 !important;
+}
+
 :root {
   /* Resizes emojis */ --custom-emoji-size-emoji: 1rem;
   /* Reduce extra spacing between messages */ --custom-message-spacing-vertical-container-cozy: unset;
