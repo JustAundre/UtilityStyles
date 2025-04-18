@@ -13,5 +13,5 @@ foreignObject [role='treeitem'] div[aria-hidden='true'] div div {
   background-repeat: no-repeat;
   background-position: center;
   background-size: calc(var(--guildbar-folder-size) / 2);
-  opacity: .2;
+  opacity: .1;
 }

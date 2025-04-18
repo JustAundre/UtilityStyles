@@ -99,8 +99,9 @@ div[style="overflow: hidden scroll; gap: var(--space-xs); padding-right: 0px;"] 
   margin-bottom: 0 !important;
 }
 [aria-label="User area"] {
-  width: 100% !important;
+  width: calc(100% - var(--custom-guild-list-width)) !important;
   right: 0 !important;
+  border-radius: unset !important;
   left: unset !important;
   bottom: 0 !important;
 }

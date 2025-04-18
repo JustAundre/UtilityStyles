@@ -1,3 +1,4 @@
+
 /* Removes the original status indicators */
 rect[fill="#23a55a"],
 rect[fill="#80848e"],

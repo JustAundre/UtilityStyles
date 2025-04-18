@@ -52,3 +52,29 @@ div:has(> span > [aria-label="Reveal email address"])::before {
   content: "ಠ _ಠ";
   color: white;
 }
+
+/* Keeps the folder size and border-radius consistent with everything else */
+foreignObject > div[aria-owns][aria-label] > * {
+  border-radius: 12px;
+  transform-origin: center;
+}
+foreignObject:has(> div[aria-owns][aria-label]) {
+  mask: none;
+  height: 40px;
+  width: 40px;
+}
+foreignObject > div[aria-owns][aria-label],
+foreignObject > div[aria-owns][aria-label] > *,
+foreignObject > div[aria-owns][aria-label] > * > * {
+  height: 40px;
+  width: 40px;
+}
+div[data-dnd-name][draggable="true"] > div[style] {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* Makes things snappier- no transitions */
+* {
+  transition: none;
+}
