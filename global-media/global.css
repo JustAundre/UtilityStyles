@@ -1,13 +1,20 @@
-/* Import Discord's Noto Sans font because that's what I like */
+/* Imports the Tangent font */
 @font-face {
-  font-family: 'noto-sans';
-  src: url('/UtilityStyles/global-media/noto-sans-semibold.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Tangent";
+  src: url("/UtilityStyles/global-media/tangent.woff2") format("woff2");
   font-display: swap;
+  font-style: normal;
+  font-weight: light;
 }
 
 /* Sets the main font along with a flurry of fallback fonts */
-* {
-  font-family: noto-sans, sans-serif, 'Open Sans', -apple-system, system-ui, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue';
+html {
+  font-family: "Tangent", "sans-serif", -apple-system, system-ui !important;
+}
+
+/* Borders, padding & margins now shave off the element's height and width to insert themselves instead of adding onto the original size */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

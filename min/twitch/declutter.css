@@ -1,1 +1,0 @@
-.side-nav, .chat-room__content > *:not([aria-label='Chat messages']):not(.chat-input):not(:not([class])), .prime-offers, section[aria-label='Main Content']#front-page-main-content > div > div > div:not(:not(.Layout-sc-1xcs6mc-0)), [aria-label='Stream Information'] div:not([class]), div.fAVISI:has(a.tw-tag[href]) {display: none;}

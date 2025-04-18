@@ -2,11 +2,16 @@
 const
 root = document.documentElement; // The root of the document; the HTML element
 now = new Date(); // Sets "now" as a new Date object (Used for time-related operations)
-let options; // A constantly changing variable representative of the options rng() gets to choose from
 // Function to call for a random value between an automatically adjusting range
-function rng(options) {
-  if (options) { return(Math.round(Math.random() * (options.length - 1))); }
-  else return(Math.round(Math.random()));
+function rng(num, noRound) {
+  if (noRound === true) {
+    if (num > 0) { return(Math.random() * (num - 1)); }
+    else { return(Math.random()); }
+  }
+  else {
+    if (num > 0) { return(Math.round(Math.random() * (num - 1))); }
+    else { return(Math.round(Math.random())); }
+  }
 }
 // Function to pull a value from the cookie based on the value's name
 function getCookie(cookieName) {
@@ -27,8 +32,7 @@ if (document.cookie) {
   document.cookie = `lastVisit=${lastVisit}`;
 }
 else {
-  options = ["programmer", "coder", "stranger", "user", "guest", "old friend", "friend", "traveler", "visitor",];
-  user.name = options[rng(options)];
+  user.name = ["programmer", "coder", "stranger", "user", "guest", "old friend", "friend", "traveler", "visitor",][rng(9)];
   document.cookie = `userName=${user.name}`;
   document.cookie = `lastVisit=${now.getTime()}`;
 }
