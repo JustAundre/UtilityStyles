@@ -8,7 +8,13 @@ ul[aria-label="Channels"] div[role="group"] div[data-dnd-name] {
   box-sizing: border-box;
 }
 
-/* Makes DMs list compact */
+/* Makes members list denser */
+[class*="member"][role="listitem"] {
+  padding: 0;
+  max-height: 36px;
+}
+
+/* Makes DMs list denser */
 li:has([href*="/channels/@me"]) {
   max-height: 36px !important;
   box-sizing: border-box;
@@ -36,9 +42,10 @@ div:has([class*="avatar"]) * {
 }
 
 /* Reduces the margin for date separaters */
-div[role="separator"] {
-  margin-top: 1rem !important;
-  margin-bottom: -1rem !important;
+/* Reduces the margin for date separaters */
+[role="separator"][aria-label] {
+  margin-top: 2rem !important;
+  transform: translateY(-16px);
 }
 
 /* Lessens the margin bewteen messages of unique users */
@@ -62,13 +69,6 @@ h2:has(span span),
 h3:has(span span) {
   line-height: 1em !important;
   display: block;
-}
-
-/* Resizes the chat history search bar for DMs, GCs, and servers. */
-section[aria-label="Channel header"] div > :nth-child(2) > *:not([role="button"][tabindex]),
-section[aria-label="Channel header"] div > :nth-child(2) > *:not([role="button"][tabindex]) *:not(svg:has([mask])):not([mask]) {
-  width: 24px;
-  padding: 0;
 }
 
 /* Shrinks the user bar */
