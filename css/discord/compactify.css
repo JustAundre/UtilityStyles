@@ -1,68 +1,53 @@
 /* Makes the channels list in servers more compact*/
-ul[aria-label="Channels"] li div:not([role="group"]):not([style="bottom: 24px;"]),
-ul[aria-label="Channels"] li ul li, ul[aria-label="Channels"] li a[aria-label][data-list-item-id] {
+ul[aria-label="Channels"] li div:not([role="group"]) {
   max-height: 24px !important;
-  min-height: 0px !important;
+  box-sizing: border-box;
 }
-div[class=""]:has(div[aria-label="Voice icon"]) {
-  max-height: unset;
-}
-ul[aria-label="Channels"] li div[role="group"] div[data-dnd-name] {
+ul[aria-label="Channels"] div[role="group"] div[data-dnd-name] {
   max-height: 16px;
-}
-ul[aria-label="Channels"] li ul[role="group"][aria-label] div:empty,
-ul[aria-label="Channels"] li ul[role="group"][aria-label] svg[width="12"][height="11"] {
-  transform: translate(0px, -4px);
-}
-ul[aria-label="Channels"] li ul[role="group"][aria-label] svg[width="12"][height="11"][style="transform: rotateX(180deg) translateY(-9px);"] {
-  transform: rotateX(180deg) translateY(-5px) !important;
+  box-sizing: border-box;
 }
 
 /* Makes DMs list compact */
-ul[aria-label="Direct Messages"] li a[class][aria-label][data-list-item-id][href] {
+li:has([href*="/channels/@me"]) {
   max-height: 36px !important;
-  min-height: 0px !important;
+  box-sizing: border-box;
 }
 
-/* Removes excess left-ward padding for voice channel users */
-li > :nth-child(2):not(svg) {
-  max-height: unset !important;
-}
-
-/* Reudces vertical spacing for text */
-[aria-roledescription="Message"] div div[id] {
-  line-height: 1rem;
+/* Reudces vertical spacing for text in messages and embeds */
+[class*="embed"],
+div:has([class*="avatar"]) * {
+  line-height: 1;
 }
 #---new-messages-bar {
   top: unset;
 }
 
 /* Truncates large reply message previews */
-[aria-roledescription="Message"] div img[alt=""][src] ~ div[tabindex="0"] {
+[class*="repliedTextPreview"] {
   max-width: 128px;
   overflow: hidden;
 }
 
-/* Truncates large channel description previews */
-section[aria-label="Channel header"] > div > div > div:has([aria-label="Open Channel Topic"][role="button"]) {
-  display: block;
+/* Truncates large reply message previews */
+[class*="topic"] {
   max-width: 128px;
+  overflow: hidden;
 }
 
 /* Reduces the margin for date separaters */
 div[role="separator"] {
-  margin-top: .75rem !important;
-  margin-bottom: .35rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: -1rem !important;
 }
 
 /* Lessens the margin bewteen messages of unique users */
-div[aria-roledescription="Message"]:has(div h3) {
+[class|="message"][class*="groupStart"] {
   margin-top: .2rem !important;
 }
 
-
 /* Removes the minimum height between messages */
-div[aria-roledescription="Message"] {
+[aria-roledescription="Message"] {
   min-height: unset !important;
 }
 
