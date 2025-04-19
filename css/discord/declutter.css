@@ -33,7 +33,7 @@ div[aria-label="Servers"] ~ div:has(> div:empty:not([aria-hidden="true"])),
 [aria-label="Members"] > h3:has([class*="toggleExpandIcon"]),
 [aria-label="Members"] > h3:has([class*="toggleExpandIcon"]) ~ div:not([class]):has([class=""]),
 /* Avatar decorations */ [class*=avatarDecoration],
-/* Profile FX */ [id*="popout"] [class*="profileEffects"] {
+/* Profile FX */ [class*="profileEffects"] {
   display: none !important;
 }
 
@@ -41,6 +41,6 @@ div[aria-label="Servers"] ~ div:has(> div:empty:not([aria-hidden="true"])),
 div[data-fullscreen][class] {
   grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end] !important;
 }
-div[style="overflow: hidden scroll; gap: var(--space-xs); padding-right: 0px;"] > *:first-child {
+[style*="overflow: hidden scroll;"] > :first-child {
   padding-top: var(--space-xs);
 }
