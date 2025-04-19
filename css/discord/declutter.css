@@ -1,10 +1,10 @@
 /* Removes the following... */
 /* Nitro button on the homepage */ [href="/shop"],
 /* Store button on the homepage */ [href="/store"],
-/* The "Edit Image with Apps" when hovering over images sent by someone other than you */ div[aria-label="Edit Image with Apps"],
+/* The "Edit Image with Apps" when hovering over images sent by someone other than you */ [aria-label="Edit Image with Apps"],
 /* Start Video Call button */ [aria-label="Start Video Call"],
-/* Loading screen */ div[style="--connecting-container-fade-duration: 200ms; --connecting-content-fade-duration: 150ms;"],
-/* "Notifications Settings" button from top footer */ div[aria-label="Notification Settings"][role="button"],
+/* Loading screen */ [style="--connecting-container-fade-duration: 200ms; --connecting-content-fade-duration: 150ms;"],
+/* "Notifications Settings" button from top footer */ [aria-label="Notification Settings"][role="button"],
 /* "Hang statuses" (the lil" icons in multi-user VCs in Discord Servers) */ a[data-list-item-id] [class*="linkBottom"],
 /* Server boosts */ [aria-label="Channels"] li:has([class*="goalText"]),
 /* Server shops */ li:has([aria-label="Server Shop"]),
@@ -26,8 +26,8 @@ ul li:has(circle[class=""]) + li + li + li + li + li,
 /* "Apps" button aside the chat text input */ [class*="AppLauncher"],
 /* Menu dividers in your user context menu */ [role="list"] button ~ div[class]:empty,
 /* The "Download" button for the Discord App */
-div[aria-label="Servers"] ~ div:has(div[aria-label="Download Apps"]),
-div[aria-label="Servers"] ~ div:has(> div:empty:not([aria-hidden="true"])),
+[aria-label="Servers"] ~ div:has(div[aria-label="Download Apps"]),
+[aria-label="Servers"] ~ div:has(> div:empty:not([aria-hidden="true"])),
 /* User sub-text and statuses under their display name on members lists*/ [class*="subText"],
 /* "Activities" at the top of the Server Members list*/
 [aria-label="Members"] > h3:has([class*="toggleExpandIcon"]),
@@ -35,7 +35,8 @@ div[aria-label="Servers"] ~ div:has(> div:empty:not([aria-hidden="true"])),
 /* Avatar decorations */ [class*=avatarDecoration],
 /* Profile FX */ [class*="profileEffects"],
 /* Hover quick-react buttons */ [class*="hoverBarButton"][aria-label*="Click to react with"],
-/* Quick-react context menu buttons */ [aria-label="Message Actions"] [role="group"]:first-of-type {
+/* Quick-react context menu buttons */ [aria-label="Message Actions"] [role="group"]:first-of-type,
+/* Clan tags */ span:not([class]):has([src*="/clan-badges/"]) {
   display: none !important;
 }
 
