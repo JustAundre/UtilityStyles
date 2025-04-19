@@ -74,6 +74,22 @@ div[data-dnd-name][draggable="true"] > div[style] {
   height: 40px !important;
 }
 
+/* Removes server icons from folder previews */
+foreignObject [class*="guildIcon"] {
+  display: none;
+}
+
+/* Implements a folder icon in place of the server icon previews in closed folders */
+[class*="closedFolderIcon"] {
+  width: var(--guildbar-folder-size);
+  height: var(--guildbar-folder-size);
+  background: url('data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iY29sb3I6IHdoaXRlOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMiA1YTMgMyAwIDAgMSAzLTNoMy45M2EyIDIgMCAwIDEgMS42Ni45TDEyIDVoN2EzIDMgMCAwIDEgMyAzdjExYTMgMyAwIDAgMS0zIDNINWEzIDMgMCAwIDEtMy0zVjVaIiBjbGFzcz0iIj48L3BhdGg+PC9zdmc+Cg==');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: calc(var(--guildbar-folder-size) / 2);
+  opacity: .1;
+}
+
 /* Makes things snappier- no transitions */
 * {
   transition: none;

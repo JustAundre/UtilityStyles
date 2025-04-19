@@ -1,15 +1,6 @@
-/* Imports the Tangent font */
-@font-face {
-  font-family: "Tangent";
-  src: url("/UtilityStyles/global-media/tangent.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: light;
-}
-
 /* Sets the main font along with a flurry of fallback fonts */
 html {
-  font-family: "Tangent", "sans-serif", -apple-system, system-ui !important;
+  font-family: "sans-serif", -apple-system, system-ui !important;
 }
 
 /* Borders, padding & margins now shave off the element's height and width to insert themselves instead of adding onto the original size */

@@ -35,17 +35,13 @@ html::after {
   height: 3px;
   width: 200%;
   background: linear-gradient(90deg, transparent 0%, rgb(65, 20, 100) 33%, transparent 66%, rgb(65, 20, 100) 100%);
-  animation: panRight infinite 3s linear;
+  animation: panRight infinite 10s linear;
   z-index: calc(-1/0);
   opacity: 1;
 }
 
 body {
   padding: 16px;
-}
-
-#greetingText {
-  font-size: 175%;
 }
 
 #greetingText > span:nth-of-type(2) {
