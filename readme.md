@@ -51,6 +51,8 @@ For functions used in an index.js but which are not declared in the index.js fil
 
 ## Attributions
 - JavaScript learning source - [MDN Web Documents - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- Discord Declutter "Remove Reply & Reacts to User Statuses" - https://discord.com/channels/1015060230222131221/1028106818368589824/1363041134179516416
+- Discord Patches "Returns "Today at..." in timestamps" - https://discord.com/channels/1015060230222131221/1028106818368589824/1354458308714696816
 
 ## Copyright
 Copyright © 2024 JustAundre - All rights reserved.

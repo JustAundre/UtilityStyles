@@ -36,7 +36,10 @@ ul li:has(circle[class=""]) + li + li + li + li + li,
 /* Profile FX */ [class*="profileEffects"],
 /* Hover quick-react buttons */ [class*="hoverBarButton"][aria-label*="Click to react with"],
 /* Quick-react context menu buttons */ [aria-label="Message Actions"] [role="group"]:first-of-type,
-/* Clan tags */ span:not([class]):has([src*="/clan-badges/"]) {
+/* Clan tags */ span > span:has([src*="/clan-badges/"]),
+/* Reply & React to user statuses - Credit to https://discord.com/channels/1015060230222131221/1028106818368589824/1363041134179516416 */
+[class*='statusPopover'], 
+[class*='avatarPopover__'] {
   display: none !important;
 }
 

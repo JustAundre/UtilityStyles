@@ -94,3 +94,13 @@ foreignObject [class*="guildIcon"] {
 * {
   transition: none;
 }
+
+/* Returns "Today at..." in timestamps instead of just "9:32 AM" - Credit to https://discord.com/channels/1015060230222131221/1028106818368589824/1354458308714696816 */
+span[class*="timestampInline"] time::before {
+  content: attr(aria-label);
+  font-size: 12px;
+}
+
+span[class*="timestampInline"] {
+  font-size: 0px !important;
+}
