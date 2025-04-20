@@ -20,7 +20,7 @@ li:has([href*="/channels/@me"]) {
   box-sizing: border-box;
 }
 
-/* Reudces vertical spacing for text in messages and embeds */
+/* Reduces vertical spacing for text in messages and embeds */
 [class*="embed"],
 div:has([class*="avatar"]) * {
   line-height: 1;
