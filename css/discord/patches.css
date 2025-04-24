@@ -53,27 +53,6 @@ div:has(> span > [aria-label="Reveal email address"])::before {
   color: white;
 }
 
-/* Keeps the folder size and border-radius consistent with everything else */
-foreignObject > div[aria-owns][aria-label] > * {
-  border-radius: 12px;
-  transform-origin: center;
-}
-foreignObject:has(> div[aria-owns][aria-label]) {
-  mask: none;
-  height: 40px;
-  width: 40px;
-}
-foreignObject > div[aria-owns][aria-label],
-foreignObject > div[aria-owns][aria-label] > *,
-foreignObject > div[aria-owns][aria-label] > * > * {
-  height: 40px;
-  width: 40px;
-}
-div[data-dnd-name][draggable="true"] > div[style] {
-  width: 40px !important;
-  height: 40px !important;
-}
-
 /* Removes server icons from folder previews */
 foreignObject [class*="guildIcon"] {
   display: none;
@@ -89,6 +68,7 @@ foreignObject [class*="guildIcon"] {
   background-size: calc(var(--guildbar-folder-size) / 2);
   opacity: .1;
 }
+
 /* Resize folders to be consistent with the other buttons on the guilds bar */
 foreignObject[mask]:has(> [class*="folder"]) {
   mask: unset;
@@ -98,13 +78,16 @@ foreignObject[mask]:has(> [class*="folder"]) {
   height: var(--guildbar-avatar-size);
   border-radius: 8px;
 }
-
-/* Returns "Today at..." in timestamps instead of just "9:32 AM" - Credit to https://discord.com/channels/1015060230222131221/1028106818368589824/1354458308714696816 */
-span[class*="timestampInline"] time::before {
-  content: attr(aria-label);
-  font-size: 12px;
+div[class*="isExpanded"] div[style*="width"][style*="height"] > svg:has([class*="folder"]) {
+  width: var(--guildbar-folder-size);
+  height: var(--guildbar-folder-size);
+}
+div[data-dnd-name][draggable="true"] > div[style] {
+  width: 40px !important;
+  height: 40px !important;
 }
 
-span[class*="timestampInline"] {
-  font-size: 0px !important;
+/* Makes things snappier- no transitions */
+* {
+  transition: none !important;
 }
