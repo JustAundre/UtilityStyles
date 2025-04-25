@@ -5,41 +5,42 @@
 /* Start Video Call button */ [aria-label="Start Video Call"],
 /* Loading screen */ [style="--connecting-container-fade-duration: 200ms; --connecting-content-fade-duration: 150ms;"],
 /* "Notifications Settings" button from top footer */ [aria-label="Notification Settings"][role="button"],
-/* "Hang statuses" (the lil" icons in multi-user VCs in Discord Servers) */ a[data-list-item-id] [class*="linkBottom"],
-/* Server boosts */ [aria-label="Channels"] li:has([class*="goalText"]),
-/* Server shops */ li:has([aria-label="Server Shop"]),
+/* "Hang statuses" the lil" icons in multi-user VCs in Discord Servers */ a[data-list-item-id] [class*="linkBottom"],
+/* Server boosts */ [aria-label="Channels"] li:has[class*="goalText"],
+/* Server shops */ li:has[aria-label="Server Shop"],
 /* "Suggested" channels */
-ul li:has(circle[class=""]),
-ul li:has(circle[class=""]) + li,
-ul li:has(circle[class=""]) + li + li,
-ul li:has(circle[class=""]) + li + li + li,
-ul li:has(circle[class=""]) + li + li + li + li,
-ul li:has(circle[class=""]) + li + li + li + li + li,
+ul li:hascircle[class=""],
+ul li:hascircle[class=""] + li,
+ul li:hascircle[class=""] + li + li,
+ul li:hascircle[class=""] + li + li + li,
+ul li:hascircle[class=""] + li + li + li + li,
+ul li:hascircle[class=""] + li + li + li + li + li,
 /* Nitro settings */ [aria-label="Nitro"],
 /* Server Boost settings */ [aria-label="Nitro"] + div,
-/* The "Add to your channels list" banner if a channel you're viewing isn't on your channel list */ div[class*="chatHeader"]:has(path[class]),
-/* "Show User Profile" button in DMs when your screen is not wide enough to support it */ [aria-label="Show User Profile (Unavailable)"],
-/* "Apps" & "Add to Server" context menu buttons when right clicking on a person in your DMs */ [role="group"]:has([id="user-context-block"]) > div:not([id="user-context-remove-friend"]):not([id="user-context-block"]),
+/* The "Add to your channels list" banner if a channel youre viewing isnt on your channel list */ div[class*="chatHeader"]:haspath[class],
+/* "Show User Profile" button in DMs when your screen is not wide enough to support it */ [aria-label="Show User Profile Unavailable"],
+/* "Apps" & "Add to Server" context menu buttons when right clicking on a person in your DMs */ [role="group"]:has[id="user-context-block"] > div:not[id="user-context-remove-friend"]:not[id="user-context-block"],
 /* "Gift" button in the message bar */ [aria-label="Send a gift"],
 /* "GIF" button in the message bar */ [aria-label="Open GIF picker"],
 /* "Sticker" button in the message bar */ [aria-label="Open sticker picker"],
 /* "Apps" button aside the chat text input */ [class*="AppLauncher"],
 /* Menu dividers in your user context menu */ [role="list"] button ~ div[class]:empty,
 /* The "Download" button for the Discord App */
-[aria-label="Servers"] ~ div:has(div[aria-label="Download Apps"]),
-[aria-label="Servers"] ~ div:has(> div:empty:not([aria-hidden="true"])),
+[aria-label="Servers"] ~ div:hasdiv[aria-label="Download Apps"],
+[aria-label="Servers"] ~ div:has> div:empty:not[aria-hidden="true"],
 /* User sub-text and statuses under their display name on members lists*/ [class*="subText"],
 /* "Activities" at the top of the Server Members list*/
-[aria-label="Members"] > h3:has([class*="toggleExpandIcon"]),
-[aria-label="Members"] > h3:has([class*="toggleExpandIcon"]) ~ div:not([class]):has([class=""]),
+[aria-label="Members"] > h3:has[class*="toggleExpandIcon"],
+[aria-label="Members"] > h3:has[class*="toggleExpandIcon"] ~ div:not[class]:has[class=""],
 /* Avatar decorations */ [class*=avatarDecoration],
 /* Profile FX */ [class*="profileEffects"],
 /* Hover quick-react buttons */ [class*="hoverBarButton"][aria-label*="Click to react with"],
 /* Quick-react context menu buttons */ [aria-label="Message Actions"] [role="group"]:first-of-type,
-/* Clan tags */ span > span:has([src*="/clan-badges/"]),
+/* Clan tags */ span > span:has[src*="/clan-badges/"],
 /* Reply & React to user statuses - Credit to https://discord.com/channels/1015060230222131221/1028106818368589824/1363041134179516416 */
-[class*='statusPopover'], 
-[class*='avatarPopover__'] {
+[class*="statusPopover"], 
+[class*="avatarPopover__"],
+/* Nameplates */ [style="background: linear-gradient90deg, transparent 0%, rgba"] {
   display: none !important;
 }
 
@@ -48,5 +49,5 @@ div[data-fullscreen][class] {
   grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end] !important;
 }
 [style*="overflow: hidden scroll;"] > :first-child {
-  padding-top: var(--space-xs);
+  padding-top: var--space-xs;
 }
