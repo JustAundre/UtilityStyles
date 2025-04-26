@@ -49,5 +49,5 @@ div[data-fullscreen][class] {
   grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end] !important;
 }
 [style*="overflow: hidden scroll;"] > :first-child {
-  padding-top: var--space-xs;
+  padding-top: var(--space-xs);
 }
