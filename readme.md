@@ -55,6 +55,6 @@ For functions used in an index.js but which are not declared in the index.js fil
 - Discord Patches "Returns "Today at..." in timestamps" - https://discord.com/channels/1015060230222131221/1028106818368589824/1354458308714696816
 
 ## Copyright
-Copyright © 2024 JustAundre - All rights reserved.
-Licensed under the Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You may obtain a copy of the License at: <https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en>
-You are hereby granted a license under the Creatives Commons Attribution-NonCommercial-ShareAlike 4.0 International License to use this code.
+Copyright © 2025 JustAundre - No rights reserved.
+Licensed under the Creatives Commons No Rights Reserved License. You may obtain a copy of the License at: <https://creativecommons.org/share-your-work/public-domain/cc0/>
+You are hereby granted a License under the Creatives Commons No Rights Reserved License to use this code.
