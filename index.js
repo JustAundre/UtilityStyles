@@ -51,7 +51,9 @@ async function fetchFileTree(path = '') {
       if (item.type === 'dir') {
         // debugging - console.log(`Found directory: ${item.path.replace("css/", "")}`)
         var element = document.createElement("div")
-        element.setAttribute("path", item.path.replace("css/", ""))
+        element.setAttribute("path", item.path.replace("css/", ""))ch
+twitter
+youtube
         element.setAttribute("isItem", undefined)
         element.innerText = item.path.replace("css/", "")
         document.querySelector("#tree").appendChild(element)
@@ -59,6 +61,11 @@ async function fetchFileTree(path = '') {
       else if (item.type === 'file') { console.log(`Found file: ${item.path}`) }
     }
   } catch (error) { console.error('Error fetching file tree:', error) }
+}
+
+if (document.querySelector("#tip").clientWidth < document.querySelector("#tip > span").clientWidth) {
+  var scaleDown = document.querySelector("#tip").clientWidth / document.querySelector("#tip > span").clientWidth - .1
+  document.querySelector("#tip").setAttribute("style", `scale: ${scaleDown};`)
 }
 
 fetchFileTree()
