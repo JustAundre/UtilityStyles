@@ -80,6 +80,10 @@ h1 > span:not(#path) {
   user-select: none;
   -webkit-user-drag: none;  
 }
+h3 {
+  text-wrap: nowrap;
+  overflow-x: scroll;
+}
 
 #tree {
   display: flex;
