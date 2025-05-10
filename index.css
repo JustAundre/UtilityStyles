@@ -70,7 +70,7 @@ body {
   justify-content: center;
   align-items: center;
   pointer-events: none;
-  transition: font-size ease-out 1s;
+  transition: font-size ease-out 1s, opacity ease-out 1s;
 }
 
 h1 {

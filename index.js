@@ -60,12 +60,14 @@ async function fetchFileTree(path = '') {
     }
   } catch (error) { console.error('Error fetching file tree:', error) }
 }
-
-setTimeout(() => {
-  if (document.querySelector("#tip").clientWidth < document.querySelector("#tip > span").clientWidth) {
-  var scaleDown = document.querySelector("#tip").clientWidth / document.querySelector("#tip > span").clientWidth - .1
-  document.querySelector("#tip").setAttribute("style", `scale: ${scaleDown};`)
-}
-}, 1000)
-
 fetchFileTree()
+
+function rescaleTip() {
+  if (document.querySelector("#tip").clientWidth < document.querySelector("#tip > span").clientWidth) {
+    var scaleDown = document.querySelector("#tip").clientWidth / document.querySelector("#tip > span").clientWidth - .1
+    document.querySelector("#tip").setAttribute("style", `scale: ${scaleDown};`)
+  }
+}
+
+window.addEventListener("resize", () => { rescaleTip() })
+window.addEventListener("DOMContentLoaded", () => { rescaleTip() })
