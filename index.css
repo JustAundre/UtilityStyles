@@ -94,12 +94,12 @@ h3 {
 }
 #tree * {
   &:hover {
-    margin-left: 6px;
+    padding-left: 6px;
     cursor: pointer;
     background: rgba(0,255,0,.5);
   }
   &:active {
-    margin-left: 10px;
+    padding-left: 10px;
     background: rgba(0,255,0,1);
   }
   &::before {
