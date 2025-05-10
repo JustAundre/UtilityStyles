@@ -22,10 +22,10 @@ function flipColorTheme() {
 let switchCount = 0
 let interval = setInterval(function() {
   if (switchCount >= 10) {
-    document.body.querySelector("h3").innerHTML = ".. What are you doing?"
+    document.body.querySelector("h2").innerHTML = ".. What are you doing?"
   } else {
-    if (document.body.querySelector("h3").innerHTML === ".. What are you doing?") {
-      document.body.querySelector("h3").innerHTML = ".. Okay."
+    if (document.body.querySelector("h2").innerHTML === ".. What are you doing?") {
+      document.body.querySelector("h2").innerHTML = ".. Okay."
       document.removeEventListener("click")
       clearInterval(interval)
     }
