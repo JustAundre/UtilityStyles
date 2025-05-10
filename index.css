@@ -1,62 +1,103 @@
-body,
+/* Sets a flurry of default fonts */
 html {
+  font-family: "sans-serif", -apple-system, system-ui;
+}
+
+/* Borders, padding & margins now shave off the element's height and width to insert themselves instead of adding onto the original size */
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+*::selection {
+  background-color: lime;
+}
+
+:root[color-theme="dark"] {
+  --bodyColor: black;
+  --textColor: white;
+}
+
+:root[color-theme="light"] {
+  --bodyColor: white;
+  --textColor: black;
+}
+
+html {
+  &:hover {
+    cursor: pointer;
+  }
+  font-family: "Space Mono", "Inconsolata", monospace;
+  padding: 24px;
+  background: white;
+  color: var(--textColor);
+  transition: 500ms linear;
+  transition-property: color;
   height: 100%;
   width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  background: radial-gradient(rgb(20,20,50), rgb(5,5,20));
-  color: white;
-  transition: 1.5s background;
-}
-
-html::before {
-  content: "";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 200%;
-  background: linear-gradient(90deg, transparent 0%, rgb(65, 20, 100) 33%, transparent 66%, rgb(65, 20, 100) 100%);
-  animation: panLeft infinite 10s ease;
-  z-index: calc(-1/0);
-  opacity: 1;
-}
-
-html::after {
-  content: "";
-  display: block;
-  position: fixed;
-  bottom: 1px;
-  right: 0;
-  height: 3px;
-  width: 200%;
-  background: linear-gradient(90deg, transparent 0%, rgb(65, 20, 100) 33%, transparent 66%, rgb(65, 20, 100) 100%);
-  animation: panRight infinite 10s linear;
-  z-index: calc(-1/0);
-  opacity: 1;
+  overflow: hidden;
 }
 
 body {
+  &:hover {
+    cursor: auto;
+  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius : 8px;
+  background: var(--bodyColor);
+  transition: 500ms linear;
+  transition-property: background;
+  margin: 0;
   padding: 16px;
+  box-shadow: 0px 0px 32px rgb(0, 0, 0);
 }
 
-#greetingText > span:nth-of-type(2) {
-  font-size: 85%;
-  opacity: .5;
+#tip {
+  color: black;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: ease-out 1s;
 }
 
-@keyframes panLeft {
-  100% {
-    transform: translateX(-100vw);
+h1 {
+  overflow-x: scroll;
+  text-wrap: nowrap;
+}
+h1 > span:not(#path) {
+  user-select: none;
+  -webkit-user-drag: none;  
+}
+
+#tree {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+#tree * {
+  &:hover {
+    translate: 6px;
+    cursor: pointer;
   }
-}
-
-@keyframes panRight {
-  100% {
-    transform: translateX(100vw);
+  &:active {
+    translate: 10px;
   }
+  &::before {
+    content: "> ";
+  }
+  width: min-content;
+  min-width: 15%;
 }

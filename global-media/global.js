@@ -21,33 +21,6 @@ function getCookie(cookieName) {
   }
 }
 
-// Basic user data
-const user = {};
-if (document.cookie) {
-  user.name = getCookie("userName");
-  let lastVisit = Number(getCookie("lastVisit"));
-  let currentTime = now.getTime();
-  if (lastVisit >= currentTime) { user.name = "time traveler"; }
-  lastVisit = now.getTime();
-  document.cookie = `lastVisit=${lastVisit}`;
-}
-else {
-  user.name = ["programmer", "coder", "stranger", "user", "guest", "old friend", "friend", "traveler", "visitor",][rng(9)];
-  document.cookie = `userName=${user.name}`;
-  document.cookie = `lastVisit=${now.getTime()}`;
-}
-document.cookie = `expires=${new Date(now.getTime() + 1000 * 60 * 60 * 24 * 31).toUTCString()}` // Sets the cookie expiry to 31 days from now
-user.hour = now.getHours(); 
-user.generalTime = (function () {
-  if (user.hour >= 4 && user.hour < 12) { return("morning"); }
-  else if (user.hour >= 12 && user.hour < 16) { return("afternoon"); }
-  else return("evening");
-})();
-//
-// Subtracts the user's date string (year, month, day) from the UTC date string and then converts it to an absolute number (force to positive number if negative) to find their absolute difference from the UTC date. If this value is past 1 (day) then it forces the user nickname to "time traveler"
-user.utcOffset = Math.abs(Number(`${now.getUTCFullYear()}${now.getUTCMonth() + 1}${now.getUTCDate()}`) - Number(`${now.getFullYear()}${(now.getMonth() + 1)}${now.getDate()}`));
-if (user.utcOffset > 1) { user.name = "time traveler"; }
-
 // Imports globally and locally used resources (resources used on all pages in this repository and ones specific to one page)
 {
   const

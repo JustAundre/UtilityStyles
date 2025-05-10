@@ -1,11 +1,3 @@
-/* Sets the main font along with a flurry of fallback fonts */
-html {
-  font-family: "sans-serif", -apple-system, system-ui !important;
-}
-
-/* Borders, padding & margins now shave off the element's height and width to insert themselves instead of adding onto the original size */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
+  flex-shrink: 0;
 }
