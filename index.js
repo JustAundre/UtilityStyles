@@ -69,5 +69,7 @@ function rescaleTip() {
   }
 }
 
+setTimeout(() => {
+  rescaleTip()
+}, 300);
 window.addEventListener("resize", () => { rescaleTip() })
-window.addEventListener("DOMContentLoaded", () => { setTimeout(rescaleTip(), 300) })
