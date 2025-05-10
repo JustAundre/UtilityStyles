@@ -7,7 +7,7 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: border-box !important;
+  box-sizing: border-box;
 }
 
 *::selection {
@@ -89,15 +89,17 @@ h1 > span:not(#path) {
 }
 #tree * {
   &:hover {
-    translate: 6px;
+    margin-left: 6px;
     cursor: pointer;
   }
   &:active {
-    translate: 10px;
+    margin-left: 10px;
   }
   &::before {
     content: "> ";
   }
-  width: min-content;
+  width: max-content;
+  text-wrap: nowrap;
+  box-sizing: content-box;
   min-width: 15%;
 }

@@ -1,21 +1,21 @@
 let colorTheme;
 if (window.matchMedia("(prefers-color-scheme: dark)")) {
   colorTheme = "dark"
-  document.documentElement.setAttribute("color-theme", colorTheme);
-  document.documentElement.setAttribute("detected-color-theme", "dark");
+  document.documentElement.setAttribute("color-theme", colorTheme)
+  document.documentElement.setAttribute("detected-color-theme", "dark")
 } else {
   colorTheme = "light"
-  document.documentElement.setAttribute("color-theme", colorTheme);
-  document.documentElement.setAttribute("detected-color-theme", "light");
+  document.documentElement.setAttribute("color-theme", colorTheme)
+  document.documentElement.setAttribute("detected-color-theme", "light")
 }
 
 function flipColorTheme() {
   if (colorTheme === "dark") {
     colorTheme = "light"
-    document.documentElement.setAttribute("color-theme", colorTheme);
+    document.documentElement.setAttribute("color-theme", colorTheme)
   } else {
     colorTheme = "dark"
-    document.documentElement.setAttribute("color-theme", colorTheme);
+    document.documentElement.setAttribute("color-theme", colorTheme)
   }
 }
 
@@ -26,6 +26,7 @@ let interval = setInterval(function() {
   } else {
     if (document.body.querySelector("h3").innerHTML === ".. What are you doing?") {
       document.body.querySelector("h3").innerHTML = ".. Okay."
+      document.removeEventListener("click")
       clearInterval(interval)
     }
   }
@@ -33,24 +34,25 @@ let interval = setInterval(function() {
 }, 5000)
 document.addEventListener("click", function(event) {
   if (!document.body.contains(event.target)) { 
-    flipColorTheme();
-    document.querySelector("#tip").setAttribute("style", "opacity: 0; font-size: 20px;");
+    flipColorTheme()
+    document.querySelector("#tip").setAttribute("style", "opacity: 0; font-size: 20px;")
     switchCount += 1
   }
-});
+})
 
 async function fetchFileTree(path = '') {
   try {
-    const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, {headers: {'X-GitHub-Api-Version': '2022-11-28'}});
+    const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
     if (!response.ok) { console.error(`HTTP error to Github API with code ${response.status}`)}
     if (response.ok) { console.log(`HTTP success to Github API with code ${response.status}`) }
     data = await response.json()
 
     for (const item of data) {
       if (item.type === 'dir') {
-        //console.log(`Found directory: ${item.path.replace("css/", "")}`)
+        // debugging - console.log(`Found directory: ${item.path.replace("css/", "")}`)
         var element = document.createElement("div")
         element.setAttribute("path", item.path.replace("css/", ""))
+        element.setAttribute("isItem", "")
         element.innerText = item.path.replace("css/", "")
         document.querySelector("#tree").appendChild(element)
       }
@@ -59,6 +61,4 @@ async function fetchFileTree(path = '') {
   } catch (error) { console.error('Error fetching file tree:', error) }
 }
 
-fetchFileTree().then(treeData => {
-  if (treeData) { console.log("Successfully fetched root tree data.") }
-});
+fetchFileTree()
