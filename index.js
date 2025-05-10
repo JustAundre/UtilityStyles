@@ -69,7 +69,5 @@ function rescaleTip() {
   }
 }
 
-setTimeout(() => {
-  rescaleTip()
-}, 300);
+setTimeout(() => { rescaleTip() }, 300);
 window.addEventListener("resize", () => { rescaleTip() })
