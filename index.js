@@ -50,21 +50,19 @@ document.addEventListener("click", function(event) {
 async function fetchFileTree(path = '') {
   try {
     const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
-    if (!response.ok) { console.error(`HTTP error to Github API with code ${response.status}`)}
     if (response.ok) { console.log(`HTTP success to Github API with code ${response.status}`) }
-    data = await response.json()
+    else { console.error(`HTTP error to Github API with code ${response.status}`) }
 
+    data = await response.json()
+    var orderInc = 1
     for (const item of data) {
-      if (item.type === 'dir') {
-        // debugging - console.log(`Found directory: ${item.path.replace("css/", "")}`)
-        var element = document.createElement("div")
-        element.setAttribute("path", item.path.replace("css/", ""))
-        element.innerText = item.path.replace("css/", "")
-        element.setAttribute("item-type", item.type)
-        element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1};`)
-        document.querySelector("#tree").appendChild(element)
-      }
-      else if (item.type === 'file') { console.log(`Found file: ${item.path}`) }
+      var element = document.createElement("div")
+      element.setAttribute("path", item.path.replace("css/", ""))
+      element.innerText = item.path.replace("css/", "")
+      element.setAttribute("item-type", item.type)
+      element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1}; order: ;`)
+      orderInc =+ 2
+      document.querySelector("#tree").appendChild(element)
     }
   } catch (error) { console.error('Error fetching file tree:', error) }
 }
