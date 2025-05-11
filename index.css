@@ -113,7 +113,7 @@ h1 {
   box-sizing: content-box;
   min-width: 15%;
   user-select: none;
-  margin-left: calc(24px * attr(layer));
+  margin-left: calc(24px * var(--layer));
 }
 
 @keyframes intro {
