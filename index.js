@@ -60,7 +60,7 @@ async function fetchFileTree(path = '') {
         var element = document.createElement("div")
         element.setAttribute("path", item.path.replace("css/", ""))
         element.innerText = item.path.replace("css/", "")
-        element.setAttribute("itemType", item.type)
+        element.setAttribute("item-type", item.type)
         element.setAttribute("layer", item.path.replace("css/", "").split("/").length)
         document.querySelector("#tree").appendChild(element)
       }
