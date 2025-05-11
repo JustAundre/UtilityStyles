@@ -75,6 +75,10 @@ function rescaleTip() {
     var scaleDown = document.querySelector("#tip").clientWidth / document.querySelector("#tip > span").clientWidth - .1
     document.querySelector("#tip").setAttribute("style", `scale: ${scaleDown};`)
   }
+  if (document.querySelector("#tip").clientHeight < document.querySelector("#tip > span").clientHeight) {
+    var scaleDown = document.querySelector("#tip").clientHeight / document.querySelector("#tip > span").clientHeight - .01
+    document.querySelector("#tip").setAttribute("style", `scale: ${scaleDown};`)
+  }
 }
 
 setTimeout(() => { rescaleTip() }, 300);
