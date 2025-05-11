@@ -8,6 +8,7 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
+  transition: scrollbar-color linear 500ms;
 }
 
 *::selection {
@@ -55,7 +56,7 @@ body {
   transition-property: background;
   margin: 0;
   padding: 16px;
-  animation: intro forwards 1s;
+  animation: intro forwards 1s ease-out;
   transform: translateY(100%) rotateZ(15deg);
   opacity: 0;
   box-shadow: 0px 0px 32px rgb(0, 0, 0);
@@ -77,11 +78,11 @@ body {
 }
 
 h1 {
+  & > span:not(#path) {
+    user-select: none;
+  }
   overflow-x: scroll;
   text-wrap: nowrap;
-}
-h1 > span:not(#path) {
-  user-select: none;
 }
 
 #tree {
@@ -97,11 +98,11 @@ h1 > span:not(#path) {
   &:hover {
     padding-left: 6px;
     cursor: pointer;
-    background: rgba(0,255,0,.5);
+    background: rgba(0, 255, 0, .5);
   }
   &:active {
     padding-left: 10px;
-    background: rgba(0,255,0,1);
+    background: rgba(0, 255, 0, 1);
   }
   &::before {
     content: "> ";
