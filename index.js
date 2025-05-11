@@ -1,3 +1,10 @@
+{
+  var tip = document.createElement("span")
+  tip.innerText = "< Click on the edges to switch color themes >"
+  tip.id = "tip"
+  document.documentElement.appendChild(tip)
+}
+
 let colorTheme;
 if (window.matchMedia("(prefers-color-scheme: dark)")) {
   colorTheme = "dark"

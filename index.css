@@ -78,7 +78,8 @@ body {
 }
 
 h1 {
-  & > span:not(#path) {
+  &::before {
+    content: "> ";
     user-select: none;
   }
   overflow-x: scroll;
