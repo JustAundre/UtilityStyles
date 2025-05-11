@@ -60,7 +60,7 @@ async function fetchFileTree(path = '') {
       element.setAttribute("path", item.path.replace("css/", ""))
       element.innerText = item.path.replace("css/", "")
       element.setAttribute("item-type", item.type)
-      element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1}; order: ;`)
+      element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1}; order: ${orderInc};`)
       orderInc =+ 2
       document.querySelector("#tree").appendChild(element)
     }
