@@ -55,6 +55,9 @@ body {
   transition-property: background;
   margin: 0;
   padding: 16px;
+  animation: intro forwards 1s;
+  transform: translateY(100%) rotateZ(15deg);
+  opacity: 0;
   box-shadow: 0px 0px 32px rgb(0, 0, 0);
 }
 
@@ -108,4 +111,11 @@ h1 > span:not(#path) {
   box-sizing: content-box;
   min-width: 15%;
   user-select: none;
+}
+
+@keyframes intro {
+  100% {
+    transform: unset;
+    opacity: 1;
+  }
 }
