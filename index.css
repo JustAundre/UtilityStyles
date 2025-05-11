@@ -1,4 +1,4 @@
-/* Sets a flurry of default fonts */
+/* Sets a flurry of fallback fonts */
 html {
   font-family: "sans-serif", -apple-system, system-ui;
 }
@@ -37,6 +37,7 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  scrollbar-color: var(--textColor) var(--bodyColor);
 }
 
 body {
@@ -55,7 +56,6 @@ body {
   margin: 0;
   padding: 16px;
   box-shadow: 0px 0px 32px rgb(0, 0, 0);
-  translateY: -10px;
 }
 
 #tip {
