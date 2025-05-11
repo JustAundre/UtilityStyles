@@ -59,9 +59,8 @@ async function fetchFileTree(path = '') {
         // debugging - console.log(`Found directory: ${item.path.replace("css/", "")}`)
         var element = document.createElement("div")
         element.setAttribute("path", item.path.replace("css/", ""))
-        element.setAttribute("isItem", undefined)
         element.innerText = item.path.replace("css/", "")
-        element.setAttribute("path", item.path.replace("css/", "").split("/").length - 1)
+        element.setAttribute("layer", item.path.replace("css/", "").split("/").length)
         document.querySelector("#tree").appendChild(element)
       }
       else if (item.type === 'file') { console.log(`Found file: ${item.path}`) }
