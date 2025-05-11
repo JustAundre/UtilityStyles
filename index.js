@@ -1,6 +1,6 @@
 {
   var tip = document.createElement("span")
-  tip.innerText = "< Click on the edges to switch color themes >"
+  tip.innerHTML = "<span>< Click on the edges to switch color themes ></span>"
   tip.id = "tip"
   document.documentElement.appendChild(tip)
 }
