@@ -95,12 +95,12 @@ h1 {
   overflow: scroll;
 }
 #tree {
-  &:hover {
+  & *:hover {
     padding-left: 6px;
     cursor: pointer;
     background: rgba(0, 255, 0, .5);
   }
-  &:active {
+  & *:active {
     padding-left: 10px;
     background: rgba(0, 255, 0, 1);
   }
