@@ -94,19 +94,19 @@ h1 {
   min-height: 100%;
   overflow: scroll;
 
-  & *:hover {
+  & div:hover {
     padding-left: 6px;
     cursor: pointer;
     background: rgba(0, 255, 0, .5);
   }
-  & *:active {
+  & div:active {
     padding-left: 10px;
     background: rgba(0, 255, 0, 1);
   }
   &[item-type="dir"] > span::before {
     content: "> ";
   }
-  & * {
+  & div {
     width: max-content;
     text-wrap: nowrap;
     box-sizing: content-box;
