@@ -94,7 +94,7 @@ h1 {
   min-height: 100%;
   overflow: scroll;
 }
-#tree * {
+#tree {
   &:hover {
     padding-left: 6px;
     cursor: pointer;
@@ -104,7 +104,7 @@ h1 {
     padding-left: 10px;
     background: rgba(0, 255, 0, 1);
   }
-  &::before {
+  &[item-type="dir"] > span::before {
     content: "> ";
   }
   width: max-content;
