@@ -42,7 +42,7 @@ let interval = setInterval(function() {
 document.addEventListener("click", function(event) {
   if (!document.body.contains(event.target)) { 
     flipColorTheme()
-    document.querySelector("#tip").setAttribute("style", "opacity: 0; font-size: 20px;")
+    tip.setAttribute("style", "opacity: 0; font-size: 20px;")
     switchCount += 1
   }
 })
@@ -69,13 +69,16 @@ async function fetchFileTree(path = '') {
 fetchFileTree()
 
 function rescaleTip() {
-  if (document.querySelector("#tip").clientWidth < document.querySelector("#tip > span").clientWidth) {
-    var scaleDown = document.querySelector("#tip").clientWidth / document.querySelector("#tip > span").clientWidth - .1
-    document.querySelector("#tip").setAttribute("style", `scale: ${scaleDown};`)
+  var tip = document.querySelector("#tip")
+  var tipInside = document.querySelector("#tip > span")
+  if (!tip.clientWidth < tipInside.clientWidth && !tip.clientHeight < tipInside.clientHeight) { tip.setAttribute("style", "scale: 1;") }
+  if (tip.clientWidth < tipInside.clientWidth) {
+    var scaleDown = tip.clientWidth / tipInside.clientWidth - .1
+    tip.setAttribute("style", `scale: ${scaleDown};`)
   }
-  if (document.querySelector("#tip").clientHeight < document.querySelector("#tip > span").clientHeight) {
-    var scaleDown = document.querySelector("#tip").clientHeight / document.querySelector("#tip > span").clientHeight - .01
-    document.querySelector("#tip").setAttribute("style", `scale: ${scaleDown};`)
+  if (tip.clientHeight < tipInside.clientHeight) {
+    var scaleDown = tip.clientHeight / tipInside.clientHeight - .01
+    tip.setAttribute("style", `scale: ${scaleDown};`)
   }
 }
 
