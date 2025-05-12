@@ -52,8 +52,7 @@ body {
   overflow-y: scroll;
   border-radius : 8px;
   background: var(--bodyColor);
-  transition: 500ms linear;
-  transition-property: background;
+  transition: background 500ms linear, scrollbar-color 500ms linear;
   margin: 0;
   padding: 16px;
   animation: intro forwards 1s ease-out;
