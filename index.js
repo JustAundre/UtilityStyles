@@ -58,7 +58,7 @@ async function fetchFileTree(path = '') {
     for (const item of data) {
       var element = document.createElement("div")
       element.setAttribute("path", item.path.replace("css/", ""))
-      element.innerText = item.path.replace("css/", "")
+      element.innerHTML = `<span>${item.path.replace("css/", "")}</span>`
       element.setAttribute("item-type", item.type)
       element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1}; order: ${orderInc};`)
       orderInc += 2
