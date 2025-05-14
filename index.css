@@ -104,6 +104,7 @@ h1 {
     background: rgba(0, 255, 0, 1);
   }
   & [item-type="dir"] > span::before {
+    width: 24px;
     content: "> ";
   }
   & div {
