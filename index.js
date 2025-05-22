@@ -53,7 +53,7 @@ async function fetchFileTree(path = "", parent = "#tree") {
     data = await response.json()
     for (const item of data) {
       var element = document.createElement("div")
-      if (parent !== "#tree" && document.querySelector(parent).secondChild) {
+      if (parent !== "#tree" && document.querySelector(parent).children > 1) {
         parent.innerHTML = ``
         parent.innerText = `> ${item.path.replace("css/", "")}`
         return;
