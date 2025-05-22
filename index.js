@@ -63,6 +63,8 @@ async function fetchFileTree(path, parent) {
       element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1};`);
       element.setAttribute("layer", item.path.replace("css/", "").split("/").length - 1)
       element.setAttribute("item-type", item.type)
+      console.log(path)
+      console.log(parent)
       document.querySelector(parent).appendChild(element)
     }
   } catch (error) { console.error('Error fetching file tree:', error) }
