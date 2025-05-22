@@ -67,7 +67,8 @@ async function fetchFileTree(path = "", parent = "#tree") {
 }
 fetchFileTree()
 document.querySelector('#tree').addEventListener("click", function(event) {
-  fetchFileTree(event.target, event.target.dataset.path)
+  console.log(event.target)
+  fetchFileTree(event.target.dataset.path, event.target)
 })
 
 function rescaleTip() {
