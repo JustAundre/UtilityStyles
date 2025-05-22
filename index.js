@@ -59,7 +59,7 @@ async function fetchFileTree(path, parent) {
     data = await response.json()
     for (const item of data) {
       var element = document.createElement("div")
-      if (parent.querySelector("*")) {
+      if (document.parent.querySelector("*")) {
         parent.innerHTML = ``
         return;
       }
