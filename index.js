@@ -59,7 +59,7 @@ async function fetchFileTree(path, parent) {
     for (const item of data) {
       var element = document.createElement("div")
       element.setAttribute("data-path", item.path.replace("css/", ""))
-      element.innerHTML = `<span>${item.path.replace("css/", "")}</span>`
+      element.innerText = `> ${item.path.replace("css/", "")}`
       element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1};`);
       element.setAttribute("layer", item.path.replace("css/", "").split("/").length - 1)
       element.setAttribute("item-type", item.type)

@@ -103,10 +103,6 @@ h1 {
     padding-left: 10px;
     background: rgba(0, 255, 0, 1);
   }
-  & [item-type="dir"] > span::before {
-    width: 24px;
-    content: "> ";
-  }
   & div {
     width: max-content;
     text-wrap: nowrap;
