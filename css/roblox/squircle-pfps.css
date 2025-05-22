@@ -2,8 +2,9 @@
 .avatar-card-fullbody .avatar-card-image,
 .avatar-card-fullbody .avatar-card-link,
 .avatar .avatar-card-image,
-.avatar .avatar-card-link
-{ border-radius: 15% !important; }
+.avatar .avatar-card-link {
+  border-radius: 15% !important;
+}
 
 /* Makes online presence indicator more "apt" */
 .game-home-page-container [data-testid="presence-icon"] { transform: translate(2.5px, 2.5px); }

@@ -17,12 +17,11 @@
 /* The loading spinner when loading more comments and recommendations */ #spinner,
 /* Video hastags */ #info > a.bold,
 /* Voice search button */ *:has(> button[aria-label="Search with your voice"]),
-/* Cinimatics - The glow around the video player */ #cinematics-container {
+/* Cinimatics - The glow around the video player */ #cinematics-container
+/* YouTube Shorts from places like Trending */ ytd-video-renderer:has(badge-shape[aria-label="Shorts"]),
+/* Removes the YouTube Shorts shelf */ div#dismissible.ytd-rich-shelf-renderer:has(svg[style="pointer-events: none; display: inherit; width: 100%; height: 100%;"][width="24"][height="24"]),
+/* Shorts from video descriptions */ ytd-reel-shelf-renderer,
+/* Shorts tab from channel views */ [tab-title="Shorts"],
+/* Shorts tab on the sidebar */ [aria-label="Shorts"] {
   display: none !important;
-}
-
-/* Disables video previews */
-#video-preview {
-  display: none;
-  pointer-events: none;
 }

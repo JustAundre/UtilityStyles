@@ -1,0 +1,20 @@
+/* Configs */
+:root {
+  --sensitivity: 1%; /* How close you need to hover to the left side of the screen to expand the sidebar */
+}
+
+/* Always keep friends, favorites, and continues at the top */
+.game-home-page-container > div {
+	display: flex;
+	flex-direction: column-reverse;
+  & > * { order: 1; }
+  & > .friend-carousel-container { order: 3; }
+  & > .game-sort-carousel-wrapper { order: 2; }
+}
+
+/* View very long game names by hovering */
+[class*="game-name"]:hover {
+  white-space: normal !important;
+  max-height: unset !important;
+  text-wrap: wrap;
+}

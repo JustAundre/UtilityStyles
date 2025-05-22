@@ -1,0 +1,24 @@
+/* Re-add the ability to collapse the sidebar again */
+.rbx-nav-collapse { display: none; }
+.rbx-left-col {
+  display: block;
+  visibility: unset;
+  width: 0px !important;
+  & .rbx-scrollbar {
+    width: 100%;
+  }
+}
+#left-navigation-container {
+  z-index: calc(1/0);
+  position: fixed;
+  width: var(--sensitivity);
+  height: calc(100% - 40px);
+}
+#left-navigation-container:is(:hover) > .rbx-left-col { width: 175px !important; }
+#navigation-container:has(#left-navigation-container) ~ main:first-of-type {
+  & > #content:has(.sort-header), & > #content:has(a[target="_self"][href="https://www.roblox.com/catalog"]) {
+    margin-left: 0;
+  }
+}
+#navigation-container:has(#left-navigation-container:hover) ~ main:first-of-type > #content:has(.sort-header) { margin-left: 175px !important; }
+.game-carousel { display: flex !important; }

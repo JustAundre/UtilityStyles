@@ -1,0 +1,8 @@
+/* Automatic windowed fullscreen mode upon starting an episode (you can scroll the page while in it) */
+.video-player, .video-player-wrapper, #velocity-player-package, #velocity-controls-package {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: calc(1/0);
+}
+div:has(> .erc-large-header) { display: none; }

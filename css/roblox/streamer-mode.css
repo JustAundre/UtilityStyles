@@ -1,0 +1,6 @@
+#content img { opacity: .5; filter: blur(10px) hue-rotate(172deg); }
+#content .game-name-title {
+  width: 112px;
+  height: 24px;
+  &::before { content: "[REDACTED]"; }
+}

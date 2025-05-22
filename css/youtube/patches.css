@@ -13,12 +13,13 @@ yt-animated-rolling-number[style="height: 28px; line-height: 28px;"] {
   transform: translateY(-4px);
 }
 
-/* Removes the auto-adjusting margin from the actual content part of YouTube */
-#page-manager {
-  margin-left: unset;
-}
-
 /* Removes the side navbar when it is closed */
 #guide:not([opened]) ~ [role="navigation"] {
   display: none;
+}
+
+/* Disables video previews */
+#video-preview {
+  display: none;
+  pointer-events: none;
 }
