@@ -51,6 +51,7 @@ async function fetchFileTree(path, parent) {
   try {
     if (path === undefined) { path = "" }
     if (!parent) { parent = "#tree" }
+    if (parent) { parent.removeChild(document.querySelector("*")) }
     const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
     if (response.ok) { console.log(`HTTP success to Github API with code ${response.status}`) }
     else { console.error(`HTTP error to Github API with code ${response.status}`) }
