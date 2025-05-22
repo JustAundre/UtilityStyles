@@ -49,6 +49,7 @@ document.addEventListener("click", function(event) {
 
 async function fetchFileTree(path, parent) {
   try {
+    if (path === undefined) { path = "" }
     const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
     if (response.ok) { console.log(`HTTP success to Github API with code ${response.status}`) }
     else { console.error(`HTTP error to Github API with code ${response.status}`) }
@@ -61,7 +62,6 @@ async function fetchFileTree(path, parent) {
         parent.innerText = `> ${item.path.replace("css/", "")}`
         return;
       }
-      if (path === undefined) { path = "" }
       if (!parent) { parent = "#tree" }
       element.setAttribute("data-path", item.path.replace("css/", ""))
       element.innerText = `> ${item.path.replace("css/", "")}`
