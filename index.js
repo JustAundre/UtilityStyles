@@ -54,8 +54,8 @@ async function fetchFileTree(path = "", parent = "#tree") {
     for (const item of data) {
       var element = document.createElement("div")
       if (parent !== "#tree" && document.querySelector(`[data-path="${parent.dataset.path}"]`).children.length >= 1) {
-        parent.innerHTML = undefined
-        parent.innerText = `> ${parent.dataset.path}`
+        document.querySelector(parent).innerHTML = undefined
+        document.querySelector(parent).innerText = `> ${document.querySelector(parent).dataset.path}`
         return;
       }
 
