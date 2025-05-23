@@ -53,10 +53,10 @@ async function fetchFileTree(path = "", parent = "#tree") {
     data = await response.json()
     for (const item of data) {
       var element = document.createElement("div")
-      if (parent !== "#tree" && document.querySelector("[data-path]").children.length >= 1) {
-        parent.innerHTML = ``
+      if (parent !== "#tree" && document.querySelector(`[data-path="${parent.dataset.path}"]`).children.length >= 1) {
+        parent.innerHTML = undefined
         parent.innerText = `> ${item.path.replace("css/", "")}`
-        return undefined;
+        throw;
       }
 
       if (response.ok) { console.log(`HTTP success to Github API with code ${response.status}`) }
@@ -71,7 +71,7 @@ async function fetchFileTree(path = "", parent = "#tree") {
       console.log(parent)
       document.querySelector(parent).appendChild(element)
     }
-  } catch (error) { console.error('Error fetching file tree:', error) }
+  }
 }
 fetchFileTree()
 document.querySelector('#tree').addEventListener("click", function(event) {
