@@ -49,8 +49,6 @@ document.addEventListener("click", function(event) {
 
 async function fetchFileTree(path = "", parent = "#tree") {
   try {
-    const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
-    if (!response.ok) { throw error(response.status) }
     parent = document.querySelector(parent)
     data = await response.json()
     if (parent !== "#tree" && parent.children.length >= 1) {
@@ -58,6 +56,10 @@ async function fetchFileTree(path = "", parent = "#tree") {
       parent.innerText = `> ${parent.dataset.path}`
       return;
     }
+    if (parent.dataset.type === "file") { return }
+
+    const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
+    if (!response.ok) { throw error(response.status) }
     for (const item of data) {
       var element = document.createElement("div")
 
@@ -73,9 +75,7 @@ async function fetchFileTree(path = "", parent = "#tree") {
   }
 }
 fetchFileTree()
-document.querySelector('#tree').addEventListener("click", function(event) {
-  fetchFileTree(event.target.dataset.path, `[data-path="${event.target.dataset.path}"]`)
-})
+document.querySelector('#tree').addEventListener("click", function(event) { fetchFileTree(event.target.dataset.path, `[data-path="${event.target.dataset.path}"]`) })
 
 function rescaleTip() {
   var tip = document.querySelector("#tip")
