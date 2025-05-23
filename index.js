@@ -61,21 +61,16 @@ async function fetchFileTree(path = "", parent = "#tree") {
     data = await response.json()
     if (!response.ok) { throw error(response.status) }
     for (const item of data) {
-      var element = (function() {
-        if (item.type === "dir") { return document.createElement("div") }
-        else {
-          a = document.createElement("div")
-          b = document.createElement("a")
-          b.setAttribute("href", `/UtilityStyles/${item.path}`)
-          a.appendChild(b)
-          return a
-        }
-      })()
+      var element = document.createElement("div")
 
       element.setAttribute("data-path", item.path.replace("css/", ""))
-      element.innerText = item.path.replace("css/", "").replace(`${parent}/`, "")
+      element.innerText = item.path.replace("css/", "").replace(`${parent.dataset.path}/`, "")
       element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1};`);
       element.setAttribute("data-type", item.type)
+      if (item.type === "file") {
+        element.setAttribute("href", `UtilityStyles/${item.path}`)
+        element.download = item.path.replace("css/", "").replace(`${parent.dataset.path}/`, "")
+      }
       parent.appendChild(element)
     }
   } catch (error) {
