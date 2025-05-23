@@ -54,9 +54,9 @@ async function fetchFileTree(path = "", parent = "#tree") {
     if (parent !== "#tree" && parent.children.length >= 1) {
       parent.innerHTML = undefined
       parent.innerText = `> ${parent.dataset.path}`
-      return;
+      return
     }
-    if (parent.dataset.type === "file") { return }
+    if (parent !== "#tree" && parent.dataset.type === "file") { return }
 
     const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
     if (!response.ok) { throw error(response.status) }
