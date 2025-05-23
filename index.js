@@ -68,7 +68,7 @@ async function fetchFileTree(path = "", parent = "#tree") {
       element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1};`);
       element.setAttribute("data-type", item.type)
       if (item.type === "file") {
-        element.setAttribute("href", `UtilityStyles/${item.path}`)
+        element.setAttribute("href", `${item.path}`)
         element.setAttribute("download", item.path.replace("css/", "").replace(`${parent.dataset.path}/`, ""))
       }
       parent.appendChild(element)
