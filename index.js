@@ -64,14 +64,16 @@ async function fetchFileTree(path = "", parent = "#tree") {
       var element = document.createElement("div")
 
       element.setAttribute("data-path", item.path.replace("css/", ""))
-      element.innerText = item.path.replace("css/", "").replace(`${parent.dataset.path}/`, "")
       element.setAttribute("style", `--layer: ${item.path.replace("css/", "").split("/").length - 1};`);
       element.setAttribute("data-type", item.type)
       if (item.type === "file") {
         a = document.createElement("a")
         a.setAttribute("href", `${item.path}`)
         a.setAttribute("download", item.path.replace("css/", "").replace(`${parent.dataset.path}/`, ""))
+        a.innerText = item.path.replace("css/", "").replace(`${parent.dataset.path}/`, "")
         element.appendChild(a)
+      } else {
+        element.innerText = item.path.replace("css/", "").replace(`${parent.dataset.path}/`, "")
       }
       parent.appendChild(element)
     }
