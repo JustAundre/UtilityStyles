@@ -47,20 +47,19 @@ document.addEventListener("click", function(event) {
   }
 })
 
-async function fetchFileTree(path = "", parentSelector = "#tree") {
+async function fetchFileTree(path = "", parent = "#tree") {
   try {
     const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
+    if (!response.ok) { throw error(response.status) }
+    parent = document.querySelector(parent)
     data = await response.json()
-    parent = document.querySelector(parentSelector)
+    if (parent !== "#tree" && parent.children.length >= 1) {
+      parent.innerHTML = undefined
+      parent.innerText = `> ${parent.dataset.path}`
+      return;
+    }
     for (const item of data) {
       var element = document.createElement("div")
-      if (parent !== "#tree" && parent.children.length >= 1) {
-        parent.innerHTML = undefined
-        parent.innerText = `> ${parent.dataset.path}`
-        return;
-      }
-
-      if (!response.ok) { throw error(response.status) }
 
       element.setAttribute("data-path", item.path.replace("css/", ""))
       element.innerText = `> ${item.path.replace("css/", "").replace(`${parent}/`)}`
