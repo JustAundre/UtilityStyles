@@ -56,7 +56,7 @@ async function fetchFileTree(path = "", parent = "#tree") {
       if (parent !== "#tree" && document.querySelector("[data-path]").children.length > 0) {
         parent.innerHTML = ``
         parent.innerText = `> ${item.path.replace("css/", "")}`
-        return;
+        return undefined;
       }
 
       if (response.ok) { console.log(`HTTP success to Github API with code ${response.status}`) }
