@@ -73,7 +73,7 @@ async function fetchFileTree(path = "", parent = "#tree") {
       parent.appendChild(element)
     }
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 }
 fetchFileTree()
