@@ -63,7 +63,13 @@ async function fetchFileTree(path = "", parent = "#tree") {
     for (const item of data) {
       var element = (function() {
         if (item.type === "dir") { return document.createElement("div") }
-        else { return document.createElement("div").appendChild(document.createElement("a")) }
+        else {
+          a = document.createElement("div")
+          b = document.createElement("a")
+          b.setAttribute("href", `/UtilityStyles/${item.path}`)
+          a.appendChild(b)
+          return a
+        }
       })()
 
       element.setAttribute("data-path", item.path.replace("css/", ""))
