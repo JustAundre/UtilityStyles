@@ -114,7 +114,8 @@ h1 {
   & div[data-type="dir"]::before { content: "> "; }
   & div[data-type="file"]::before {
     content: "";
-    height: 24px;
+    display: inline-block;
+    height: 100%;
     aspect-ratio: 1/1;
     background-image: url(/UtilityStyles/global-media/graphics/page.svg);
     background-size: contain;
