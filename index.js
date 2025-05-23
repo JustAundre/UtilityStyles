@@ -61,7 +61,10 @@ async function fetchFileTree(path = "", parent = "#tree") {
     data = await response.json()
     if (!response.ok) { throw error(response.status) }
     for (const item of data) {
-      var element = document.createElement("div")
+      var element = (function() {
+        if (item.type === "dir") { document.createElement("div") }
+        else { document.createElement("a") }
+      })
 
       element.setAttribute("data-path", item.path.replace("css/", ""))
       element.innerText = item.path.replace("css/", "").replace(`${parent}/`, "")

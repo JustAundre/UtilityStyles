@@ -112,15 +112,6 @@ h1 {
     margin-left: calc(24px * var(--layer));
   }
   & div[data-type="dir"]::before { content: "> "; }
-  & div[data-type="file"]::before {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    aspect-ratio: 1/1;
-    background-image: url(/UtilityStyles/global-media/graphics/page.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
 }
 
 @keyframes intro {
