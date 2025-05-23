@@ -47,11 +47,11 @@ document.addEventListener("click", function(event) {
   }
 })
 
-async function fetchFileTree(path = "", parent = "#tree") {
+async function fetchFileTree(path = "", parentSelector = "#tree") {
   try {
     const response = await fetch(`https://api.github.com/repos/JustAundre/UtilityStyles/contents/css/${path}`, { headers: {'X-GitHub-Api-Version': '2022-11-28'} })
     data = await response.json()
-    parent = document.querySelector(parent)
+    parent = document.querySelector(parentSelector)
     for (const item of data) {
       var element = document.createElement("div")
       if (parent !== "#tree" && parent.children.length >= 1) {
