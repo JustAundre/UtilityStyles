@@ -55,12 +55,13 @@ async function fetchFileTree(path = "", parent = "#tree") {
       var element = document.createElement("div")
       if (parent !== "#tree" && document.querySelector(`[data-path="${parent.dataset.path}"]`).children.length >= 1) {
         parent.innerHTML = undefined
-        parent.innerText = `> ${item.path.replace("css/", "")}`
-        throw error();
+        parent.innerText = `> ${parent.dataset.path}`
+        return;
       }
 
-      if (response.ok) { console.log(`HTTP success to Github API with code ${response.status}`) }
-      else { console.error(`HTTP error to Github API with code ${response.status}`) }
+      if (!response.ok) {
+        throw error(response.status)
+      }
 
       element.setAttribute("data-path", item.path.replace("css/", ""))
       element.innerText = `> ${item.path.replace("css/", "").replace(`${parent}/`)}`
@@ -71,7 +72,9 @@ async function fetchFileTree(path = "", parent = "#tree") {
       console.log(parent)
       document.querySelector(parent).appendChild(element)
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 }
 fetchFileTree()
 document.querySelector('#tree').addEventListener("click", function(event) {
