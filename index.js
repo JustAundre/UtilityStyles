@@ -64,7 +64,7 @@ async function fetchFileTree(path = "", parent = "#tree") {
       var element = (function() {
         if (item.type === "dir") { return document.createElement("div") }
         else { return document.createElement("a") }
-      })
+      })()
 
       element.setAttribute("data-path", item.path.replace("css/", ""))
       element.innerText = item.path.replace("css/", "").replace(`${parent}/`, "")
