@@ -97,11 +97,11 @@ h1 {
   & div:hover {
     padding-left: 6px;
     cursor: pointer;
-    background: rgba(0, 255, 0, .5);
+    background: rgba(0, 255, 0, .25);
   }
   & div:active {
-    padding-left: 10px;
-    background: rgba(0, 255, 0, 1);
+    padding-left: 12px;
+    background: rgba(0, 255, 0, .5);
   }
   & div {
     width: max-content;
@@ -111,6 +111,7 @@ h1 {
     user-select: none;
     margin-left: calc(24px * var(--layer));
   }
+  & div::before { content: "> "; }
 }
 
 @keyframes intro {
