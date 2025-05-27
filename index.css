@@ -89,6 +89,7 @@ h1 {
   &[data-status="fail"] { animation: fail calc(1s / 3) ease-out forwards; }
   overflow-x: scroll;
   text-wrap: nowrap;
+  &::selection { background-color: white; }
 }
 @keyframes success {
   0% { color: white; }
