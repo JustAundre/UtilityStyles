@@ -33,9 +33,9 @@ var interval = setInterval(function() {
     statusDisplay.dataset.status = ""
     statusDisplay.innerHTML = ".. What are you doing?"
   } else {
-    if (document.body.querySelector("h2").innerHTML === ".. What are you doing?") {
+    if (statusDisplay.innerHTML === ".. What are you doing?") {
       statusDisplay.dataset.status = ""
-      document.body.querySelector("h2").innerHTML = ".. Okay."
+      statusDisplay.innerHTML = ".. Okay."
       document.removeEventListener("click")
       clearInterval(interval)
     }
