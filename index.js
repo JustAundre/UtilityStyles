@@ -81,12 +81,10 @@ async function fetchFileTree(path = "", parent = "#tree") {
     }
 
     statusDisplay.innerText = `Success - ${response.status}`
-    statusDisplay.dataset.status = ""
     statusDisplay.dataset.status = "success"
   } catch (error) {
     console.error(error)
     statusDisplay.innerText = `Failure - ${error}`
-    statusDisplay.dataset.status = ""
     statusDisplay.dataset.status = "fail"
   }
 }

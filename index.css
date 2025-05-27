@@ -85,8 +85,8 @@ h1 {
     content: "> ";
     user-select: none;
   }
-  &[data-status="success"] { animation: success calc(1s / 3) ease-out forwards; }
-  &[data-status="fail"] { animation: fail calc(1s / 3) ease-out forwards; }
+  &[data-status="success"] { animation: success 500ms ease-out forwards; }
+  &[data-status="fail"] { animation: fail 500ms ease-out forwards; }
   overflow-x: scroll;
   text-wrap: nowrap;
   &::selection { background-color: white; }
