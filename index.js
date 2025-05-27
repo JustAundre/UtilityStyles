@@ -1,3 +1,4 @@
+const statusDisplay = document.body.querySelector("h1[data-status]")
 {
   var tip = document.createElement("span")
   tip.innerHTML = "<span>< Click on the edges to switch color themes ></span>"
@@ -5,7 +6,7 @@
   document.documentElement.appendChild(tip)
 }
 
-let colorTheme;
+var colorTheme;
 if (window.matchMedia("(prefers-color-scheme: dark)")) {
   colorTheme = "dark"
   document.documentElement.setAttribute("color-theme", colorTheme)
@@ -26,10 +27,10 @@ function flipColorTheme() {
   }
 }
 
-let switchCount = 0
-let interval = setInterval(function() {
+var switchCount = 0
+var interval = setInterval(function() {
   if (switchCount >= 10) {
-    document.body.querySelector("h2").innerHTML = ".. What are you doing?"
+    .innerHTML = ".. What are you doing?"
   } else {
     if (document.body.querySelector("h2").innerHTML === ".. What are you doing?") {
       document.body.querySelector("h2").innerHTML = ".. Okay."
@@ -48,7 +49,6 @@ document.addEventListener("click", function(event) {
 })
 
 async function fetchFileTree(path = "", parent = "#tree") {
-  var statusDisplay = document.querySelector("[data-status]")
   parent = document.querySelector(parent)
   if (parent !== "#tree" && parent.children.length >= 1) {
     parent.innerHTML = undefined
