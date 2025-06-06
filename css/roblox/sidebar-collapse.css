@@ -21,9 +21,10 @@
 }
 #left-navigation-container:is(:hover) > .rbx-left-col { width: 175px !important; }
 #navigation-container:has(#left-navigation-container) ~ main:first-of-type {
-  & > #content:has(.sort-header), & > #content:has(a[target="_self"][href="https://www.roblox.com/catalog"]) {
+  /* Places on Roblox where the left margins can be removed without breaking things */
+  /* The Catalog */ & > #content:has(.sort-header), & > #content:has(a[target="_self"][href="https://www.roblox.com/catalog"]),
+  /* The Homepage */ & > #content:has(#HomeContainer) {
     margin-left: 0;
   }
 }
 #navigation-container:has(#left-navigation-container:hover) ~ main:first-of-type > #content:has(.sort-header) { margin-left: 175px !important; }
-.game-carousel { display: flex !important; }
