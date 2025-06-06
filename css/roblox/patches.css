@@ -1,8 +1,3 @@
-/* Configs */
-:root {
-  --sensitivity: 1%; /* How close you need to hover to the left side of the screen to expand the sidebar */
-}
-
 /* Always keep friends, favorites, and continues at the top */
 .game-home-page-container > div {
 	display: flex;

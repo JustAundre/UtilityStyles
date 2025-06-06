@@ -1,3 +1,8 @@
+/* Configs */
+:root {
+  --sensitivity: 1%; /* How close you need to hover to the left side of the screen to expand the sidebar */
+}
+
 /* Re-add the ability to collapse the sidebar again */
 .rbx-nav-collapse { display: none; }
 .rbx-left-col {
