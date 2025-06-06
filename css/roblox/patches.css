@@ -13,3 +13,8 @@
   max-height: unset !important;
   text-wrap: wrap;
 }
+
+/* Overflowing containers like your Continues or Favorites on your home page are made scrollable with [SHIFT + SCROLL] */
+.game-sort-carousel-wrapper .horizontal-scroll-window {
+  overflow-x: scroll;
+}
