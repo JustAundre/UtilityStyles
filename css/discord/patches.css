@@ -1,31 +1,3 @@
-/* Adds a 3s delay before you can block or unfriend someone */
-#user-context-remove-friend > div,
-#user-context-block > div {
-  color: var(--status-danger);
-}
-#user-context-remove-friend,
-#user-context-block {
-  transform: translateX(-200%);
-}
-#user-context-remove-friend:hover,
-#user-context-block:hover {
-  background-color: var(--menu-item-danger-hover-bg);
-}
-#user-context-remove-friend:hover > div,
-#user-context-block:hover > div {
-  color: white;
-}
-[role="group"]:hover #user-context-remove-friend {
-  transform: none;
-  transition-delay: 3s;
-  transition-property: transform;
-}
-[role="group"]:hover #user-context-block {
-  transform: none;
-  transition-delay: 3s;
-  transition-property: transform;
-}
-
 /* Keeps the emoji selector icon consistent */
 [aria-label="Select emoji"] div[style] > div:last-of-type {
   mask-position: 18px 54px;
@@ -51,6 +23,27 @@ div:has(> span > [aria-label="Reveal email address"])::before {
   display: block;
   content: "ಠ _ಠ";
   color: white;
+}
+
+/* Keeps the folder size and border-radius consistent with everything else */
+foreignObject > div[aria-owns][aria-label] > * {
+  border-radius: 12px;
+  transform-origin: center;
+}
+foreignObject:has(> div[aria-owns][aria-label]) {
+  mask: none;
+  height: 40px;
+  width: 40px;
+}
+foreignObject > div[aria-owns][aria-label],
+foreignObject > div[aria-owns][aria-label] > *,
+foreignObject > div[aria-owns][aria-label] > * > * {
+  height: 40px;
+  width: 40px;
+}
+div[data-dnd-name][draggable="true"] > div[style] {
+  width: 40px !important;
+  height: 40px !important;
 }
 
 /* Removes server icons from folder previews */
@@ -80,7 +73,23 @@ svg:has(foreignObject[mask] [class*="folder"]),
   height: var(--guildbar-avatar-size) !important;
 }
 
-/* Makes things snappier- no transitions */
+[class*="credentialItem"] {
+  padding-left: 16px; /* Discord's 32px is awkwardly big */
+  & > div:first-of-type::before {  /* We could use more pop around here */
+    display: inline-block;
+    content: "🔑";
+    margin-right: 8px;
+  }
+}
+
+/* No thinking bubbles for statuses */
+[role="tooltip"] > div:first-of-type {
+  &::before, &::after {
+    display: none;
+  }
+}
+
+/* No transitions */
 * {
   transition: none !important;
 }

@@ -1,80 +1,4 @@
-/* Makes the channels list in servers more compact*/
-ul[aria-label="Channels"] li div:not([role="group"]) {
-  max-height: 24px !important;
-  box-sizing: border-box;
-}
-ul[aria-label="Channels"] div[role="group"] div[data-dnd-name] {
-  max-height: 16px;
-  box-sizing: border-box;
-}
-
-/* Makes members list denser */
-[class*="member"][role="listitem"] {
-  padding: 0;
-  max-height: 36px;
-}
-
-/* Makes DMs list denser */
-li:has([href*="/channels/@me"]) {
-  max-height: 36px !important;
-  box-sizing: border-box;
-}
-
-/* Reduces vertical spacing for text in messages and embeds */
-[class*="embed"],
-div:has([class*="avatar"]) * {
-  line-height: 1;
-}
-#---new-messages-bar {
-  top: unset;
-}
-
-/* Truncates large reply message previews */
-[class*="repliedTextPreview"] {
-  max-width: 128px;
-  overflow: hidden;
-}
-
-/* Truncates large reply message previews */
-[class*="topic"] {
-  max-width: 128px;
-  overflow: hidden;
-}
-
-/* Reduces the margin for date separaters */
-/* Reduces the margin for date separaters */
-[role="separator"][aria-label] {
-  margin-top: 2rem !important;
-  transform: translateY(-16px);
-}
-
-/* Lessens the margin bewteen messages of unique users */
-[class*="message"][class*="groupStart"] {
-  margin-top: .2rem !important;
-}
-
-/* Removes the minimum height between messages */
-[aria-roledescription="Message"] {
-  min-height: unset !important;
-}
-
-/* Makes header text sent by users have less spacing */
-[aria-roledescription="Message"] h1,
-[aria-roledescription="Message"] h2,
-[aria-roledescription="Message"] h3 {
-  margin: 0 !important;
-}
-h1:has(span span),
-h2:has(span span),
-h3:has(span span) {
-  line-height: 1em !important;
-  display: block;
-}
-
 /* Shrinks the user bar */
-[aria-label="Servers sidebar"] {
-  margin-bottom: 0 !important;
-}
 [aria-label="User area"] {
   width: calc(100% - var(--custom-guild-list-width)) !important;
   right: 0 !important;
@@ -83,8 +7,22 @@ h3:has(span span) {
   bottom: 0 !important;
 }
 
+/* Reduce spacing between... */
 :root {
-  /* Resizes emojis */ --custom-emoji-size-emoji: 1rem;
-  /* Reduce extra spacing between messages */ --custom-message-spacing-vertical-container-cozy: unset;
-  /* Reduce spacing between channel categories */ --custom-category-channel-space-before-category: 8px;
+  /* Messages */ --custom-message-spacing-vertical-container-cozy: unset;
+  /* Channel categories */ --custom-category-channel-space-before-category: 8px;
+  /* Emojis */--custom-emoji-size-emoji: 1rem;
+}
+/* Messages (again) */
+[data-list-id="chat-messages"] * {
+  line-height: .9 !important;
+  min-height: unset !important;
+}
+
+/* Crops long channel descriptions &  long reply previews */
+*:has(> [aria-label="Open Channel Topic"]), [class*="repliedTextPreview"] {
+  display: block;
+  max-width: 256px;
+  text-wrap: nowrap;
+  overflow: hidden;
 }
