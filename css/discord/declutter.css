@@ -13,7 +13,7 @@
 /* "Add to your channels list" */ div[class*="chatHeader"]:has(path[class]),
 /* Hide "Show User Profile" when screen isn't wide enough*/ [aria-label="Show User Profile (Unavailable)"],
 /* "Apps" & "Add to Server" context menu buttons*/ [role="group"]:has([id="user-context-block"]) > div:not([id="user-context-remove-friend"]):not([id="user-context-block"]),
-/* Anything in the message input that isnt GIF or Emoji picker */ div:has(> [aria-label="Send a gift"]) > *:not(:has([aria-label="Select emoji"]), :has([aria-label="Open GIF picker"])),
+/* Anything in the message input that isnt GIF or Emoji picker */ div:has(> .expression-picker-chat-input-button) > div:not(.expression-picker-chat-input-button),
 /* The "Download" button for the Discord App */ div[aria-label="Servers"] ~ div:has(div[aria-label="Download Apps"]), div[aria-label="Servers"] ~ div:has(> div:empty:not([aria-hidden="true"])),
 /* User sub-text and statuses under their display name on members lists*/ [class*="subText"],
 /* "Activities" @ Members list */ [aria-label="Members"] > h3:has([class=""]), [aria-label="Members"] > h3:has([class=""]) ~ div:not([class]),
@@ -21,13 +21,13 @@
 /* Quick-react buttons */ [class*="hoverBarButton"][aria-label*="Click to react with"], [aria-label="Message Actions"] [role="group"]:first-of-type,
 /* Clan tags */ span > span:has([src*="/clan-badges/"]),
 /* Reply & React to user statuses */ [class*='statusPopover'], [class*='avatarPopover'], [style*="background: linear-gradient(90deg, transparent 0%, rgba("],
-/* Closed & Claimed quests */ [id*="quest-tile"]:has([disabled]), [id*="quest-tile"]:has([d="M4 12a8 8 0 0 1 14.93-4H15a1 1 0 1 0 0 2h6a1 1 0 0 0 1-1V3a1 1 0 1 0-2 0v3a9.98 9.98 0 0 0-18 6 10 10 0 0 0 16.29 7.78 1 1 0 0 0-1.26-1.56A8 8 0 0 1 4 12Z"]),
-div:has(> [aria-label="Open Soundboard"]), [aria-label="Start An Activity"], [class*="guildIcon"],
+/* Soundboard & Start activity buttons in VC */ div:has(> [aria-label="Open Soundboard"]), [aria-label="Start An Activity"],
 /* Booster Badge */ div[class=""]:has([fill="var(--guild-boosting-pink)"]),
 /* Tooltips */ #cash-app-pay-container + div:empty:not([class]) + div[class] > div:has([class*="disabledPointerEvents"]),
 /* "Quests have moved!" in your Gifts Inventory */ [style='background-image: url("https://cdn.discordapp.com/assets/discovery/quests-wumpus-hikes-mountain-transparent-background.png");'],
-/* Your "Add Friends" tab only needs to do 1 thing; add friends */ #add_friend-tab [alt="Wumpus Waving"], #add_friend-tab > *:not(:nth-child(1)) {
+/* Hi Wumpus, bye Wumpus. */ #add_friend-tab [alt="Wumpus Waving"] {
   display: none !important;
+  visibility: hidden !important;
 }
 
 /* Removes the title bar */

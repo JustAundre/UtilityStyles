@@ -93,3 +93,27 @@ svg:has(foreignObject[mask] [class*="folder"]),
 * {
   transition: none !important;
 }
+
+/* Improve contrast */
+nav[aria-label="Servers sidebar"] {
+  background-color: color-mix(in oklab, var(--background-base-lowest) 100%, black 15%);
+}
+
+div:has(> [aria-label="Members"]), main[aria-label] + div > aside > div {
+  background-color: color-mix(in oklab, var(--background-base-lowest) 100%, black 5%);
+  & div[index] {
+    background-color: transparent;
+  }
+}
+[aria-label="Channel header"] {
+  background-color: color-mix(in oklab, var(--__header-bar-background) 100%, black 10%) !important;
+}
+div:has(> svg[viewBox="0 0 4 4"])::after, div:has([id^=":"])::after {
+  display: none;
+}
+div > nav[aria-label] > div[data-has-banner="false"], nav[aria-label="Private channels"] {
+  background-color: rgba(0, 0, 0, 20%);
+}
+nav[aria-label="Servers sidebar"] + div {
+  border-start-start-radius: unset;
+}

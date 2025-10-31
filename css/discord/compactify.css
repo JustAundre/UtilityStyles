@@ -6,6 +6,10 @@
   left: unset !important;
   bottom: 0 !important;
 }
+/* Removes the server sidebar bottom margin after shrinking the user bar out of the way */
+nav[aria-label="Servers sidebar"] {
+  margin-bottom: unset;
+}
 
 /* Reduce spacing between... */
 :root {
